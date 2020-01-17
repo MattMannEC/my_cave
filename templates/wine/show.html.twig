@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Wine{% endblock %}
+
+{% block body %}
+    <h1>Wine</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ wine.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ wine.name }}</td>
+            </tr>
+            <tr>
+                <th>Vintage</th>
+                <td>{{ wine.vintage ? wine.vintage|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Grape</th>
+                <td>{{ wine.grape }}</td>
+            </tr>
+            <tr>
+                <th>Country</th>
+                <td>{{ wine.country }}</td>
+            </tr>
+            <tr>
+                <th>Region</th>
+                <td>{{ wine.region }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ wine.description }}</td>
+            </tr>
+            <tr>
+                <th>Ref_image</th>
+                <td>{{ wine.refImage }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('wine_index') }}">back to list</a>
+
+    <a href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
+
+    {{ include('wine/_delete_form.html.twig') }}
+{% endblock %}

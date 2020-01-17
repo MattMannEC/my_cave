@@ -22,8 +22,7 @@ class WineRepository extends ServiceEntityRepository
     // /**
     //  * @return Wine[] Returns an array of Wine objects
     //  */
-    /*
-    public function findByExampleField($value)
+    public function readWines($value)
     {
         return $this->createQueryBuilder('w')
             ->andWhere('w.exampleField = :val')
@@ -34,10 +33,8 @@ class WineRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?Wine
+    
+    public function readWine($value): ?Wine
     {
         return $this->createQueryBuilder('w')
             ->andWhere('w.exampleField = :val')
@@ -46,5 +43,4 @@ class WineRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
-    */
 }

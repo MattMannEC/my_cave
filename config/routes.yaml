@@ -1,3 +1,6 @@
-index:
+home:
     path: /
     controller: App\Controller\DefaultController::index
+wine:
+    path: /wine
+    controller: App\Controller\WineController::index
