@@ -80,7 +80,7 @@ class WineController extends AbstractController
 
     /**
      * @Route("/{id}", name="wine_delete", methods={"DELETE"})
-     */
+     */ 
     public function delete(Request $request, Wine $wine): Response
     {
         if ($this->isCsrfTokenValid('delete'.$wine->getId(), $request->request->get('_token'))) {

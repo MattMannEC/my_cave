@@ -22,17 +22,17 @@ class Wine
     private $name;
 
     /**
-     * @ORM\Column(type="date", nullable=true)
+     * @ORM\Column(type="string", length=4, nullable=true)
      */
     private $vintage;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $grape;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $country;
 
@@ -68,12 +68,12 @@ class Wine
         return $this;
     }
 
-    public function getVintage(): ?\DateTimeInterface
+    public function getVintage(): ?string
     {
         return $this->vintage;
     }
 
-    public function setVintage(?\DateTimeInterface $vintage): self
+    public function setVintage(?string $vintage): self
     {
         $this->vintage = $vintage;
 

@@ -4,3 +4,6 @@ home:
 wine:
     path: /wine
     controller: App\Controller\WineController::index
+default:
+    path: /index
+    controller: App\Controller\DefaultController::index

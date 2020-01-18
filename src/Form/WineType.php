@@ -14,7 +14,7 @@ class WineType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('vintage', TextType::class, array('attr' => array('class' => 'toto', 'my-name' => 'matt')))
+            ->add('vintage')
             ->add('grape')
             ->add('country')
             ->add('region')
