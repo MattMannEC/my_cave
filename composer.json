@@ -32,10 +32,13 @@
         "symfony/yaml": "5.0.*"
     },
     "require-dev": {
-        "symfony/debug-pack": "*",
+        "easycorp/easy-log-handler": "^1.0.7",
+        "symfony/debug-bundle": "*",
         "symfony/maker-bundle": "^1.0",
+        "symfony/monolog-bundle": "^3.0",
         "symfony/profiler-pack": "*",
-        "symfony/test-pack": "*"
+        "symfony/test-pack": "*",
+        "symfony/var-dumper": "*"
     },
     "config": {
         "preferred-install": {
