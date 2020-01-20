@@ -1,0 +1,44 @@
+/*===================================================
+                    Colors
+===================================================== */
+
+
+:root {
+    --main-color-1: #8C0335;
+    --main-color-2: #40011e;
+    --main-color-3: #8C5E85;
+    --main-color-4: #F2F2F2;
+    --main-color-5: #0D0D0D;
+}
+
+.b-color-1 {
+    background-color: var(--main-color-1);
+}
+.b-color-2 {
+    background-color: var(--main-color-2);
+}
+.b-color-3 {
+    background-color: var(--main-color-3);
+}
+.b-color-4 {
+    background-color: var(--main-color-4);
+}
+.b-color-5 {
+    background-color: var(--main-color-5);
+}
+
+.color-1 {
+    color: var(--main-color-1);
+}
+.color-2 {
+    color: var(--main-color-2);
+}
+.color-3 {
+    color: var(--main-color-3);
+}
+.color-4 {
+    color: var(--main-color-4);
+}
+.color-5 {
+    color: var(--main-color-5);
+}

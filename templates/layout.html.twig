@@ -2,7 +2,33 @@
 {# extends from base.html.twig and defines the content structure used in all or most of the pages, such as a two-column content + sidebar layout. Some sections of the application can define their own layouts (e.g. templates/blog/layout.html.twig); #}
 {% extends 'base.html.twig' %}
 {% block body %}
-layout
     <h1>My Cave</h1>
+        base
+        <nav class="">
+            <div class="" id="">
+                <ul class="">
+                    <li class="">
+                        <a class="" href="{{ path('home') }}">My Cave</a>
+                    </li>
+                    <li class="">
+                        <a class="" href="{{ path('wine')}}">Collection</a>
+                    </li>
+                    <li class="">
+                        <a class="" href="">Login</a>
+                    </li>
+                </ul>
+                <form class="">
+                    <input class="" type="search" placeholder="Search" aria-label="Search">
+                    <button class="" type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+
     {% block content %}{% endblock %}
+
+        <footer class="footer">
+            <div class="container text-center">
+                <span class="">Footer</span>
+            </div>
+        </footer>
 {% endblock %}
