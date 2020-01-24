@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Wine;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -19,7 +20,10 @@ class WineType extends AbstractType
             ->add('country')
             ->add('region')
             ->add('description')
-            ->add('ref_image')
+            ->add('imageFile', FileType::class, [
+                'mapped' => false,
+                'required' => false,
+            ])
         ;
     }
 

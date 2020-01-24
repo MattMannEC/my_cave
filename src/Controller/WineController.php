@@ -67,6 +67,20 @@ class WineController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $uploadedFile = $form['imageFile']->getData();
+            if($uploadedFile) {
+                $destination = $this->getParameter('kernel.project_dir').'/public/uploads/images';
+
+                $orignalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $newFilename = $orignalFilename . '-' . uniqid() . '.' . $uploadedFile->guessExtension(); // add Urlizer::urlize
+        
+                $uploadedFile->move(
+                    $destination, 
+                    $newFilename
+                );
+                $wine->setRefImage($newFilename);
+            }
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('wine_index');
@@ -77,7 +91,7 @@ class WineController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-
+ 
     /**
      * @Route("/{id}", name="wine_delete", methods={"DELETE"})
      */ 
