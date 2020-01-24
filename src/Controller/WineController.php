@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Entity\Wine;
 use App\Form\WineType;
 use App\Repository\WineRepository;
+use App\Service\UploaderHelper;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,13 +30,19 @@ class WineController extends AbstractController
     /**
      * @Route("/new", name="wine_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, UploaderHelper $uploaderHelper): Response
     {
         $wine = new Wine();
         $form = $this->createForm(WineType::class, $wine);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $uploadedFile = $form['imageFile']->getData(); 
+            if($uploadedFile) {
+                $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
+
+                $wine->setRefImage($newFilename);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($wine);
             $entityManager->flush();
@@ -61,24 +69,18 @@ class WineController extends AbstractController
     /**
      * @Route("/{id}/edit", name="wine_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Wine $wine): Response
+    public function edit(Request $request, Wine $wine, UploaderHelper $uploaderHelper): Response
     {
         $form = $this->createForm(WineType::class, $wine);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $uploadedFile = $form['imageFile']->getData();
+            $uploadedFile = $form['imageFile']->getData(); 
             if($uploadedFile) {
-                $destination = $this->getParameter('kernel.project_dir').'/public/uploads/images';
 
-                $orignalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-                $newFilename = $orignalFilename . '-' . uniqid() . '.' . $uploadedFile->guessExtension(); // add Urlizer::urlize
-        
-                $uploadedFile->move(
-                    $destination, 
-                    $newFilename
-                );
+                $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
+
                 $wine->setRefImage($newFilename);
             }
             $this->getDoctrine()->getManager()->flush();
@@ -91,7 +93,7 @@ class WineController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
- 
+
     /**
      * @Route("/{id}", name="wine_delete", methods={"DELETE"})
      */ 
