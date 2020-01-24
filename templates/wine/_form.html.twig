@@ -1,24 +1,3 @@
 {{ form_start(form) }}
-    <div class="arsenal">
-        {{ form_row(form.name) }}
-    </div>
-    <div class="arsenal">
-        {{ form_row(form.vintage) }}
-    </div>
-    <div class="arsenal">
-        {{ form_row(form.grape) }}
-    </div>
-    <div class="arsenal">
-        {{ form_row(form.country) }}
-    </div>
-    <div class="arsenal">
-        {{ form_row(form.region) }}
-    </div>
-    <div class="arsenal">
-        {{ form_row(form.description) }}
-    </div>
-    <div class="btn btn-primary">
-        {{ form_row(form.imageFile) }}
-    </div>
-    <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_widget(form)}}
 {{ form_end(form) }}

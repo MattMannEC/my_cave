@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Wine;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -21,9 +22,11 @@ class WineType extends AbstractType
             ->add('region')
             ->add('description')
             ->add('imageFile', FileType::class, [
+                'attr' => ['class' => 'btn btn-primary'],
                 'mapped' => false,
                 'required' => false,
             ])
+            ->add('Update', SubmitType::class)
         ;
     }
 
