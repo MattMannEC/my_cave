@@ -41,12 +41,14 @@ class WineType extends AbstractType
 
         $builder
             ->add('imageFile', FileType::class, [
-                'attr' => ['class' => 'btn btn-primary'],
+                'attr' => ['class' => 'btn'],
                 'mapped' => false,
                 'required' => false,
                 'constraints' => $imageConstraints,
             ])
-            ->add('Update', SubmitType::class)
+            ->add('Update', SubmitType::class, [
+                'attr' => ['class' => 'btn btn-primary'],
+            ])
         ;
     }
 

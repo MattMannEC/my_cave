@@ -1,3 +1,13 @@
 {{ form_start(form) }}
-    {{ form_widget(form)}}
+    {{ form_row(form.name) }}
+    {{ form_row(form.vintage) }}
+    {{ form_row(form.grape) }}
+    {{ form_row(form.country) }}
+    {{ form_row(form.region) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.imageFile, {
+        attr : {
+            placeholder: 'Select an image'
+        }
+    }) }}
 {{ form_end(form) }}

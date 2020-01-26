@@ -8,31 +8,23 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Name</th>
                 <th>Vintage</th>
                 <th>Grape</th>
-                <th>Country</th>
                 <th>Region</th>
-                <th>Description</th>
                 <th>Ref_image</th>
-                <th>actions</th>
             </tr>
         </thead>
         <tbody>
         {% for wine in wines %}
             <tr>
-                <td>{{ wine.id }}</td>
                 <td>{{ wine.name }}</td>
                 <td>{{ wine.vintage }}</td>
                 <td>{{ wine.grape }}</td>
-                <td>{{ wine.country }}</td>
                 <td>{{ wine.region }}</td>
-                <td>{{ wine.description }}</td>
                 <td>{{ wine.refImage }}</td>
                 <td>
                     <a href="{{ path('wine_show', {'id': wine.id}) }}">show</a>
-                    <a href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
