@@ -4,4 +4,7 @@ home:
 wine:
     path: /wine
     controller: App\Controller\WineController::index
+login:
+    path: /login
+    controller: App\Controller\SecurityController::login
     
