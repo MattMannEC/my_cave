@@ -12,6 +12,7 @@ security:
                 property: username
     firewalls:
         dev:
+        # The dev firewall blocks any urls that start with profiler or wdt that would break symfony's dev tools
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
