@@ -13,9 +13,14 @@
                     <li class="">
                         <a class="" href="{{ path('wine')}}">Collection</a>
                     </li>
-                    <li class="">
-                        <a class="" href="{{ path('login')}}">Login</a>
-                    </li>
+                    {% if app.user == false %}
+                        <a href="{{ path('app_login') }}">Login</a>
+                    {% else %}
+                        <div class="mb-3">
+                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+                        </div>
+
+                    {% endif %}
                 </ul>
             </div>
         </nav>

@@ -91,10 +91,9 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator implements P
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $providerKey)) {
             return new RedirectResponse($targetPath);
-        } else {
-            echo('Login works but $targetPath is null');
         }
-        // For example : return new RedirectResponse($this->urlGenerator->generate('some_route'));
+
+        return new RedirectResponse($this->urlGenerator->generate('home'));
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
