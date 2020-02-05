@@ -3,7 +3,7 @@ home:
     controller: App\Controller\DefaultController::index
 wine:
     path: /wine
-    controller: App\Controller\WineController::index
+    controller: App\Controller\DefaultController::wineCatalogue
 login:
     path: /login
     controller: App\Controller\SecurityController::login

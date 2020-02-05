@@ -13,22 +13,23 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/wine")
+ * @Route("/profile/wine")
  */
 class WineController extends AbstractController
 {
     /**
      * @Route("/", name="wine_index", methods={"GET"})
      */
+    /*
     public function index(WineRepository $wineRepository): Response
     {
         return $this->render('wine/index.html.twig', [
             'wines' => $wineRepository->findAll(),
         ]);
-    }
+    }*/
 
     /**
-     * @Route("/new", name="wine_new", methods={"GET","POST"})
+     * @Route("/profile/new", name="wine_new", methods={"GET","POST"})
      */
     public function new(Request $request, UploaderHelper $uploaderHelper): Response
     {
@@ -47,7 +48,7 @@ class WineController extends AbstractController
             $entityManager->persist($wine);
             $entityManager->flush();
 
-            return $this->redirectToRoute('wine_index');
+            return $this->redirectToRoute('wine');
         }
 
         return $this->render('wine/new.html.twig', [
@@ -57,17 +58,7 @@ class WineController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="wine_show", methods={"GET"})
-     */
-    public function show(Wine $wine): Response
-    {
-        return $this->render('wine/show.html.twig', [
-            'wine' => $wine,
-        ]);
-    }
-
-    /**
-     * @Route("/{id}/edit", name="wine_edit", methods={"GET","POST"})
+     * @Route("/profile/{id}/edit", name="wine_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Wine $wine, UploaderHelper $uploaderHelper): Response
     {
@@ -85,7 +76,7 @@ class WineController extends AbstractController
             }
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('wine_index');
+            return $this->redirectToRoute('wine');
         }
 
         return $this->render('wine/edit.html.twig', [
@@ -95,7 +86,7 @@ class WineController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="wine_delete", methods={"DELETE"})
+     * @Route("/profile/{id}", name="wine_delete", methods={"DELETE"})
      */ 
     public function delete(Request $request, Wine $wine): Response
     {
@@ -105,6 +96,6 @@ class WineController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('wine_index');
+        return $this->redirectToRoute('wine');
     }
 }
