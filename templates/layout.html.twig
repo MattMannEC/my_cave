@@ -13,13 +13,15 @@
                     <li class="">
                         <a class="" href="{{ path('wine')}}">Collection</a>
                     </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <a class="" href="{{ path('user_index') }}">Admin</a>
+                    {% endif %}
                     {% if app.user == false %}
                         <a href="{{ path('app_login') }}">Login</a>
                     {% else %}
                         <div class="mb-3">
                             You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
                         </div>
-
                     {% endif %}
                 </ul>
             </div>

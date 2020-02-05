@@ -10,16 +10,16 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/")
+ */
 class DefaultController extends AbstractController
 {
     /**
-     * @Route("/")
+     * @Route ("/", name="home")
      */
     public function index()
     {
-        /**
-         * @Route("/", name="home")
-         */
         return $this->render('index.html.twig');
     }
 
