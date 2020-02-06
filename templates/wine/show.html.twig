@@ -36,8 +36,10 @@
                 <td>{{ wine.description }}</td>
             </tr>
             <tr>
-                <th>Ref_image</th>
-                <td>{{ wine.refImage }}</td>
+                <th>image_path</th>
+                <td>
+                    <img src="{{ wine.imagePath }}">
+                </td>
             </tr>
         </tbody>
     </table>

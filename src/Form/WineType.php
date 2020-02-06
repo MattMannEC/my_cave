@@ -33,7 +33,7 @@ class WineType extends AbstractType
             ]),
         ];
 
-        if (!$isEdit || !$wine->getRefImage()) {
+        if (!$isEdit || !$wine->getImagePath()) {
             $imageConstraints[] = new NotNull([
                 'message' => 'Please upload an image'
             ]);

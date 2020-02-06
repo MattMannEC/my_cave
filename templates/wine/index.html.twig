@@ -12,7 +12,7 @@
                 <th>Vintage</th>
                 <th>Grape</th>
                 <th>Region</th>
-                <th>Ref_image</th>
+                <th>image_path</th>
             </tr>
         </thead>
         <tbody>
@@ -22,7 +22,9 @@
                 <td>{{ wine.vintage }}</td>
                 <td>{{ wine.grape }}</td>
                 <td>{{ wine.region }}</td>
-                <td>{{ wine.refImage }}</td>
+                <td>
+                    <img src="{{ wine.imagePath }}">
+                </td>
                 <td>
                     <a href="{{ path('wine_show', {'id': wine.id}) }}">show</a>
                 </td>

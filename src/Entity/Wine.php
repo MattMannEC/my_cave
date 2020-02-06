@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Service\UploaderHelper;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\WineRepository")
@@ -49,7 +50,7 @@ class Wine
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $ref_image;
+    private $imageFilename;
 
     public function getId(): ?int
     {
@@ -128,14 +129,19 @@ class Wine
         return $this;
     }
 
-    public function getRefImage(): ?string
+    public function getImageFilename(): ?string
     {
-        return $this->ref_image;
+        return $this->imageFilename;
     }
 
-    public function setRefImage(?string $ref_image): self
+    public function getImagePath(): ?string
     {
-        $this->ref_image = $ref_image;
+        return UploaderHelper::getPublicPath() . UploaderHelper::IMAGES . '/' .  $this->getImageFilename();
+    }
+ 
+    public function setImageFilename(?string $imageFilename): self
+    {
+        $this->imageFilename = $imageFilename;
 
         return $this;
     }

@@ -22,7 +22,7 @@ final class Version20200116141627 extends AbstractMigration
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE wine ADD vintage DATE DEFAULT NULL, ADD grape VARCHAR(255) DEFAULT NULL, ADD country VARCHAR(255) NOT NULL, ADD region VARCHAR(255) DEFAULT NULL, ADD description VARCHAR(255) DEFAULT NULL, ADD ref_image VARCHAR(255) DEFAULT NULL');
+        $this->addSql('ALTER TABLE wine ADD vintage DATE DEFAULT NULL, ADD grape VARCHAR(255) DEFAULT NULL, ADD country VARCHAR(255) NOT NULL, ADD region VARCHAR(255) DEFAULT NULL, ADD description VARCHAR(255) DEFAULT NULL, ADD image_path VARCHAR(255) DEFAULT NULL');
     }
 
     public function down(Schema $schema) : void
@@ -30,6 +30,6 @@ final class Version20200116141627 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE wine DROP vintage, DROP grape, DROP country, DROP region, DROP description, DROP ref_image');
+        $this->addSql('ALTER TABLE wine DROP vintage, DROP grape, DROP country, DROP region, DROP description, DROP image_path');
     }
 }
