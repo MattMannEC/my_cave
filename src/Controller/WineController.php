@@ -78,7 +78,6 @@ class WineController extends AbstractController
 
             return $this->redirectToRoute('wine');
         }
-
         return $this->render('wine/edit.html.twig', [
             'wine' => $wine,
             'form' => $form->createView(),

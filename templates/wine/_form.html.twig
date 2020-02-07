@@ -5,10 +5,18 @@
     {{ form_row(form.country) }}
     {{ form_row(form.region) }}
     {{ form_row(form.description) }}
-    {{ form_row(form.imageFile, {
-        attr : {
-            placeholder: 'Select an image'
-        }
-    }) }}
+    <div class="row">
+        <div class="col-sm-9">
+                {{ form_row(form.imageFile, {
+                    attr : {
+                        placeholder: 'Select an image'
+                    }
+                }) }}
+        </div>
+        <div class="col-sm-3">
+            {% if form.vars.data.imageFilename|default %}
+                <img src="{{ form.vars.data.imagePath|imagine_filter('my_full') }}">
+            {% endif %}
+        </div>
+    </div>
 {{ form_end(form) }}
- 

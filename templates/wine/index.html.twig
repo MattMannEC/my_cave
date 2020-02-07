@@ -23,7 +23,7 @@
                 <td>{{ wine.grape }}</td>
                 <td>{{ wine.region }}</td>
                 <td>
-                    <img src="{{ wine.imagePath }}">
+                    <img src="{{ wine.imagePath|imagine_filter('my_thumb') }}">
                 </td>
                 <td>
                     <a href="{{ path('wine_show', {'id': wine.id}) }}">show</a>

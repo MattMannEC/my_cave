@@ -38,7 +38,7 @@
             <tr>
                 <th>image_path</th>
                 <td>
-                    <img src="{{ wine.imagePath }}">
+                    <img src="{{ wine.imagePath|imagine_filter('my_full') }}">
                 </td>
             </tr>
         </tbody>
