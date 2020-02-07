@@ -2,21 +2,18 @@
 
 namespace App\Service;
 
-use Symfony\Component\Asset\Context\RequestStackContext;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 Class UploaderHelper
 { 
-    const UPLOADS = 'uploads/'; // path of app's public upload directory
-    const IMAGES = 'images/'; 
+    const UPLOADS = 'uploads'; // path of app's public upload directory
+    const IMAGES = 'images'; 
 
     private $uploadsPath;
-    private $requestStackContext;
 
-    public function __construct(string $uploadsPath, RequestStackContext $requestStackContext) // use construc to import uploadsPath parametres...
+    public function __construct(string $uploadsPath) // use construc to import uploadsPath parametres...
     {
         $this->uploadsPath = $uploadsPath;
-        $this->requestStackContext = $requestStackContext;
     }
 
     public function uploadArticleImage(UploadedFile $uploadedFile): string
@@ -27,14 +24,14 @@ Class UploaderHelper
 
         $uploadedFile->move(
             $destination,  
-            $newFilename,
+            $newFilename
         ); 
 
         return $newFilename; 
     }
 
-    public function getPublicPath()
+    public static function getPublicPath()
     {
-        return  $this->requestStackContext->getBasePath(). self::UPLOADS;
+        return '/' . self::UPLOADS . '/';
     }
 }
