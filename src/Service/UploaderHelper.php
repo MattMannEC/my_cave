@@ -25,7 +25,7 @@ Class UploaderHelper
         $uploadedFile->move(
             $destination,  
             $newFilename
-        ); 
+        );
 
         return $newFilename; 
     }
