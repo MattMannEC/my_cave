@@ -6,8 +6,8 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 Class UploaderHelper
 { 
-    const UPLOADS = 'uploads'; // path of app's public upload directory
-    const IMAGES = 'images'; 
+    const UPLOADS = 'uploads/'; // path of app's public upload directory
+    const IMAGES = 'images/'; 
 
     private $uploadsPath;
 
@@ -32,6 +32,6 @@ Class UploaderHelper
 
     public static function getPublicPath()
     {
-        return '/' . self::UPLOADS . '/';
+        return '/' . self::UPLOADS;
     }
 }
