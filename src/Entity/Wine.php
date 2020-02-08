@@ -136,7 +136,7 @@ class Wine
 
     public function getImagePath(): ?string
     {
-        return UploaderHelper::getPublicPath() . UploaderHelper::IMAGES . $this->getImageFilename();
+        return UploaderHelper::getPublicPath() . '/' . UploaderHelper::IMAGES . '/' . $this->getImageFilename();
     }
 
     public function setImageFilename(?string $imageFilename): self
