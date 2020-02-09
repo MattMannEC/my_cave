@@ -7,15 +7,18 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $user = $options['data'] ?? null;
+        $isEdit = $user && $user->getId();
+
         $builder
             ->add('username')
             ->add('roles')
-            ->add('password')
             ->add('firstname')
             ->add('lastname')
         ;
@@ -30,8 +33,17 @@ class UserType extends AbstractType
                     // transform the string back to an array
                     return json_decode($rolesAsJson, true);
                 }
-            ))
-        ;
+            ));
+        
+        if ($isEdit || $user->getPassword()) {
+                $required = false;
+        }
+
+        $builder
+            ->add('password', TextType::class, [
+                'required' => $required,
+            ]);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)

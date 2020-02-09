@@ -93,6 +93,8 @@ class WineController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($wine);
             $entityManager->flush();
+
+            
         }
 
         return $this->redirectToRoute('wine');

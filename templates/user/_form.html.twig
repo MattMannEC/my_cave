@@ -1,4 +1,12 @@
 {{ form_start(form) }}
-    {{ form_widget(form) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.roles) }}
+    {{ form_row(form.password, {
+        attr : {
+            value: '',
+        }
+    }) }}
+    {{ form_row(form.firstname) }}
+    {{ form_row(form.lastname) }}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
