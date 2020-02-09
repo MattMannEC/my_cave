@@ -87,14 +87,15 @@ class WineController extends AbstractController
     /**
      * @Route("/profile/{id}", name="wine_delete", methods={"DELETE"})
      */ 
-    public function delete(Request $request, Wine $wine): Response
+    public function delete(Request $request, Wine $wine, UploaderHelper $uploaderHelper): Response
     {
         if ($this->isCsrfTokenValid('delete'.$wine->getId(), $request->request->get('_token'))) {
+            $uploaderHelper->removeFile(UploaderHelper::IMAGES, $wine->getImageFilename());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($wine);
+
             $entityManager->flush();
         }
-
         return $this->redirectToRoute('wine');
     }
 }
