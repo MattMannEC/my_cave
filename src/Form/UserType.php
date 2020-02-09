@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class UserType extends AbstractType
 {
@@ -14,7 +15,12 @@ class UserType extends AbstractType
     {
         $builder
             ->add('username')
-            ->add('roles')
+            ->add('roles', ChoiceType::class, [
+                'choices' => [
+                    'User' => 'e',
+                    'Admin' => 'r',
+                ],
+            ])
             ->add('password')
             ->add('firstname')
             ->add('lastname')
@@ -24,11 +30,11 @@ class UserType extends AbstractType
             ->addModelTransformer(new CallbackTransformer(
                 function ($rolesAsArray) {
                     // transform the array to a string
-                    return json_encode($rolesAsArray);
+                    return json_encode($rolesAsArray, true);
                 },
                 function ($rolesAsJson) {
                     // transform the string back to an array
-                    return json_decode($rolesAsJson, true);
+                    return json_decode($rolesAsJson);
                 }
             ))
         ;
