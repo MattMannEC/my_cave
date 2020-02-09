@@ -3,6 +3,7 @@
 namespace App\Service;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Filesystem\Filesystem;
 
 Class UploaderHelper
 { 
@@ -30,8 +31,13 @@ Class UploaderHelper
         return $newFilename; 
     }
 
-    public static function getPublicPath()
+    public function getPublicPath()
     {
         return '/' . self::UPLOADS;
+    }
+
+    public function removeFile($directory, $imageFilename)
+    {
+        FileSystem::remove($this->uploadsPath . '/' . $directory . '/' . $imageFilename);
     }
 }
