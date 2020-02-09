@@ -36,8 +36,8 @@ Class UploaderHelper
         return '/' . self::UPLOADS;
     }
 
-    public function removeFile($uploadDirectory, $imageFilename)
+    public function removeFile($directory, $imageFilename)
     {
-        FileSystem::remove($this->uploadsPath . '/' . $uploadDirectory . '/' . $imageFilename);
+        FileSystem::remove($this->uploadsPath . '/' . $directory . '/' . $imageFilename);
     }
 }
