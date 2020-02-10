@@ -69,9 +69,7 @@ class WineController extends AbstractController
 
             $uploadedFile = $form['imageFile']->getData(); 
             if($uploadedFile) {
-
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
-
                 $wine->setimageFilename($newFilename);
             }
             $this->getDoctrine()->getManager()->flush();
