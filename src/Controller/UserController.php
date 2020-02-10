@@ -70,6 +70,8 @@ class UserController extends AbstractController
     {
         $form = $this->createForm(UserType::class, $user);
         $currentPassword = $user->getPassword();
+        dump($request);
+        dd($form);//"["ROLE_ADMIN","ROLE_USER"]"
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
 
