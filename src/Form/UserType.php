@@ -13,8 +13,12 @@ class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $user = $options['data'] ?? null;
+        $isEdit = $user && $user->getId();
+
         $builder
             ->add('username')
+
             ->add('roles', ChoiceType::class, [
                 'choices' => [
                     'User' => 'e',
@@ -36,8 +40,18 @@ class UserType extends AbstractType
                     // transform the string back to an array
                     return json_decode($rolesAsJson);
                 }
-            ))
-        ;
+            ));
+        
+        if ($isEdit || $user->getPassword()) {
+                $required = false;
+        }
+
+        $builder
+            ->add('password', TextType::class, [
+                'required' => $required,
+                'empty_data' => '',
+            ]);
+
     }
 
     public function configureOptions(OptionsResolver $resolver)
