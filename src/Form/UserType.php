@@ -41,9 +41,10 @@ class UserType extends AbstractType
                     return json_decode($rolesAsJson);
                 }
             ));
-        
-        if ($isEdit || $user->getPassword()) {
-                $required = false;
+
+        $required = false;
+        if (!$isEdit || !$user->getPassword()) {
+            $required = true;
         }
 
         $builder

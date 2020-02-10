@@ -74,7 +74,6 @@ class UserController extends AbstractController
         dd($form);//"["ROLE_ADMIN","ROLE_USER"]"
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-
             $password = $form['password']->getData();
             if($password === '') {
                 $user->setPassword($currentPassword);
