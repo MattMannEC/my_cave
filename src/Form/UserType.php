@@ -20,9 +20,11 @@ class UserType extends AbstractType
         $builder
             ->add('username')
             ->add('roles', ChoiceType::class, [
+                'multiple' => true,
+                'expanded' => true,
                 'choices' => [
-                    'User' => json_encode("ROLE_USER"),
-                    'Admin' => json_encode("ROLE_ADMIN"),
+                    'User' => "ROLE_USER",
+                    'Admin' => "ROLE_ADMIN",
                 ],
             ])
             ->add('password')
@@ -30,17 +32,17 @@ class UserType extends AbstractType
             ->add('lastname')
         ;
 
-        $builder->get('roles')
-            ->addModelTransformer(new CallbackTransformer(
-                function ($rolesAsArray) {
-                    // transform the array to a string
-                    return json_encode($rolesAsArray, true);
-                },
-                function ($rolesAsJson) {
-                    // transform the string back to an array
-                    return json_decode($rolesAsJson);
-                }
-            ));
+        // $builder->get('roles')
+        //     ->addModelTransformer(new CallbackTransformer(
+        //         function ($rolesAsArray) {
+        //             // transform the array to a string
+        //             return json_encode($rolesAsArray, true);
+        //         },
+        //         function ($rolesAsJson) {
+        //             // transform the string back to an array
+        //             return json_decode($rolesAsJson);
+        //         }
+        //     ));
 
         $required = false;
         if (!$isEdit || !$user->getPassword()) {
