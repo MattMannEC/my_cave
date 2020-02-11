@@ -22,13 +22,12 @@ class WineRepository extends ServiceEntityRepository
     // /**
     //  * @return Wine[] Returns an array of Wine objects
     //  */
-    public function readWines($value)
+    public function readWines()
     {
         return $this->createQueryBuilder('w')
-            ->andWhere('w.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('w.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('w.imageFilename IS NOT NULL')
+            ->orderBy('w.date_modified', 'ASC')
+            ->setMaxResults(6) 
             ->getQuery()
             ->getResult()
         ;

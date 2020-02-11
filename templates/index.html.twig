@@ -1,6 +1,21 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Homepage{% endblock %}
 {% block content %}
-        <h2>This Page will be the Home Page</h2>
-        <p></p>
+    <h2>This Page will be the Home Page</h2>
+        <div id="homeSlider" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "autoplay": true, "autoplaySpeed": 5000, "arrows": true}'>
+    {% for sliderElement in sliderElements %}
+            <div>
+                <h3>{{ sliderElement.name }}</h3>
+                <h4>{{ sliderElement.region }} - {{ sliderElement.grape }}</h4>
+                <img src="{{ sliderElement.imagePath|imagine_filter('my_full') }}" alt="wine">
+                <p>{{ sliderElement.description }}</p>
+            </div>
+    {% else %}
+        <tr>
+            <div>
+                <h3>no records found</h3>
+            </div>
+        </tr>
+    {% endfor %}
+    </div>
 {% endblock %}

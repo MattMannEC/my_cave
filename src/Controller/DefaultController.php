@@ -19,9 +19,11 @@ class DefaultController extends AbstractController
     /**
      * @Route ("/", name="home")
      */
-    public function index()
+    public function index(WineRepository $wineRepository)
     {
-        return $this->render('index.html.twig');
+        return $this->render('index.html.twig', [
+            'sliderElements' => $wineRepository->readWines(),
+        ]);
     }
 
     /**
@@ -31,7 +33,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('wine/index.html.twig', [
             'wines' => $wineRepository->findAll(),
-        ]); 
+        ]);
     }
 
     /**

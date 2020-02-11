@@ -52,6 +52,11 @@ class Wine
      */
     private $imageFilename;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $date_modified;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -142,6 +147,18 @@ class Wine
     public function setImageFilename(?string $imageFilename): self
     {
         $this->imageFilename = $imageFilename;
+
+        return $this;
+    }
+
+    public function getDateModified(): ?\DateTimeInterface
+    {
+        return $this->date_modified;
+    }
+
+    public function setDateModified(\DateTimeInterface $date_modified): self
+    {
+        $this->date_modified = $date_modified;
 
         return $this;
     }
