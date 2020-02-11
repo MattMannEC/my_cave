@@ -21,8 +21,8 @@ class UserType extends AbstractType
             ->add('username')
             ->add('roles', ChoiceType::class, [
                 'choices' => [
-                    'User' => "ROLE_USER",
-                    'Admin' => "ROLE_ADMIN",
+                    'User' => json_encode("ROLE_USER"),
+                    'Admin' => json_encode("ROLE_ADMIN"),
                 ],
             ])
             ->add('password')
