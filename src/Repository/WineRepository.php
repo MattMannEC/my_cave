@@ -42,4 +42,23 @@ class WineRepository extends ServiceEntityRepository
             ->getOneOrNullResult()
         ;
     }
+    /**
+     * @param string|null $term
+     * @return Wine[]
+     */
+    public function findAllWithSearch(?string $term)
+    {
+        $qb = $this->createQueryBuilder('w');
+
+        if ($term) {
+            $qb->andWhere('w.name LIKE :term OR w.vintage LIKE :term OR w.grape LIKE :term OR w.country LIKE :term OR w.region LIKE :term OR w.description LIKE :term')
+                ->setParameter('term', '%' . $term . '%')
+            ;
+        }
+        return $qb
+            ->orderBy('w.date_modified', 'DESC')
+            ->getQuery()
+            ->getResult()
+            ;
+    }
 }

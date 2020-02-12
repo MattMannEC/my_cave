@@ -3,7 +3,21 @@
 {% block title %}Wine index{% endblock %}
 
 {% block content %}
-    <h1>This page will be the Wine Catalogue Page</h1>
+    <h1>This page will be the Wine Catalogue Page</h1>    
+    <div class="row">
+        <div class="col-sm-12">
+            <form>
+                <div class="input-group mb-3">
+                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-outline-secondary">
+                            <span class="fa fa-search"></span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <table class="table">
         <thead>

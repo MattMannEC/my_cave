@@ -7,6 +7,7 @@ use App\Entity\Wine;
 use App\Form\WineType;
 use App\Repository\WineRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -29,10 +30,11 @@ class DefaultController extends AbstractController
     /**
      * @Route("/wine", name="wine", methods={"GET"})
      */
-    public function wineCatalogue(WineRepository $wineRepository): Response
+    public function wineCatalogue(WineRepository $wineRepository, Request $request): Response
     {
+        $q = $request->query->get('q');
         return $this->render('wine/index.html.twig', [
-            'wines' => $wineRepository->findAll(),
+            'wines' => $wineRepository->findAllWithSearch($q),
         ]);
     }
 
