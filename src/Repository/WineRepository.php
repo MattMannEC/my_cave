@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\Wine;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\QueryBuilder;
+use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
  * @method Wine|null find($id, $lockMode = null, $lockVersion = null)
@@ -44,9 +46,8 @@ class WineRepository extends ServiceEntityRepository
     }
     /**
      * @param string|null $term
-     * @return Wine[]
      */
-    public function findAllWithSearch(?string $term)
+    public function getWithSearchQueryBuilder(?string $term): QueryBuilder
     {
         $qb = $this->createQueryBuilder('w');
 
@@ -57,8 +58,7 @@ class WineRepository extends ServiceEntityRepository
         }
         return $qb
             ->orderBy('w.date_modified', 'DESC')
-            ->getQuery()
-            ->getResult()
             ;
     }
 }
+ 

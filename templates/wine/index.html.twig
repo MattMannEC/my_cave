@@ -5,10 +5,11 @@
 {% block content %}
     <h1>This page will be the Wine Catalogue Page</h1>    
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12"> 
+            <h3>{{ pagination.getTotalItemCount }}</h3>
             <form>
                 <div class="input-group mb-3">
-                    <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <input type="text" name="q" class="form-control" placeholder="Search..." value="{{ app.request.query.get('q') }}">
                     <div class="input-group-append">
                         <button type="submit" class="btn btn-outline-secondary">
                             <span class="fa fa-search"></span>
@@ -30,7 +31,7 @@
             </tr>
         </thead>
         <tbody>
-        {% for wine in wines %}
+        {% for wine in pagination %}
             <tr>
                 <td>{{ wine.name }}</td>
                 <td>{{ wine.vintage }}</td>
@@ -50,7 +51,10 @@
             </tr>
         {% endfor %}
         </tbody>
-    </table>
+    </table> 
+<div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>
 
     <a href="{{ path('wine_new') }}">Create new</a>
 {% endblock %}
