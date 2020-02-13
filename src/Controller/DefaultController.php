@@ -23,7 +23,7 @@ class DefaultController extends AbstractController
     public function index(WineRepository $wineRepository, HeroRepository $heroRepository)
     {
         return $this->render('index.html.twig', [
-            'heroElements' => $heroRepository->findAll(),
+            'heroElements' => $heroRepository->readHero(),
             'sliderElements' => $wineRepository->readWines(),
         ]);
     }

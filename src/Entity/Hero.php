@@ -29,7 +29,7 @@ class Hero
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $image_filename;
+    private $imageFilename;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)

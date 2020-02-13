@@ -47,4 +47,17 @@ class HeroRepository extends ServiceEntityRepository
         ;
     }
     */
+        // /**
+    //  * @return Wine[] Returns an array of Wine objects
+    //  */
+    public function readHero()
+    {
+        return $this->createQueryBuilder('h')
+            ->andWhere('h.imageFilename IS NOT NULL')
+            ->orderBy('h.date_modified', 'ASC')
+            ->setMaxResults(1) 
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }
