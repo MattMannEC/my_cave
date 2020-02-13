@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/hero")
+ * @Route("/admin/cms")
  */
 class HeroController extends AbstractController
 {
@@ -20,7 +20,7 @@ class HeroController extends AbstractController
      */
     public function index(HeroRepository $heroRepository): Response
     {
-        return $this->render('hero/index.html.twig', [
+        return $this->render('admin/hero/index.html.twig', [
             'heroes' => $heroRepository->findAll(),
         ]);
     }
@@ -42,7 +42,7 @@ class HeroController extends AbstractController
             return $this->redirectToRoute('hero_index');
         }
 
-        return $this->render('hero/new.html.twig', [
+        return $this->render('admin/hero/new.html.twig', [
             'hero' => $hero,
             'form' => $form->createView(),
         ]);
@@ -53,7 +53,7 @@ class HeroController extends AbstractController
      */
     public function show(Hero $hero): Response
     {
-        return $this->render('hero/show.html.twig', [
+        return $this->render('admin/hero/show.html.twig', [
             'hero' => $hero,
         ]);
     }
@@ -63,6 +63,7 @@ class HeroController extends AbstractController
      */
     public function edit(Request $request, Hero $hero): Response
     {
+        
         $form = $this->createForm(HeroType::class, $hero);
         $form->handleRequest($request);
 
@@ -72,7 +73,7 @@ class HeroController extends AbstractController
             return $this->redirectToRoute('hero_index');
         }
 
-        return $this->render('hero/edit.html.twig', [
+        return $this->render('admin/hero/edit.html.twig', [
             'hero' => $hero,
             'form' => $form->createView(),
         ]);
