@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Hero;
 use App\Form\HeroType;
 use App\Repository\HeroRepository;
+use App\Service\UploaderHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -61,16 +62,20 @@ class HeroController extends AbstractController
     /**
      * @Route("/{id}/edit", name="hero_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Hero $hero, HeroRepository $heroRepository): Response
+    public function edit(Request $request, Hero $hero, HeroRepository $heroRepository, UploaderHelper $uploaderHelper): Response
     {
-        $currentHero = $heroRepository->readHero(1);
         $form = $this->createForm(HeroType::class, $hero);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $uploadedFile = $form['imageFile']->getData(); 
+            if($uploadedFile) {
+                $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
+                $hero->setimageFilename($newFilename);
+            }
+
             $this->getDoctrine()->getManager()->flush();
-            $this->getDoctrine()->getManager()->remove($currentHero);
 
             return $this->redirectToRoute('hero_index');
         }

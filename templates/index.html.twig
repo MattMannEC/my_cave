@@ -22,7 +22,7 @@
                 <td>{{ hero.id }}</td>
                 <td>{{ hero.title }}</td>
                 <td>{{ hero.text }}</td>
-                <td>{{ hero.imageFilename }}</td>
+                <td><img src="{{ hero.imagePath }}"></img></td>
                 <td>{{ hero.dateModified ? hero.dateModified|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('hero_show', {'id': hero.id}) }}">show</a>
