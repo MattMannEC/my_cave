@@ -12,7 +12,6 @@
                 <th>Title</th>
                 <th>Text</th>
                 <th>Image_filename</th>
-                <th>Date_modified</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -23,7 +22,6 @@
                 <td>{{ hero.title }}</td>
                 <td>{{ hero.text }}</td>
                 <td>{{ hero.imageFilename }}</td>
-                <td>{{ hero.dateModified ? hero.dateModified|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
                     <a href="{{ path('hero_show', {'id': hero.id}) }}">show</a>
                     <a href="{{ path('hero_edit', {'id': hero.id}) }}">edit</a>

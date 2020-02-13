@@ -61,14 +61,16 @@ class HeroController extends AbstractController
     /**
      * @Route("/{id}/edit", name="hero_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Hero $hero): Response
+    public function edit(Request $request, Hero $hero, HeroRepository $heroRepository): Response
     {
-        
+        $currentHero = $heroRepository->readHero(1);
         $form = $this->createForm(HeroType::class, $hero);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
             $this->getDoctrine()->getManager()->flush();
+            $this->getDoctrine()->getManager()->remove($currentHero);
 
             return $this->redirectToRoute('hero_index');
         }

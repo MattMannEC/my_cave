@@ -50,7 +50,7 @@ class HeroRepository extends ServiceEntityRepository
         // /**
     //  * @return Wine[] Returns an array of Wine objects
     //  */
-    public function readHero()
+    public function readHeros()
     {
         return $this->createQueryBuilder('h')
             ->andWhere('h.imageFilename IS NOT NULL')
@@ -58,6 +58,15 @@ class HeroRepository extends ServiceEntityRepository
             ->setMaxResults(1) 
             ->getQuery()
             ->getResult()
+        ;
+    }
+    public function readHero($value): ?Hero
+    {
+        return $this->createQueryBuilder('h')
+            ->andWhere('h.id = :val')
+            ->setParameter('val', $value)
+            ->getQuery()
+            ->getOneOrNullResult()
         ;
     }
 }
