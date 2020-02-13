@@ -61,4 +61,3 @@ class WineRepository extends ServiceEntityRepository
             ;
     }
 }
- 
