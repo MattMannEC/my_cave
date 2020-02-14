@@ -2,47 +2,22 @@
 {% block title %}Homepage{% endblock %}
 {% block content %}
     <h2>This Page will be the Home Page</h2>
-
-    <h1>Hero index</h1>
-
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Text</th>
-                <th>Image_filename</th>
-                <th>Date_modified</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
         {% for hero in heroElements %}
-            <tr>
-                <td>{{ hero.id }}</td>
-                <td>{{ hero.title }}</td>
-                <td>{{ hero.text }}</td>
-                <td><img src="{{ hero.imagePath }}"></img></td>
-                <td>{{ hero.dateModified ? hero.dateModified|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('hero_show', {'id': hero.id}) }}">show</a>
-                    <a href="{{ path('hero_edit', {'id': hero.id}) }}">edit</a>
-                </td>
-            </tr>
+                <h1>{{ hero.title }}</h1>
+                <h4>{{ hero.text }}</h4>
+                <img src="{{ hero.imagePath|imagine_filter('my_large') }}"></img>
         {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
+                <h1>Default Title</h1>
+                <h4>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h4>
+                <img src="defaultimage.image"></img>
         {% endfor %}
-        </tbody>
-    </table>
 
     <div id="homeSlider" data-slick='{"slidesToShow": 1, "slidesToScroll": 1, "autoplay": true, "autoplaySpeed": 5000, "arrows": true}'>
     {% for sliderElement in sliderElements %}
         <div>
             <h3>{{ sliderElement.name }}</h3>
             <h4>{{ sliderElement.region }} - {{ sliderElement.grape }}</h4>
-            <img src="{{ sliderElement.imagePath|imagine_filter('my_full') }}" alt="wine">
+            <img src="{{ sliderElement.imagePath|imagine_filter('my_normal') }}" alt="wine">
             <p>{{ sliderElement.description }}</p>
         </div>
     {% else %}

@@ -23,9 +23,16 @@ liip_imagine:
                 # 4px larger to create a 2px border around the final image
                 # background: { size: [124, 94], position: center, color: '#000000' }
 
-        my_full:
+        my_normal:
             quality: 100
             filters:
                 thumbnail: 
                     size: [470, 620]
+                    mode: outbound
+
+        my_large:
+            quality: 100
+            filters:
+                thumbnail: 
+                    size: [1024, 768]
                     mode: outbound

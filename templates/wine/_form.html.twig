@@ -7,15 +7,11 @@
     {{ form_row(form.description) }}
     <div class="row">
         <div class="col-sm-9">
-                {{ form_row(form.imageFile, {
-                    attr : {
-                        placeholder: 'Select an image'
-                    }
-                }) }}
+                {{ form_row(form.imageFile) }}
         </div>
         <div class="col-sm-3">
             {% if form.vars.data.imageFilename|default %}
-                <img src="{{ form.vars.data.imagePath|imagine_filter('my_full') }}">
+                <img src="{{ form.vars.data.imagePath|imagine_filter('my_normal') }}">
             {% endif %}
         </div>
     </div>

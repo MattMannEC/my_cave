@@ -80,7 +80,7 @@ class Hero
 
     public function getImagePath(): ?string
     {
-        return UploaderHelper::getPublicPath() . '/' . UploaderHelper::HERO . '/' . $this->getImageFilename();
+        return UploaderHelper::getPublicPath() . '/' . UploaderHelper::IMAGES . '/' . $this->getImageFilename();
     }
 
     public function getDateModified(): ?\DateTimeInterface

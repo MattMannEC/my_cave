@@ -8,8 +8,7 @@ use Symfony\Component\Filesystem\Filesystem;
 Class UploaderHelper
 { 
     const UPLOADS = 'uploads'; // path of app's public upload directory
-    const IMAGES = 'images'; 
-    const HERO = 'hero'; 
+    const IMAGES = 'images';
 
     private $uploadsPath;
 

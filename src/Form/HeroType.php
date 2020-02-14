@@ -22,8 +22,6 @@ class HeroType extends AbstractType
         $builder
             ->add('title')
             ->add('text')
-            ->add('image_filename')
-            ->add('date_modified')
         ;
 
         $imageConstraints = [
