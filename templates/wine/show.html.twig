@@ -45,8 +45,9 @@
     </table>
 
     <a href="{{ path('wine') }}">back to list</a>
-
+    {% if app.user == true %}
     <a href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
 
     {{ include('wine/_delete_form.html.twig') }}
+    {% endif %}
 {% endblock %}

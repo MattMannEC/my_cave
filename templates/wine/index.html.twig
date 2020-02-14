@@ -42,7 +42,10 @@
                 </td>
                 <td>
                     <a href="{{ path('wine_show', {'id': wine.id}) }}">show</a>
+
+                    {% if app.user == true %}
                     <a href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
+                    {% endif %}
                 </td>
             </tr>
         {% else %}
@@ -55,6 +58,7 @@
 <div class="navigation">
     {{ knp_pagination_render(pagination) }}
 </div>
-
+    {% if app.user == true %}
     <a href="{{ path('wine_new') }}">Create new</a>
+    {% endif %}
 {% endblock %}
