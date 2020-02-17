@@ -44,7 +44,7 @@ class HeroType extends AbstractType
                 'constraints' => $imageConstraints,
             ])
             ->add('Update', SubmitType::class, [
-                'attr' => ['class' => 'btn btn-primary'],
+                'attr' => ['class' => 'btn'],
             ])
         ;
     }

@@ -4,41 +4,41 @@
 
 
 :root {
-    --main-color-1: #8C0335;
-    --main-color-2: #40011e;
-    --main-color-3: #8C5E85;
-    --main-color-4: #F2F2F2;
-    --main-color-5: #0D0D0D;
+    --main-color-red: #8C0335;
+    --main-color-bordeaux: #40011e;
+    --main-color-purple: #8C5E85;
+    --main-color-white: #F2F2F2;
+    --main-color-black: #0D0D0D;
 }
 
-.b-color-1 {
-    background-color: var(--main-color-1);
+.b-color-red {
+    background-color: var(--main-color-red);
 }
-.b-color-2 {
-    background-color: var(--main-color-2);
+.b-color-bordeaux {
+    background-color: var(--main-color-bordeaux);
 }
-.b-color-3 {
-    background-color: var(--main-color-3);
+.b-color-purple {
+    background-color: var(--main-color-purple);
 }
-.b-color-4 {
-    background-color: var(--main-color-4);
+.b-color-white {
+    background-color: var(--main-color-white);
 }
-.b-color-5 {
-    background-color: var(--main-color-5);
+.b-color-black {
+    background-color: var(--main-color-black);
 }
 
-.color-1 {
-    color: var(--main-color-1);
+.color-red {
+    color: var(--main-color-red);
 }
-.color-2 {
-    color: var(--main-color-2);
+.color-bordeaux {
+    color: var(--main-color-bordeaux);
 }
-.color-3 {
-    color: var(--main-color-3);
+.color-purple {
+    color: var(--main-color-purple);
 }
-.color-4 {
-    color: var(--main-color-4);
+.color-white {
+    color: var(--main-color-white);
 }
-.color-5 {
-    color: var(--main-color-5);
+.color-black {
+    color: var(--main-color-black);
 }

@@ -2,41 +2,66 @@
 {# extends from base.html.twig and defines the content structure used in all or most of the pages, such as a two-column content + sidebar layout. Some sections of the application can define their own layouts (e.g. templates/blog/layout.html.twig); #}
 {% extends 'base.html.twig' %}
 {% block body %}
-    <h1>My Cave</h1>
-        base
-        <nav class="">
-            <div class="" id="">
-                <ul class="">
-                    <li class="">
-                        <a class="" href="{{ path('home') }}">My Cave</a>
-                    </li>
-                    <li class="">
-                        <a class="" href="{{ path('wine')}}">Collection</a>
-                    </li>
-                    {% if is_granted('ROLE_ADMIN') %}
-                    <li class="">
-                        <a class="" href="{{ path('user_index') }}">Admin</a>
-                    </li>
-                    {% endif %}
-                    {% if app.user == false %}
-                    <li class="">
-                        <a href="{{ path('app_login') }}">Login</a>
-                    </li>
-                    {% else %}
-                        <div class="mb-3">
-                            You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+    <header>
+        <div class="container">
+            <div class="row align-items-stretch">
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="{{ path('home') }}"><img src="{{ asset('images/logo-large.png') }}" alt="mycave" class="logo"></a>
                         </div>
-                    {% endif %}
-                </ul>
+                        <div class="col-md-6">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="row navbar float-right navbar-expand-lg">
+                        <a class="nav-item" href="{{ path('home') }}">My Cave</a>
+                        <a class="nav-item" href="{{ path('wine')}}">Collection</a>
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <a class="nav-item" href="{{ path('user_index') }}">Admin</a>
+                            {% endif %}
+                            {% if app.user == false %}
+                                <a class="nav-item nav-item nav-item-last login" href="{{ path('app_login') }}">Login</a>
+                            {% else %}
+                                <a class="nav-item nav-item nav-item-last login" href="{{ path('app_logout') }}">Logout</a>
+                            {% endif %}
+                    </div>    
+                </div>
             </div>
-        </nav>
-
+        </div>
+    </header>
+        
     {% block sectionNav %}{% endblock %}
     {% block content %}{% endblock %}
 
-        <footer class="footer">
-            <div class="container text-center">
-                <span class="">Footer</span>
+    <footer class="footer container">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-md-4">
+                    <img src="{{ asset('images/logo-dark.jpg') }}" alt="logo"></div>
+                <div class="col-md-4">
+                    <div class="flex-column justify-content-between">
+                        <div class="col-md-12">"Alcohol is bad, M'Kay?"</div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-4"><a href="{{ path('home') }}">My Cave</a></div>
+                                <div class="col-md-4"><a href="{{ path('wine')}}">Collection</a></div>
+                                <div class="col-md-4">
+                                {% if app.user == false %}
+                                    <a href="{{ path('app_login') }}">Login</a>
+                                {% else %}
+                                    <a href="{{ path('app_logout') }}">Logout</a>
+                                {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                </div>
             </div>
-        </footer>
+        </div>
+    </footer>
 {% endblock %}
+
+

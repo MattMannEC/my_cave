@@ -1,0 +1,176 @@
+/*===================================================
+                    Fonts
+===================================================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    font-family: 'Source Sans Pro', sans-serif; 
+}
+
+
+p {
+    color: var(--main-color-black);
+}
+
+.nav-item:hover {
+    color: var(--main-color-red);
+    text-decoration: none;
+    border-bottom: 1px solid var(--main-color-red);
+}
+
+.btn-bordeaux {
+    color: var(--main-color-white);
+    background-color: var(--main-color-bordeaux);
+    border: none;
+}
+
+
+.btn-bordeaux:hover {
+    color: var(--main-color-white);
+    background-color: var(--main-color-bordeaux);
+    border-color:var(--main-color-bordeaux);
+}
+
+
+/*===================================================
+                    Colors
+===================================================*/
+
+
+:root {
+    --main-color-red: rgba(140, 3, 53, 1);
+    --main-color-bordeaux: rgba(64, 1, 30, 1);
+    --main-color-purple: rgba(140, 94, 133, 0.3);
+    --main-color-white: rgba(242, 242, 242, 1);
+    --main-color-black: rgba(13, 13, 13, 1);
+}
+
+.b-color-red {
+    background-color: var(--main-color-red);
+}
+.b-color-bordeaux {
+    background-color: var(--main-color-bordeaux);
+}
+.b-color-purple {
+    background-color: var(--main-color-purple);
+}
+.b-color-white {
+    background-color: var(--main-color-white);
+}
+.b-color-black {
+    background-color: var(--main-color-black);
+}
+
+.color-red {
+    color: var(--main-color-red);
+}
+.color-bordeaux {
+    color: var(--main-color-bordeaux);
+}
+.color-purple {
+    color: var(--main-color-purple);
+}
+.color-white {
+    color: var(--main-color-white);
+}
+.color-black {
+    color: var(--main-color-black);
+}
+
+/************************************************************
+*                       header                        
+************************************************************/
+
+header {
+    height: 10vh;
+}
+
+.navbar {
+    padding: 0;
+    height: 10vh;
+}
+
+.nav-item {
+    color: var(--main-color-bordeaux);
+    padding: 3em 2em 1em 2em;
+}
+
+.login { 
+    color: var(--main-color-white);
+    background-color: var(--main-color-bordeaux);
+}
+
+.login:hover {
+    border-bottom: 1px solid var(--main-color-white);
+}
+
+
+/************************************************************
+*                       Section-1                           *
+************************************************************/
+
+#section-1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-content-container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content-container h1 {
+    color: var(--main-color-white); 
+}
+
+.hero-content-container h4 {
+    color: var(--main-color-white);
+}
+
+
+
+/************************************************************
+*                       Section-2                           *
+************************************************************/
+
+#section-2 {
+    margin-top: 5rem;
+}
+.slider-row {
+    display: flex;
+}
+
+.wine-banner {
+    color: white;
+    background-color: var(--main-color-red);
+}
+
+/************************************************************
+                        Section-3                          
+************************************************************/
+
+#section-3 {
+    color: var(--main-color-white);
+    background-color: var(--main-color-purple);
+    height: 50vh;
+}
+
+/************************************************************
+                        Section-3                          
+************************************************************/
+
+footer {
+    height: 25vh;
+    color: var(--main-color-white);
+    background-color: var(--main-color-bordeaux);
+}
