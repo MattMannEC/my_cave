@@ -23,41 +23,33 @@
         </div>
     </div>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Vintage</th>
-                <th>Grape</th>
-                <th>Region</th>
-                <th>image_path</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for wine in pagination %}
-            <tr>
-                <td>{{ wine.name }}</td>
-                <td>{{ wine.vintage }}</td>
-                <td>{{ wine.grape }}</td>
-                <td>{{ wine.region }}</td>
-                <td>
-                    <img src="{{ wine.imagePath|imagine_filter('my_thumb') }}">
-                </td>
-                <td>
-                    <a href="{{ path('wine_show', {'id': wine.id}) }}">show</a>
+    <section id="collection">
+        <div class="container">
+            <div class="d-flex row">
+                
+                {% for wine in pagination %}
+
+                <div class="col-md-4">
+                    <img src="{{ wine.imagePath|imagine_filter('my_thumb') }}" class"wine-image">
+                    <h3 class="name">{{ wine.name }}</h3>
+                    <h4 class="vintage">{{ wine.vintage }}</h4>
+                    <h4 class="grape">{{ wine.grape }}</h4>
+                    <h4 class="region">{{ wine.region }}</h4>
 
                     {% if app.user == true %}
                     <a href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
+                    {% else %}
+                    <a href="{{ path('wine_show', {'id': wine.id}) }}">learn more</a>
                     {% endif %}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="9">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table> 
+                </div>
+                {% else %}
+                <div>
+                    <td colspan="9">no records found</td>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 <div class="navigation">
     {{ knp_pagination_render(pagination) }}
 </div>
