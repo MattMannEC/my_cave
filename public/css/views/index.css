@@ -1,0 +1,66 @@
+
+
+/************************************************************
+*                       Section-1                           *
+************************************************************/
+
+#section-1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.hero-content-container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content-container h1 {
+    color: var(--main-color-white); 
+}
+
+.hero-content-container h4 {
+    color: var(--main-color-white);
+}
+
+
+
+/************************************************************
+*                       Section-2                           *
+************************************************************/
+
+#section-2 {
+    margin-top: 5rem;
+}
+.slider-row {
+    display: flex;
+}
+
+.wine-banner {
+    color: white;
+    background-color: var(--main-color-red);
+}
+
+/************************************************************
+                        Section-3                          
+************************************************************/
+
+#section-3 {
+    color: var(--main-color-white);
+    background-color: var(--main-color-purple);
+    height: 50vh;
+}
+
+/************************************************************
+                        Section-3                          
+************************************************************/
+
+footer {
+    height: 25vh;
+    color: var(--main-color-white);
+    background-color: var(--main-color-bordeaux);
+}

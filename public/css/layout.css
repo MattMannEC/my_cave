@@ -9,7 +9,7 @@ h5,
 h6,
 p,
 a {
-    font-family: 'Source Sans Pro', sans-serif; 
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 
@@ -111,66 +111,19 @@ header {
 
 
 /************************************************************
-*                       Section-1                           *
+*                       Structure                           *
 ************************************************************/
 
-#section-1 {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+body {
+    color: var(--main-color-1);
+    margin: 0 40px 40px 40px ;
 }
 
-.hero-content-container {
-    width: 80%;
-    height: 100%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.btn {
+    background-color: var(--main-color-2);
 }
 
-.hero-content-container h1 {
-    color: var(--main-color-white); 
+section {
+    height: 60vh;
 }
 
-.hero-content-container h4 {
-    color: var(--main-color-white);
-}
-
-
-
-/************************************************************
-*                       Section-2                           *
-************************************************************/
-
-#section-2 {
-    margin-top: 5rem;
-}
-.slider-row {
-    display: flex;
-}
-
-.wine-banner {
-    color: white;
-    background-color: var(--main-color-red);
-}
-
-/************************************************************
-                        Section-3                          
-************************************************************/
-
-#section-3 {
-    color: var(--main-color-white);
-    background-color: var(--main-color-purple);
-    height: 50vh;
-}
-
-/************************************************************
-                        Section-3                          
-************************************************************/
-
-footer {
-    height: 25vh;
-    color: var(--main-color-white);
-    background-color: var(--main-color-bordeaux);
-}

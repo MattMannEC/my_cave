@@ -3,6 +3,8 @@
     {% block childStyleSheets %}
     {% endblock %}
 {% block content %}
+
+<div class="test">test</div>
     {% for hero in heroElements %}
     <section id="section-1" class="container" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
         <div class="container hero-content-container ">
