@@ -123,7 +123,12 @@ body {
     background-color: var(--main-color-2);
 }
 
-section {
-    height: 60vh;
-}
+/************************************************************
+                        footer                         
+************************************************************/
 
+footer {
+    height: 25vh;
+    color: var(--main-color-white);
+    background-color: var(--main-color-bordeaux);
+}

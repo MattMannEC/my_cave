@@ -8,6 +8,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 88vh;
 }
 
 .hero-content-container {
@@ -53,14 +54,4 @@
     color: var(--main-color-white);
     background-color: var(--main-color-purple);
     height: 50vh;
-}
-
-/************************************************************
-                        Section-3                          
-************************************************************/
-
-footer {
-    height: 25vh;
-    color: var(--main-color-white);
-    background-color: var(--main-color-bordeaux);
 }

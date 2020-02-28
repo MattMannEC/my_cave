@@ -12,8 +12,7 @@ liip_imagine:
 
         # the name of the "filter set"
         my_thumb:
-
-            default_image: block-nine-5e445f17130a2.png
+            default_image: default.png
             quality: 100
             filters:
 
@@ -27,6 +26,7 @@ liip_imagine:
                     mode: outbound
 
         my_normal:
+            default_image: default.png
             quality: 100
             filters:
                 thumbnail: 
@@ -34,6 +34,7 @@ liip_imagine:
                     mode: outbound
 
         my_large:
+            default_image: default.png
             quality: 100
             filters:
                 thumbnail: 

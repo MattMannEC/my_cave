@@ -5,26 +5,24 @@
             <link rel="stylesheet" href="/css/views/collection.css">
     {% endblock %}
 
-{% block content %}
-    <h1>This page will be the Wine Catalogue Page</h1>    
-    <div class="row">
-        <div class="col-sm-12"> 
-            <h3>{{ pagination.getTotalItemCount }}</h3>
-            <form>
-                <div class="input-group mb-3">
-                    <input type="text" name="q" class="form-control" placeholder="Search..." value="{{ app.request.query.get('q') }}">
-                    <div class="input-group-append">
-                        <button type="submit" class="btn btn-outline-secondary">
-                            <span class="fa fa-search"></span>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-
+{% block content %}   
     <section id="collection">
         <div class="container">
+            <div class="row">
+                <div class="col-sm-12"> 
+                    <h1>Wine Collection</h1>
+                    <form>
+                    <div class="input-group mb-3">
+                        <input type="text" name="q" class="form-control" placeholder="Search..." value="{{ app.request.query.get('q') }}">
+                        <div class="input-group-append">
+                            <button type="submit" class="btn btn-outline-secondary">
+                                <span class="fa fa-search"></span>
+                            </button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
             <div class="d-flex row">
                 
                 {% for wine in pagination %}
@@ -50,12 +48,15 @@
                 </div>
                 {% endfor %}
             </div>
+
+            <div class="navigation text-right">
+                {{ knp_pagination_render(pagination) }}
+                    <h3>{{ pagination.getTotalItemCount }} - Wine(s) in stock</h3>
+            </div>
+            {% if app.user == true %}
+            <a href="{{ path('wine_new') }}">Create new</a>
+            {% endif %}
+
         </div>
     </section>
-<div class="navigation">
-    {{ knp_pagination_render(pagination) }}
-</div>
-    {% if app.user == true %}
-    <a href="{{ path('wine_new') }}">Create new</a>
-    {% endif %}
 {% endblock %}
