@@ -29,18 +29,20 @@
                 
                 {% for wine in pagination %}
 
-                <div class="col-md-4">
+                <div class="col-md-4 text-center text-capitalize px-0">
                     <img src="{{ wine.imagePath|imagine_filter('my_thumb') }}" class"wine-image">
-                    <h3 class="name">{{ wine.name }}</h3>
-                    <h4 class="vintage">{{ wine.vintage }}</h4>
-                    <h4 class="grape">{{ wine.grape }}</h4>
-                    <h4 class="region">{{ wine.region }}</h4>
+                    <div class="wine-container">
+                        <h3 class="name">{{ wine.name }}</h3>
+                        <h5 class="region">{{ wine.region }}</h5>
+                        <h5 class="vintage d-inline">{{ wine.vintage }}</h5>
+                        <h5 class="grape d-inline">{{ wine.grape }}</h5>
 
-                    {% if app.user == true %}
-                    <a href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
-                    {% else %}
-                    <a href="{{ path('wine_show', {'id': wine.id}) }}">learn more</a>
-                    {% endif %}
+                        {% if app.user == true %}
+                        <a class="d-block btn color-bordeaux collection-btn" href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
+                        {% else %}
+                        <a class="d-block btn color-bordeaux collection-btn" href="{{ path('wine_show', {'id': wine.id}) }}">learn more</a>
+                        {% endif %}
+                    </div>
                 </div>
                 {% else %}
                 <div>

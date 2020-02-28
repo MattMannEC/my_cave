@@ -1,6 +1,23 @@
 /*===================================================
-                    
+                    Collection
 ====================================================*/
 
-.wine-image {
+.wine-container {
+    padding: 0 40px;
+}
+
+.name {
+}
+
+.region {
+}
+
+.grape {
+}
+
+.collection-btn {
+    text-transform: uppercase;
+    -webkit-text-stroke: 1px var(--main-color-bordeaux);
+    -webkit-text-fill-color: white;
+    border: 3px solid var(--main-color-bordeaux);
 }

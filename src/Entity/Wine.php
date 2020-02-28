@@ -69,7 +69,7 @@ class Wine
 
     public function setName(string $name): self
     {
-        $this->name = $name;
+        $this->name = strtolower($name);
 
         return $this;
     }
@@ -93,7 +93,7 @@ class Wine
 
     public function setGrape(?string $grape): self
     {
-        $this->grape = $grape;
+        $this->grape = strtolower($grape);
 
         return $this;
     }
@@ -105,7 +105,7 @@ class Wine
 
     public function setCountry(string $country): self
     {
-        $this->country = $country;
+        $this->country = strtolower($country);
 
         return $this;
     }
@@ -117,7 +117,7 @@ class Wine
 
     public function setRegion(?string $region): self
     {
-        $this->region = $region;
+        $this->region = strtolower($region);
 
         return $this;
     }
@@ -129,7 +129,7 @@ class Wine
 
     public function setDescription(?string $description): self
     {
-        $this->description = $description;
+        $this->description = strtolower($description);
 
         return $this;
     }
