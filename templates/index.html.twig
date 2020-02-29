@@ -21,6 +21,9 @@
         </div>
     </section>
 
+
+<!--       Slider        -->
+
 <section id="section-2" class="container" >
     <div id="arrow-container" class="container">
         <div id="homeSlider">
@@ -30,7 +33,7 @@
                 <div class="col-md-4">
                     <img src="{{ sliderElement.imagePath|imagine_filter('my_normal') }}" alt="wine">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 d-flex flex-column justify-content-center">
                     <div class="wine-banner">
                         <h3>{{ sliderElement.name }}</h3>
                         <h4>{{ sliderElement.region }} - {{ sliderElement.grape }}</h4>

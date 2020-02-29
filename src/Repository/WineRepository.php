@@ -28,7 +28,7 @@ class WineRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('w')
             ->andWhere('w.imageFilename IS NOT NULL')
-            ->orderBy('w.date_modified', 'ASC')
+            ->orderBy('w.date_modified', 'DESC')
             ->setMaxResults(6) 
             ->getQuery()
             ->getResult()
