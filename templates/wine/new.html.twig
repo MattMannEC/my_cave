@@ -3,9 +3,12 @@
 {% block title %}New Wine{% endblock %}
 
 {% block content %}
-    <h1>Create new Wine</h1>
+    <section id="wineNew">
+        <div class="container">
+            <h1>Create new Wine</h1>
+                {{ include('wine/_form.html.twig') }}
 
-    {{ include('wine/_form.html.twig') }}
-
-    <a href="{{ path('wine') }}">back to list</a>
+            <a href="{{ path('wine') }}">back to list</a>
+        </div>
+    </section>
 {% endblock %}

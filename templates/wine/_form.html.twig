@@ -1,18 +1,18 @@
 {{ form_start(form) }}
-    {{ form_row(form.name) }}
-    {{ form_row(form.vintage) }}
-    {{ form_row(form.grape) }}
-    {{ form_row(form.country) }}
-    {{ form_row(form.region) }}
-    {{ form_row(form.description) }}
     <div class="row">
-        <div class="col-sm-9">
-                {{ form_row(form.imageFile) }}
-        </div>
-        <div class="col-sm-3">
+        <div class="col-md-4">
             {% if form.vars.data.imageFilename|default %}
                 <img src="{{ form.vars.data.imagePath|imagine_filter('my_normal') }}">
             {% endif %}
+            {{ form_row(form.imageFile) }}
+        </div>
+        <div class="col-md-8">        
+            {{ form_row(form.name) }}
+            {{ form_row(form.vintage) }}
+            {{ form_row(form.grape) }}
+            {{ form_row(form.country) }}
+            {{ form_row(form.region) }}
+            {{ form_row(form.description) }}
         </div>
     </div>
 {{ form_end(form) }}
