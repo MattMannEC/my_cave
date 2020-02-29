@@ -37,13 +37,28 @@
 #section-2 {
     margin-top: 5rem;
 }
+
 .slider-row {
     display: flex;
+}
+
+#homeSlider {
+    width: 90%;
+    margin: 0 auto;
 }
 
 .wine-banner {
     color: white;
     background-color: var(--main-color-red);
+    margin-bottom: 3em;
+}
+
+.slick-arrow {
+    z-index: 1;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size: 50px;
 }
 
 /************************************************************
