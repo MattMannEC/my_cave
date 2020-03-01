@@ -1,12 +1,13 @@
 {{ form_start(form) }}
     {{ form_row(form.title) }}
-    {{ form_row(form.text) }}    <div class="row">
-        <div class="col-sm-9">
+    {{ form_row(form.text) }}    
+    <div class="row">
+        <div class="col-md-12">
                 {{ form_row(form.imageFile) }}
         </div>
-        <div class="col-sm-3">
+        <div class="col-md-12">
             {% if form.vars.data.imageFilename|default %}
-                <img src="{{ form.vars.data.imagePath|imagine_filter('my_normal') }}">
+                <img class="cms-image" src="{{ form.vars.data.imagePath|imagine_filter('my_large') }}">
             {% endif %}
         </div>
     </div>
