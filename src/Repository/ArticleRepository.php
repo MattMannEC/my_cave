@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Article;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\ORM\QueryBuilder;
 
 /**
  * @method Article|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +18,17 @@ class ArticleRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Article::class);
+    }
+
+    public function readArticles()
+    {
+        return $this->createQueryBuilder('a')
+            ->andWhere('a.imageFilename IS NOT NULL')
+            ->orderBy('a.date_modified', 'DESC')
+            ->setMaxResults(3) 
+            ->getQuery()
+            ->getResult()
+        ;
     }
 
     // /**

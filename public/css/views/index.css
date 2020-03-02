@@ -67,6 +67,39 @@
 
 #section-3 {
     color: var(--main-color-white);
+    margin-top: 5rem;
     background-color: var(--main-color-purple);
-    height: 50vh;
+    height: 90vh;
 }
+
+.article-col {
+    padding: 0 6px;
+}
+
+.article-image-small {
+    width: 100%;
+}
+
+.article-title {
+    color: var(--main-color-black);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.article-text {
+    color: var(--main-color-black);
+    text-align: center;
+}
+
+.article-title:hover {
+    color: var(--main-color-black);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.article-text:hover {
+    color: var(--main-color-black);
+    text-align: center;
+    text-decoration: none;
+}
+

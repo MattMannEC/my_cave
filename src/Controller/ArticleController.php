@@ -27,7 +27,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/new", name="article_new", methods={"GET","POST"})
+     * @Route("", name="", methods={"GET","POST"})
      */
     public function new(Request $request, UploaderHelper $uploaderHelper): Response
     {
@@ -93,7 +93,7 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="article_delete", methods={"DELETE"})
+     * @Route("/{id}", name="", methods={"DELETE"})
      */
     public function delete(Request $request, Article $article): Response
     {

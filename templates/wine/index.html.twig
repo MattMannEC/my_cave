@@ -28,7 +28,7 @@
                 {% for wine in pagination %}
 
                 <div class="col-md-4 text-center text-capitalize px-0">
-                    <img src="{{ wine.imagePath|imagine_filter('my_thumb') }}" class"wine-image">
+                    <img src="{{ wine.imagePath|imagine_filter('my_thumb_90') }}" class"wine-image">
                     <div class="wine-container">
                         <h3 class="name">{{ wine.name }}</h3>
                         <h5 class="region">{{ wine.region }}</h5>

@@ -52,21 +52,15 @@
 <section id="section-3" class="container" >
     <div class="container">
         <div id="about-banner" class="row">
-            <div class="col-md-4">
-                <img src="" alt="grapes">
-                <h4>Lorem lipsum Wine</h4>
-                <p>purus in mollis nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris augue neque gravida in fermentum</p>
+            {% for articleElement in articleElements %}
+            <div class="col-md-4 article-col">
+                <a href="{{ path('article_show', {'id': articleElement.id}) }}">
+                    <img href="{{ path('article_show', {'id': articleElement.id}) }}" src="{{ articleElement.imagePath|imagine_filter('my_article_small') }}" alt="grapes" class="article-image-small">
+                    <h4 class="article-title">{{ articleElement.title }}</h4>
+                    <p class="article-text">{{ articleElement.text }}</p>
+                </a>
             </div>
-            <div class="col-md-4">
-                <img src="" alt="barrel">
-                <h4>Lorem lipsum Wine</h4>
-                <p>purus in mollis nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris augue neque gravida in fermentum</p>
-            </div>
-            <div class="col-md-4">
-                <img src="" alt="glass">
-                <h4>Lorem lipsum Wine</h4>
-                <p>purus in mollis nunc sed id semper risus in hendrerit gravida rutrum quisque non tellus orci ac auctor augue mauris augue neque gravida in fermentum</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>

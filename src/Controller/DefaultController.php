@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Wine;
+use App\Repository\ArticleRepository;
 use App\Repository\HeroRepository;
 use App\Repository\WineRepository;
 use Knp\Component\Pager\PaginatorInterface;
@@ -20,11 +21,12 @@ class DefaultController extends AbstractController
     /**
      * @Route ("/", name="home")
      */
-    public function index(WineRepository $wineRepository, HeroRepository $heroRepository)
+    public function index(WineRepository $wineRepository, HeroRepository $heroRepository, ArticleRepository $articleRepository)
     {
         return $this->render('index.html.twig', [
             'heroElements' => $heroRepository->readHeros(),
             'sliderElements' => $wineRepository->readWines(),
+            'articleElements' => $articleRepository->readArticles(),
         ]);
     }
 

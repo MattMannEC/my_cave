@@ -25,7 +25,6 @@
                 <td>{{ article.imageFilename }}</td>
                 <td>{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
                     <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
                 </td>
             </tr>
@@ -37,5 +36,4 @@
         </tbody>
     </table>
 
-    <a href="{{ path('article_new') }}">Create new</a>
 {% endblock %}
