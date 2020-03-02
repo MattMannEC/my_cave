@@ -53,7 +53,7 @@ class Wine
     private $imageFilename;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="datetime", nullable=true)
      */
     private $date_modified;
 
@@ -156,7 +156,7 @@ class Wine
         return $this->date_modified;
     }
 
-    public function setDateModified(\DateTimeInterface $date_modified): self
+    public function setDateModified(?\DateTimeInterface $date_modified): self
     {
         $this->date_modified = $date_modified;
 
