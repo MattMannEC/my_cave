@@ -1,5 +1,9 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Admin{% endblock %}
+
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/admin.css">
+    {% endblock %}
     {% block sectionNav %}
     <section id="sectionNav">
         <div class="container">
@@ -18,10 +22,13 @@
                     </ul>
                 </div>
             </nav>
+        </div>
+    </section>        
 
-    {% block adminContent %}
-    {% endblock %}
+    <section id="adminSection">
+        <div class="container">
+            {% block adminContent %}
+            {% endblock %}
         </div>
     </section>
-
     {% endblock %}
