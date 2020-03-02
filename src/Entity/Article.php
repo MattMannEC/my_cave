@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Service\UploaderHelper;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
@@ -75,6 +76,11 @@ class Article
         $this->imageFilename = $imageFilename;
 
         return $this;
+    }
+
+    public function getImagePath(): ?string
+    {
+        return UploaderHelper::getPublicPath() . '/' . UploaderHelper::IMAGES . '/' . $this->getImageFilename();
     }
 
     public function getDateModified(): ?\DateTimeInterface

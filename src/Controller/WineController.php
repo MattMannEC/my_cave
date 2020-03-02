@@ -42,7 +42,7 @@ class WineController extends AbstractController
             if($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
 
-                $wine->setimageFilename($newFilename);
+                $wine->setImageFilename($newFilename);
             }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($wine);
@@ -70,7 +70,7 @@ class WineController extends AbstractController
             $uploadedFile = $form['imageFile']->getData(); 
             if($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
-                $wine->setimageFilename($newFilename);
+                $wine->setImageFilename($newFilename);
             }
             $this->getDoctrine()->getManager()->flush();
 

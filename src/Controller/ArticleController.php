@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Article;
 use App\Form\ArticleType;
 use App\Repository\ArticleRepository;
+use App\Service\UploaderHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -28,13 +29,19 @@ class ArticleController extends AbstractController
     /**
      * @Route("/new", name="article_new", methods={"GET","POST"})
      */
-    public function new(Request $request): Response
+    public function new(Request $request, UploaderHelper $uploaderHelper): Response
     {
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $uploadedFile = $form['imageFile']->getData();
+            if($uploadedFile) {
+                $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
+
+                $article->setImageFilename($newFilename);
+            }
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($article);
             $entityManager->flush();
@@ -61,12 +68,19 @@ class ArticleController extends AbstractController
     /**
      * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Article $article): Response
+    public function edit(Request $request, Article $article, UploaderHelper $uploaderHelper): Response
     {
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $uploadedFile = $form['imageFile']->getData();
+            if($uploadedFile) {
+                $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
+                $article->setImageFilename($newFilename);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('article_index');

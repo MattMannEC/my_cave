@@ -62,7 +62,7 @@ class HeroController extends AbstractController
     /**
      * @Route("/{id}/edit", name="hero_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Hero $hero, HeroRepository $heroRepository, UploaderHelper $uploaderHelper): Response
+    public function edit(Request $request, Hero $hero, UploaderHelper $uploaderHelper): Response
     {
         $form = $this->createForm(HeroType::class, $hero);
         $form->handleRequest($request);
@@ -72,7 +72,7 @@ class HeroController extends AbstractController
             $uploadedFile = $form['imageFile']->getData(); 
             if($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
-                $hero->setimageFilename($newFilename);
+                $hero->setImageFilename($newFilename);
             }
 
             $this->getDoctrine()->getManager()->flush();
