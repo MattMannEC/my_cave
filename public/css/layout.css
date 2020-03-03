@@ -87,16 +87,33 @@ p {
 
 header {
     height: 10vh;
+    text-transform: uppercase;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.header-logo {
+    height: 8vh;
+    margin: auto;
 }
 
 .navbar {
     padding: 0;
-    height: 10vh;
+    height: 8vh;
 }
 
 .nav-item {
     color: var(--main-color-bordeaux);
     padding: 3em 2em 1em 2em;
+}
+
+.login-div { 
+    background-color: var(--main-color-bordeaux);
+}
+
+.login-text {
+    color: var(--main-color-white);
 }
 
 .login { 

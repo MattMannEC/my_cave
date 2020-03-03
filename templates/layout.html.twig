@@ -8,7 +8,7 @@
                 <div class="col-md-6">
                     <div class="row">
                         <div class="col-md-6">
-                            <a href="{{ path('home') }}"><img src="{{ asset('images/logo-large.png') }}" alt="mycave" class="logo"></a>
+                            <a href="{{ path('home') }}"><img src="{{ asset('images/logo-large.png') }}" alt="mycave" class="header-logo"></a>
                         </div>
                         <div class="col-md-6">
                         </div>
@@ -22,11 +22,19 @@
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a class="nav-item" href="{{ path('user_index') }}">Admin</a>
                             {% endif %}
+                            
+                            <div class="d-flex flex-column justify-content-center login-div">
                             {% if app.user == false %}
-                                <a class="nav-item nav-item nav-item-last login" href="{{ path('app_login') }}">Login</a>
+                                <a class="nav-item nav-item-last d-flex flex-column justify-content-center text-center login" href="{{ path('app_login') }}">  
+                                <i class="fas fa-lock login-text"></i>
+                                <p class="login-text">Login</p>
+                                </a>
                             {% else %}
-                                <a class="nav-item nav-item nav-item-last login" href="{{ path('app_logout') }}">Logout</a>
+                                <a class="nav-item nav-item nav-item-last" href="{{ path('app_logout') }}">
+                                    Logout
+                                </a>
                             {% endif %}
+                            </div>
                     </div>    
                 </div>
             </div>
