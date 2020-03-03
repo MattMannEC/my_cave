@@ -2,37 +2,42 @@
 
 {% block title %}Hero{% endblock %}
 
-{% block adminContent %}
-    <h2>Hero</h2>
+{% block content %}
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ hero.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ hero.title }}</td>
-            </tr>
-            <tr>
-                <th>Text</th>
-                <td>{{ hero.text }}</td>
-            </tr>
-            <tr>
-                <th>Image_filename</th>
-                <td>{{ hero.imageFilename }}</td>
-            </tr>
-            <tr>
-                <th>Date_modified</th>
-                <td>{{ hero.dateModified ? hero.dateModified|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+<section id="">
+    <div class="container">
+        <h2>Hero</h2>
 
-    <a href="{{ path('hero_index') }}">back to list</a>
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Id</th>
+                    <td>{{ hero.id }}</td>
+                </tr>
+                <tr>
+                    <th>Title</th>
+                    <td>{{ hero.title }}</td>
+                </tr>
+                <tr>
+                    <th>Text</th>
+                    <td>{{ hero.text }}</td>
+                </tr>
+                <tr>
+                    <th>Image_filename</th>
+                    <td>{{ hero.imageFilename }}</td>
+                </tr>
+                <tr>
+                    <th>Date_modified</th>
+                    <td>{{ hero.dateModified ? hero.dateModified|date('Y-m-d H:i:s') : '' }}</td>
+                </tr>
+            </tbody>
+        </table>
 
-    <a href="{{ path('hero_edit', {'id': hero.id}) }}">edit</a>
+        <a href="{{ path('hero_index') }}">back to list</a>
 
-    {{ include('admin/hero/_delete_form.html.twig') }}
+        <a href="{{ path('hero_edit', {'id': hero.id}) }}">edit</a>
+
+        {{ include('admin/hero/_delete_form.html.twig') }}
+    </div>
+</section>
 {% endblock %}

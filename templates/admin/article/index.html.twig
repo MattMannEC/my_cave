@@ -2,38 +2,44 @@
 
 {% block title %}Article index{% endblock %}
 
-{% block adminContent %}
-    <h1>Article index</h1>
+{% block content %}
+<section id="">
+    <div class="container">
+        <h1>Article index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Text</th>
-                <th>ImageFilename</th>
-                <th>Date modified</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for article in articles %}
-            <tr>
-                <td>{{ article.id }}</td>
-                <td>{{ article.title }}</td>
-                <td>{{ article.text }}</td>
-                <td>{{ article.imageFilename }}</td>
-                <td>{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Text</th>
+                    <th>ImageFilename</th>
+                    <th>Date modified</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+                <tr>
+                    <td>{{ article.id }}</td>
+                    <td>{{ article.title }}</td>
+                    <td>{{ article.text |length > 255 ? article.text|slice(0, 255) ~ '...' : article.text  }}</td>
+                    <td>
+                        <img src="{{ article.imagePath|imagine_filter ('my_thumb') }}" alt="">
+                    </td>
+                    <td>{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>
+                        <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
 
 {% endblock %}

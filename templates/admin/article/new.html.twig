@@ -1,11 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin/index.html.twig' %}
 
 {% block title %}New Article{% endblock %}
 
-{% block body %}
-    <h1>Create new Article</h1>
+{% block content %}
 
-    {{ include('admin/article/_form.html.twig') }}
+<section id="">
+    <div class="container">
+        <h1>Create new Article</h1>
 
-    <a href="{{ path('article_index') }}">back to list</a>
+        {{ include('admin/article/_form.html.twig') }}
+
+        <a href="{{ path('article_index') }}">back to list</a>
+    </div>
+</section>
 {% endblock %}

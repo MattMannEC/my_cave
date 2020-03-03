@@ -57,7 +57,7 @@
                 <a href="{{ path('article_show', {'id': articleElement.id}) }}">
                     <img href="{{ path('article_show', {'id': articleElement.id}) }}" src="{{ articleElement.imagePath|imagine_filter('my_article_small') }}" alt="grapes" class="article-image-small">
                     <h4 class="article-title">{{ articleElement.title }}</h4>
-                    <p class="article-text">{{ articleElement.text }}</p>
+                    <p class="article-text">{{ articleElement.text |length > 255 ? articleElement.text|slice(0, 255) ~ '...' : articleElement.text  }}</p>
                 </a>
             </div>
             {% endfor %}

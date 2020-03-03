@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TextAreaType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Validator\Constraints\Image;
 use Symfony\Component\Validator\Constraints\NotNull;
@@ -20,7 +21,9 @@ class ArticleType extends AbstractType
 
         $builder
             ->add('title')
-            ->add('text')
+            ->add('text', TextAreaType::class, [
+                'attr' => ['rows' => '10','cols' => '10']
+            ])
             ->add('imageFile')
         ;
 

@@ -2,11 +2,15 @@
 
 {% block title %}Edit Hero{% endblock %}
 
-{% block adminContent %}
-    <h2>Edit Hero</h2>
+{% block content %}
+<section id="">
+    <div class="container">
+        <h2>Edit Hero</h2>
 
-    {{ include('admin/hero/_form.html.twig', {'button_label': 'Update'}) }}
+        {{ include('admin/hero/_form.html.twig', {'button_label': 'Update'}) }}
 
-    <a href="{{ path('hero_index') }}">back to list</a>
+        <a href="{{ path('hero_index') }}">back to list</a>
+    </div>
+</section>
 
 {% endblock %}

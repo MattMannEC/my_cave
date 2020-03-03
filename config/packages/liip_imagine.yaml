@@ -8,9 +8,14 @@ liip_imagine:
     filter_sets:
         cache: ~
 
+        my_thumb:
+            default_image: default.png
+            quality: 100
+            filters:
+                thumbnail: 
+                    size: [100, 100]
+                    mode: outbound
 
-
-        # the name of the "filter set"
         my_thumb_90:
             default_image: default.png
             quality: 100

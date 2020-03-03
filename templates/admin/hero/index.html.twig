@@ -2,36 +2,42 @@
 
 {% block title %}Hero index{% endblock %}
 
-{% block adminContent %}
-    <h2>Change Main Section</h2>
+{% block content %}
+<section id="">
+    <div class="container">
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Text</th>
-                <th>Image_filename</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for hero in heroes %}
-            <tr>
-                <td>{{ hero.id }}</td>
-                <td>{{ hero.title }}</td>
-                <td>{{ hero.text }}</td>
-                <td>{{ hero.imageFilename }}</td>
-                <td>
-                    <a href="{{ path('hero_edit', {'id': hero.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="6">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+        <h2>Change Main Section</h2>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Text</th>
+                    <th>Image_filename</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for hero in heroes %}
+                <tr>
+                    <td>{{ hero.id }}</td>
+                    <td>{{ hero.title }}</td>
+                    <td>{{ hero.text }}</td>
+                    <td>{{ hero.imageFilename }}</td>
+                    <td>
+                        <a href="{{ path('hero_edit', {'id': hero.id}) }}">edit</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
 
 {% endblock %}

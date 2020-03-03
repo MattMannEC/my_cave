@@ -1,37 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}Article{% endblock %}
 
-{% block body %}
-    <h1>Article</h1>
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/article.css">
+    {% endblock %}
+{% block content %}
+<section id="section-article-show">
+    <div class="container">
+        <h1>{{ article.title }}</h1>
+        <img src="{{ article.imagePath|imagine_filter('my_large') }}" alt="" class="article-image-large">
+        <p>{{ article.text }}</p>
+        <h6>{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</h6>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ article.id }}</td>
-            </tr>
-            <tr>
-                <th>Title</th>
-                <td>{{ article.title }}</td>
-            </tr>
-            <tr>
-                <th>Text</th>
-                <td>{{ article.text }}</td>
-            </tr>
-            <tr>
-                <th>ImageFilename</th>
-                <td>{{ article.imageFilename }}</td>
-            </tr>
-            <tr>
-                <th>Date_modified</th>
-                <td>{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <a href="{{ path('home') }}">back to home</a>
 
-    <a href="{{ path('article_index') }}">back to list</a>
-
-    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+    {% endif %}
+    </div>
+</section>
 
 {% endblock %}

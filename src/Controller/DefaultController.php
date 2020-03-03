@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Wine;
+use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use App\Repository\HeroRepository;
 use App\Repository\WineRepository;
@@ -56,6 +57,16 @@ class DefaultController extends AbstractController
     {
         return $this->render('wine/show.html.twig', [
             'wine' => $wine,
+        ]);
+    }
+
+    /**
+     * @Route("/article/{id}", name="article_show", methods={"GET"})
+     */
+    public function articleShow(Article $article): Response
+    {
+        return $this->render('admin/article/show.html.twig', [
+            'article' => $article,
         ]);
     }
 }

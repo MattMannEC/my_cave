@@ -2,10 +2,14 @@
 
 {% block title %}New Hero{% endblock %}
 
-{% block adminContent %}
-    <h2>Create new Hero</h2>
+{% block content %}
+<section id="">
+    <div class="container">
+        <h2>Create new Hero</h2>
 
-    {{ include('admin/hero/_form.html.twig') }}
+        {{ include('admin/hero/_form.html.twig') }}
 
-    <a href="{{ path('hero_index') }}">back to list</a>
+        <a href="{{ path('hero_index') }}">back to list</a>
+    </div>
+</section>
 {% endblock %}

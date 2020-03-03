@@ -23,7 +23,7 @@ class Article
     private $title;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", nullable=true)
      */
     private $text;
 

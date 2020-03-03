@@ -56,16 +56,6 @@ class ArticleController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="article_show", methods={"GET"})
-     */
-    public function show(Article $article): Response
-    {
-        return $this->render('admin/article/show.html.twig', [
-            'article' => $article,
-        ]);
-    }
-
-    /**
      * @Route("/{id}/edit", name="article_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Article $article, UploaderHelper $uploaderHelper): Response
