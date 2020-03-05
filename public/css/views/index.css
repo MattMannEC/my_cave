@@ -11,6 +11,7 @@
     height: 88vh;
 }
 
+
 .hero-content-container {
     width: 80%;
     height: 100%;
@@ -18,17 +19,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: rgba(13, 13, 13, 0.3)
 }
 
 .hero-content-container h1 {
     color: var(--main-color-white); 
+
+    font-size: 10rem;
 }
 
 .hero-content-container h4 {
     color: var(--main-color-white);
+    font-size: 3rem;
+    padding: 0 12rem;
+    font-weight: 200;
+    text-align: center;
 }
-
-
 
 /************************************************************
 *                       Section-2                           *

@@ -6,8 +6,8 @@
 {% block content %}
 
     {% for hero in heroElements %}
-    <section id="section-1" class="container" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
-        <div class="container hero-content-container ">
+    <section id="section-1" class="container-fluid" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
+        <div class="container-fluid hero-content-container text-center">
             <h1 class="display-1">{{ hero.title }}</h1>
             <h4 class="blockquote">{{ hero.text }}</h4>
         {% else %}
@@ -15,17 +15,14 @@
             <h4>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h4>
             <img src="defaultimage.image"></img>
         {% endfor %}
-            <a href="{{ path('wine') }}">
-                <button type="button" class="btn btn-bordeaux btn-lg btn-block">My Collection</button>
-            <a/>
         </div>
     </section>
 
 
 <!--       Slider        -->
 
-<section id="section-2" class="container" >
-    <div id="arrow-container" class="container">
+<section id="section-2" class="container-fluid" >
+    <div id="arrow-container" class="container-fluid">
         <div id="homeSlider">
         {% for sliderElement in sliderElements %}
         <div>
@@ -49,8 +46,8 @@
     </div>    
 </section>
 
-<section id="section-3" class="container" >
-    <div class="container">
+<section id="section-3" class="container-fluid" >
+    <div class="container-fluid">
         <div id="about-banner" class="row">
             {% for articleElement in articleElements %}
             <div class="col-md-4 article-col">

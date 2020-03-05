@@ -4,7 +4,7 @@
 
 {% block content %}
     <section id="wineEdit">
-        <div class="container">
+        <div class="container-fluid">
             <h1>Edit Wine</h1>
                 {{ include('wine/_form.html.twig', {'button_label': 'Update'}) }}
                 <a href="{{ path('wine') }}">back to list</a>

@@ -7,7 +7,7 @@
     {% endblock %}
 {% block content %}
 <section id="section-article-show">
-    <div class="container">
+    <div class="container-fluid">
         <h1>{{ article.title }}</h1>
         <img src="{{ article.imagePath|imagine_filter('my_large') }}" alt="" class="article-image-large">
         <p>{{ article.text }}</p>
