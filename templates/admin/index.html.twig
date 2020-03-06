@@ -8,28 +8,23 @@
     <section id="sectionNav">
         <div class="container-fluid">
             <h1>Admin</h1>
-            <nav class="">
+            <nav class="admin-nav">
                 <div class="" id="">
-                    <ul class="">
+                    <ul class="nav nav-pills">
                         {% if is_granted('ROLE_ADMIN') %}
-                        <li class="">
+                        <li class="nav-item nav-item admin-nav-item">
                             <a class="" href="{{ path('user_index') }}">Users</a>
                         </li>
-                        <li class="">
+                        <li class="nav-item admin-nav-item">
                             <a href="{{ path('hero_index') }}">Homepage</a>
                         </li>
-                        <li class="">
+                        <li class="nav-item admin-nav-item">
                             <a href="{{ path('article_index') }}">Articles</a>
                         </li>
                         {% endif %}
                     </ul>
                 </div>
             </nav>
-
-
-
-
-
 
         </div>
     </section>

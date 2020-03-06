@@ -120,6 +120,7 @@ header {
 .nav-item {
     color: var(--main-color-bordeaux);
     padding: 3em 2em 1em 2em;
+    border-bottom: 1px solid transparent;
 }
 
 .login-div { 
