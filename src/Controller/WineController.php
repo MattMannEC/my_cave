@@ -65,7 +65,6 @@ class WineController extends AbstractController
                     $wine->setImageFilename($newFilename);
                     $uploaderHelper->removeFile(UploaderHelper::IMAGES, $currentFilename);
                 }
-
             }
             $this->getDoctrine()->getManager()->flush();
 

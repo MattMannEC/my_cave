@@ -65,10 +65,15 @@ class ArticleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $currentFilename = $article->getImageFilename();
             $uploadedFile = $form['imageFile']->getData();
             if($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
-                $article->setImageFilename($newFilename);
+
+                if ($newFilename) {
+                    $article->setImageFilename($newFilename);
+                    $uploaderHelper->removeFile(UploaderHelper::IMAGES, $currentFilename);
+                }
             }
 
             $this->getDoctrine()->getManager()->flush();
@@ -85,9 +90,10 @@ class ArticleController extends AbstractController
     /**
      * @Route("/{id}", name="", methods={"DELETE"})
      */
-    public function delete(Request $request, Article $article): Response
+    public function delete(Request $request, Article $article, UploaderHelper $uploaderHelper): Response
     {
         if ($this->isCsrfTokenValid('delete'.$article->getId(), $request->request->get('_token'))) {
+            $uploaderHelper->removeFile(UploaderHelper::IMAGES, $article->getImageFilename());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($article);
             $entityManager->flush();

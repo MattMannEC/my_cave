@@ -69,10 +69,15 @@ class HeroController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
+            $currentFilename = $hero->getImageFilename();
             $uploadedFile = $form['imageFile']->getData(); 
             if($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
-                $hero->setImageFilename($newFilename);
+
+                if ($newFilename) {
+                    $hero->setImageFilename($newFilename);
+                    $uploaderHelper->removeFile(UploaderHelper::IMAGES, $currentFilename);
+                }
             }
 
             $this->getDoctrine()->getManager()->flush();
@@ -89,9 +94,10 @@ class HeroController extends AbstractController
     /**
      * @Route("/{id}", name="hero_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Hero $hero): Response
+    public function delete(Request $request, Hero $hero, UploaderHelper $uploaderHelper): Response
     {
         if ($this->isCsrfTokenValid('delete'.$hero->getId(), $request->request->get('_token'))) {
+            $uploaderHelper->removeFile(UploaderHelper::IMAGES, $hero->getImageFilename());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($hero);
             $entityManager->flush();
