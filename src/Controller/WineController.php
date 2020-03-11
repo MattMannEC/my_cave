@@ -89,7 +89,6 @@ class WineController extends AbstractController
 
             $entityManager->flush();
 
-            
         }
         return $this->redirectToRoute('wine');
     }
