@@ -29,7 +29,7 @@ class WineController extends AbstractController
     }*/
 
     /**
-     * @Route("/profile/new", name="wine_new", methods={"GET","POST"})
+     * @Route("/new", name="wine_new", methods={"GET","POST"})
      */
     public function new(Request $request, UploaderHelper $uploaderHelper): Response
     {
@@ -58,7 +58,7 @@ class WineController extends AbstractController
     }
 
     /**
-     * @Route("/profile/{id}/edit", name="wine_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="wine_edit", methods={"GET","POST"})
      */
     public function edit(Request $request, Wine $wine, UploaderHelper $uploaderHelper): Response
     {
@@ -83,7 +83,7 @@ class WineController extends AbstractController
     }
 
     /**
-     * @Route("/profile/{id}", name="wine_delete", methods={"DELETE"})
+     * @Route("/{id}", name="wine_delete", methods={"DELETE"})
      */ 
     public function delete(Request $request, Wine $wine, UploaderHelper $uploaderHelper): Response
     {
