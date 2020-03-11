@@ -18,17 +18,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class WineController extends AbstractController
 {
     /**
-     * @Route("/", name="wine_index", methods={"GET"})
-     */
-    /*
-    public function index(WineRepository $wineRepository): Response
-    {
-        return $this->render('wine/index.html.twig', [
-            'wines' => $wineRepository->findAll(),
-        ]);
-    }*/
-
-    /**
      * @Route("/new", name="wine_new", methods={"GET","POST"})
      */
     public function new(Request $request, UploaderHelper $uploaderHelper): Response
