@@ -24,7 +24,7 @@ class ArticleType extends AbstractType
             ->add('text', TextAreaType::class, [
                 'attr' => ['rows' => '10','cols' => '10']
             ])
-            ->add('imageFile')
+            ->add('imageFilename')
         ;
 
         $imageConstraints = [
@@ -40,7 +40,7 @@ class ArticleType extends AbstractType
         }
 
         $builder
-            ->add('imageFile', FileType::class, [
+            ->add('imageFilename', FileType::class, [
                 'attr' => ['class' => 'btn'],
                 'mapped' => false,
                 'required' => false,

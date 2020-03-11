@@ -4,7 +4,7 @@
             {% if form.vars.data.imageFilename|default %}
                 <img src="{{ form.vars.data.imagePath|imagine_filter('my_normal') }}">
             {% endif %}
-            {{ form_row(form.imageFile) }}
+            {{ form_row(form.imageFilename) }}
         </div>
         <div class="col-md-8">        
             {{ form_row(form.name) }}

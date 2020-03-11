@@ -36,7 +36,7 @@ class ArticleController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $uploadedFile = $form['imageFile']->getData();
+            $uploadedFile = $form['imageFilename']->getData();
             if($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
 
@@ -66,7 +66,7 @@ class ArticleController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $currentFilename = $article->getImageFilename();
-            $uploadedFile = $form['imageFile']->getData();
+            $uploadedFile = $form['imageFilename']->getData();
             if($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
 

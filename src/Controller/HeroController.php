@@ -70,7 +70,7 @@ class HeroController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
 
             $currentFilename = $hero->getImageFilename();
-            $uploadedFile = $form['imageFile']->getData(); 
+            $uploadedFile = $form['imageFilename']->getData(); 
             if($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
 

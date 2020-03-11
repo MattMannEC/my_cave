@@ -37,7 +37,7 @@ class HeroType extends AbstractType
         }
 
         $builder
-            ->add('imageFile', FileType::class, [
+            ->add('imageFilename', FileType::class, [
                 'attr' => ['class' => 'btn'],
                 'mapped' => false,
                 'required' => false,
