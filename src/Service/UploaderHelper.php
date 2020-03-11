@@ -12,7 +12,7 @@ Class UploaderHelper
 
     private $uploadsPath;
 
-    public function __construct(string $uploadsPath) // use construc to import uploadsPath parametres...
+    public function __construct(string $uploadsPath) // use construct to import uploadsPath parametres...
     {
         $this->uploadsPath = $uploadsPath;
     }
@@ -21,7 +21,7 @@ Class UploaderHelper
     {
         $destination = $this->uploadsPath . '/' . self::IMAGES;
         $orignalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-        $newFilename = $orignalFilename . '-' . uniqid() . '.' . $uploadedFile->guessExtension(); // add Urlizer::urlize
+        $newFilename = $orignalFilename . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
 
         $uploadedFile->move(
             $destination,  
