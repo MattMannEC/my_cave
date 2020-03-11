@@ -55,11 +55,17 @@ class WineController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
+            
+            $currentFilename = $wine->getImageFilename();
             $uploadedFile = $form['imageFile']->getData(); 
             if($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
-                $wine->setImageFilename($newFilename);
+
+                if ($newFilename) {
+                    $wine->setImageFilename($newFilename);
+                    $uploaderHelper->removeFile(UploaderHelper::IMAGES, $currentFilename);
+                }
+
             }
             $this->getDoctrine()->getManager()->flush();
 
