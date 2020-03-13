@@ -34,7 +34,7 @@ class WineRepository extends ServiceEntityRepository
         ;
     }
     
-    public function readWine($value): ?Wine
+    public function readWine($value): ?Wine 
     {
         return $this->createQueryBuilder('w')
             ->andWhere('w.exampleField = :val')

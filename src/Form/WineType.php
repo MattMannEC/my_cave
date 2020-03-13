@@ -33,7 +33,7 @@ class WineType extends AbstractType
 
         $imageConstraints = [
             new Image([
-                'maxSize' => '2M'
+                'maxSize' => '5M'
             ]),
         ];
 
