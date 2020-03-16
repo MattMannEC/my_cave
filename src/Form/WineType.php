@@ -30,7 +30,6 @@ class WineType extends AbstractType
                 'attr' => ['rows' => '10','cols' => '10']
             ]);
             
-
         $imageConstraints = [
             new Image([
                 'maxSize' => '5M'

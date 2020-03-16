@@ -31,7 +31,7 @@ Class UploaderHelper
         return $newFilename; 
     }
 
-    public function getPublicPath()
+    public static function getPublicPath()
     {
         return '/' . self::UPLOADS;
     }
