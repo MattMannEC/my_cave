@@ -112,7 +112,7 @@ header {
 
 .header-logo {
     height: 8vh;
-    margin: auto;
+    margin: 1vh 0 1vh 0;
 }
 
 .navbar {
@@ -156,17 +156,23 @@ header {
 
 footer {
     height: 25vh;
+    padding-top: 2rem;
     color: var(--main-color-white);
     background-color: var(--main-color-bordeaux);
     margin: 1rem 0 0 0;
 }
 
 .footer-quote {
-    margin: 1rem;
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 100;
+    text-align: right;
 }
 
 .footer-nav-item {
     color: white;
+    text-align: right;
 }
 
 .footer-nav-item:hover {

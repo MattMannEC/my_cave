@@ -7,4 +7,5 @@ $(document).ready(function() {
         infinite: true,
         arrows: true,
     })
+    
 });
