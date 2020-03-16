@@ -56,6 +56,9 @@ h6,
 p,
 a {
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 100;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
 }
 
 
@@ -155,4 +158,19 @@ footer {
     height: 25vh;
     color: var(--main-color-white);
     background-color: var(--main-color-bordeaux);
+    margin: 1rem 0 0 0;
+}
+
+.footer-quote {
+    margin: 1rem;
+}
+
+.footer-nav-item {
+    color: white;
+}
+
+.footer-nav-item:hover {
+    text-decoration: none;
+    color: white;
+    border-bottom: solid 1px white; 
 }

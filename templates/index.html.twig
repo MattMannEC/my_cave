@@ -7,7 +7,6 @@
 
     {% for hero in heroElements %}
     <section id="section-1" class="container-fluid" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
-        <div class="container-fluid opaque-container">
             <div class="container-fluid hero-content-container text-center">
             <h1 class="display-1">{{ hero.title }}</h1>
             <h4 class="blockquote">{{ hero.text }}</h4>
@@ -17,7 +16,6 @@
             <img src="defaultimage.image"></img>
         {% endfor %}
             </div>
-        </div>
     </section>
 
 
@@ -34,8 +32,8 @@
                 </div>
                 <div class="col-md-8 d-flex flex-column justify-content-center">
                     <div class="wine-banner">
-                        <h3>{{ sliderElement.name }}</h3>
-                        <h4>{{ sliderElement.region }} - {{ sliderElement.grape }}</h4>
+                        <h3 class="banner-name">{{ sliderElement.name }}</h3>
+                        <h4 class="banner-region-grape">{{ sliderElement.region }} - {{ sliderElement.grape }}</h4>
                     </div>
                         <p>{{ sliderElement.description }}</p>
                 </div>
@@ -53,7 +51,7 @@
         <div id="about-banner" class="row">
             {% for articleElement in articleElements %}
             <div class="col-md-4 article-col">
-                <a href="{{ path('article_show', {'id': articleElement.id}) }}">
+                <a class="article-a" href="{{ path('article_show', {'id': articleElement.id}) }}">
                     <img href="{{ path('article_show', {'id': articleElement.id}) }}" src="{{ articleElement.imagePath|imagine_filter('my_article_small') }}" alt="grapes" class="article-image-small">
                     <h4 class="article-title">{{ articleElement.title }}</h4>
                     <p class="article-text">{{ articleElement.text |length > 255 ? articleElement.text|slice(0, 255) ~ '...' : articleElement.text  }}</p>
