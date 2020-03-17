@@ -1,9 +1,12 @@
 {% extends 'admin/index.html.twig' %}
 
 {% block title %}Hero index{% endblock %}
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/hero.css">
+    {% endblock %}
 
 {% block content %}
-<section id="">
+<section id="hero">
     <div class="container-fluid">
 
         <h2>Change Main Section</h2>

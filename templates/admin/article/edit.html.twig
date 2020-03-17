@@ -1,15 +1,20 @@
 {% extends 'admin/index.html.twig' %}
 
 {% block title %}Edit Article{% endblock %}
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/article.css">
+    {% endblock %}
 
 {% block content %}
-<section id="">
+<section id="article">
     <div class="container-fluid">
         <h1>Edit Article</h1>
 
         {{ include('admin/article/_form.html.twig', {'button_label': 'Update'}) }}
 
-        <a class="action-link" href="{{ path('article_index') }}">back to list</a>
+        <div class="col-md-12">
+            <a class="action-link" href="{{ path('article_index') }}">back to list</a>
+        </div>
     </div>
 </section>
 

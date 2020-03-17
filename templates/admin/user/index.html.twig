@@ -1,9 +1,12 @@
 {% extends 'admin/index.html.twig' %}
 
 {% block title %}User index{% endblock %}
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/user.css">
+    {% endblock %}
 
 {% block content %}
-<section id="">
+<section id="user">
     <div class="container-fluid">
         <h2>Users</h2>
 
@@ -38,7 +41,9 @@
             </tbody>
         </table>
 
-        <a class="action-link" href="{{ path('user_new') }}">Create new</a>
+        <div class="col-md-12">
+            <a class="action-link" href="{{ path('user_new') }}">Create new</a>
+        </div>
     </div>
 </section>
 {% endblock %}

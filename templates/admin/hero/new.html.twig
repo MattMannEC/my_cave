@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}New Hero{% endblock %}
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/hero.css">
+    {% endblock %}
 
 {% block content %}
-<section id="">
+<section id="hero">
     <div class="container-fluid">
         <h2>Create new Hero</h2>
 

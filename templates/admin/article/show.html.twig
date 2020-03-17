@@ -6,18 +6,20 @@
             <link rel="stylesheet" href="/css/views/article.css">
     {% endblock %}
 {% block content %}
-<section id="section-article-show">
+<section id="article">
     <div class="container-fluid">
-        <h1>{{ article.title }}</h1>
-        <img src="{{ article.imagePath|imagine_filter('my_large') }}" alt="" class="article-image-large">
-        <p>{{ article.text }}</p>
-        <h6>{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</h6>
+        <div class="col-md-12">
+            <h1>{{ article.title }}</h1>
+            <img src="{{ article.imagePath|imagine_filter('my_large') }}" alt="" class="article-image-large">
+            <p>{{ article.text }}</p>
+            <h6>{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</h6>
 
-        <a href="{{ path('home') }}">back to home</a>
+            <a href="{{ path('home') }}">back to home</a>
 
-    {% if is_granted('ROLE_ADMIN') %}
-        <a class="action-link" href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
-    {% endif %}
+        {% if is_granted('ROLE_ADMIN') %}
+            <a class="action-link" href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+        {% endif %}
+        </div>
     </div>
 </section>
 

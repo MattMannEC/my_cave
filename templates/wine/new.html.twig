@@ -1,14 +1,18 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}New Wine{% endblock %}
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/collection.css">
+    {% endblock %}
 
 {% block content %}
     <section id="wineNew">
         <div class="container-fluid">
             <h1>Create new Wine</h1>
                 {{ include('wine/_form.html.twig') }}
-
-            <a class="action-link" href="{{ path('wine') }}">back to list</a>
+            <div class="col-md-12">
+                <a class="action-link" href="{{ path('wine') }}">back to list</a>
+            </div>
         </div>
     </section>
 {% endblock %}

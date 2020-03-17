@@ -1,6 +1,9 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}Wine{% endblock %}
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/collection.css">
+    {% endblock %}
 
 {% block content %}
     <section id="wineShowSection">

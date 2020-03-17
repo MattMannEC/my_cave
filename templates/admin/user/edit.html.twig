@@ -1,15 +1,20 @@
 {% extends 'admin/index.html.twig' %}
 
 {% block title %}Edit User{% endblock %}
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/user.css">
+    {% endblock %}
 
 {% block content %}
-<section id="">
+<section id="user">
     <div class="container-fluid">
         <h2>Edit User</h2>
 
         {{ include('admin/user/_form.html.twig', {'button_label': 'Update'}) }}
 
-        <a class="action-link" href="{{ path('user_index') }}">back to list</a>
+        <div class="col-md-12">
+            <a class="action-link" href="{{ path('user_index') }}">back to list</a>
+        </div>
 
         {{ include('admin/user/_delete_form.html.twig') }}
     </div>
