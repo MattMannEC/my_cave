@@ -13,13 +13,13 @@
                     <ul class="nav nav-pills">
                         {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item nav-item admin-nav-item">
-                            <a class="" href="{{ path('user_index') }}">Users</a>
+                            <a class="action-link" href="{{ path('user_index') }}">Users</a>
                         </li>
                         <li class="nav-item admin-nav-item">
-                            <a href="{{ path('hero_index') }}">Homepage</a>
+                            <a class="action-link" href="{{ path('hero_index') }}">Homepage</a>
                         </li>
                         <li class="nav-item admin-nav-item">
-                            <a href="{{ path('article_index') }}">Articles</a>
+                            <a class="action-link" href="{{ path('article_index') }}">Articles</a>
                         </li>
                         {% endif %}
                     </ul>

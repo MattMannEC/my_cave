@@ -59,12 +59,23 @@ a {
     font-weight: 100;
     line-height: 1.4;
     letter-spacing: 0.5px;
+    color: black;
 }
 
-
-p {
-    color: var(--main-color-black);
+.pagination,
+.page-item,
+.page-link,
+.action-link {
+    color: inherit;
 }
+
+.pagination:hover,
+.page-item:hover,
+.page-link:hover,
+.action-link:hover {
+    color: inherit;
+}
+
 
 .nav-item:hover {
     color: var(--main-color-red);
@@ -72,13 +83,15 @@ p {
     border-bottom: 1px solid var(--main-color-red);
 }
 
+.btn-primary,
 .btn-bordeaux {
     color: var(--main-color-white);
     background-color: var(--main-color-bordeaux);
     border: solid 1px var(--main-color-white);
 }
 
-.btn-bordeaux:hover {
+.btn-bordeaux:hover,
+.btn-primary:hover {
     color: var(--main-color-bordeaux);
     background-color: var(--main-color-white);
     border: solid 1px var(--main-color-bordeaux);
@@ -159,7 +172,6 @@ footer {
     padding-top: 2rem;
     color: var(--main-color-white);
     background-color: var(--main-color-bordeaux);
-    margin: 1rem 0 0 0;
 }
 
 .footer-quote {

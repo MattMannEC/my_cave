@@ -1,0 +1,25 @@
+#loginSection {
+    min-height: 65vh;
+    position: relative;
+}
+
+.login-container {
+    width: 25%;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.form-container {
+    border: none;
+}
+
+#loginSection h1 {
+    font-size: rem;
+}
+
+.login-submit {
+    width: 100%;
+}

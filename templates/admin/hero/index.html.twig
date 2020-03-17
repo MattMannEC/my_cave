@@ -28,7 +28,7 @@
                         <img src="{{ hero.imagePath|imagine_filter ('my_thumb') }}" alt="">
                     </td>
                     <td>
-                        <a href="{{ path('hero_edit', {'id': hero.id}) }}">edit</a>
+                        <a class="action-link" href="{{ path('hero_edit', {'id': hero.id}) }}">edit</a>
                     </td>
                 </tr>
             {% else %}

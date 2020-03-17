@@ -9,13 +9,13 @@
     <section id="collection">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12"> 
+                <div class="col-md-4 mx-auto"> 
                     <h1>Wine Collection</h1>
                     <form>
                     <div class="input-group mb-3 search-bar">
                         <input type="text" name="q" class="form-control" placeholder="Search..." value="{{ app.request.query.get('q') }}">
                         <div class="input-group-append">
-                            <button type="submit" class="btn btn-outline-secondary">
+                            <button type="submit" class="btn btn-bordeaux btn-outline-secondary">
                                 <span class="fa fa-search"></span>
                             </button>
                         </div>
@@ -23,7 +23,7 @@
                     </form>
                 </div>
             </div>
-            <div class="d-flex row">
+            <div class="d-flex row collection-container">
                 
                 {% for wine in pagination %}
 
@@ -36,9 +36,9 @@
                         <h5 class="grape d-inline">{{ wine.grape }}</h5>
 
                         {% if app.user == true %}
-                        <a class="d-block btn color-bordeaux collection-btn" href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
+                        <a class="d-block btn color-bordeaux collection-btn mx-auto" href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
                         {% else %}
-                        <a class="d-block btn color-bordeaux collection-btn" href="{{ path('wine_show', {'id': wine.id}) }}">learn more</a>
+                        <a class="d-block btn color-bordeaux collection-btn mx-auto" href="{{ path('wine_show', {'id': wine.id}) }}">learn more</a>
                         {% endif %}
                     </div>
                 </div>
@@ -48,15 +48,19 @@
                 </div>
                 {% endfor %}
             </div>
-
-            <div class="navigation text-right">
-                {{ knp_pagination_render(pagination) }}
-                    <h3>{{ pagination.getTotalItemCount }} - Wine(s) in stock</h3>
+            <div class="navigation text-center col-md-12">
+                <div class="row">
+                    <div class="col-md-3 mx-auto">
+                        {{ knp_pagination_render(pagination) }}
+                    </div>
+                </div>
+                <div class="row d-flex justify-content-between">
+                    {% if app.user == true %}
+                    <a class="action-link btn btn-bordeaux" href="{{ path('wine_new') }}">Create new</a>
+                    {% endif %}
+                    <h3 class="">{{ pagination.getTotalItemCount }} - Wine(s) in stock</h3>
+                </div>
             </div>
-            {% if app.user == true %}
-            <a href="{{ path('wine_new') }}">Create new</a>
-            {% endif %}
-
         </div>
     </section>
 {% endblock %}

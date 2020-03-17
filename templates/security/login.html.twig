@@ -1,12 +1,15 @@
 {% extends 'layout.html.twig' %}
 
 {% block title %}Log In{% endblock %}
+    {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/login.css">
+    {% endblock %}
 
 {% block content %}
 <section id="loginSection">
-    <div class="container-fluid">
-        <h1>Login</h1>
-        <form class='form-control' method="post">
+    <div class="container-fluid login-container">
+        <form class='form-control form-container' method="post">
+            <h1>Login</h1>
             {% if error %}
                 <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
             {% endif %}
@@ -17,7 +20,7 @@
                 </div>
             {% endif %}
 
-                <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                <h3 class="mb-3">Please sign in</h3>
                 <label for="inputUsername">Username</label>
                 <input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" required autofocus>
                 <label for="inputPassword">Password</label>
@@ -27,11 +30,11 @@
 
                 <div class="checkbox mb-3">
                     <label>
-                        <input type="checkbox" name="_remember_me"> Remember me
+                        <input class="rememberMe" type="checkbox" name="_remember_me"> Remember me
                     </label>
                 </div>
 
-            <button class="btn btn-bordeaux" type="submit">
+            <button class="btn btn-bordeaux login-submit" type="submit">
                 Sign in
             </button>
         </form>

@@ -1,18 +1,32 @@
 /*===================================================
                     Collection
 ====================================================*/
+#collection {
+    margin-bottom: 1rem;
+}
+
 .search-bar {
     z-index: 0;
 }
 
+.collection-container {
+    margin: 1rem 0;
+}
+
 .wine-container {
-    padding: 0 40px;
+    padding: 1.5rem 1rem;
 }
 
 .name {
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 0;
 }
 
 .region {
+    font-weight: 100;
+    margin-bottom: 0;
+    line-height: 1.1;
 }
 
 .grape {
@@ -23,4 +37,11 @@
     -webkit-text-stroke: 1px var(--main-color-bordeaux);
     -webkit-text-fill-color: white;
     border: 3px solid var(--main-color-bordeaux);
+    margin-top: 0.5rem;
+    width: 75%;
+}
+
+.page-item.active .page-link {
+    background-color: var(--main-color-bordeaux);
+    border-color: var(--main-color-bordeaux);
 }
