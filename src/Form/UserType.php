@@ -6,6 +6,7 @@ use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -41,7 +42,11 @@ class UserType extends AbstractType
             ->add('password', TextType::class, [
                 'required' => $required,
                 'empty_data' => '',
-            ]);
+            ])
+            ->add('Update', SubmitType::class, [
+                'attr' => ['class' => 'btn btn-primary'],
+            ])
+        ;
 
     }
 

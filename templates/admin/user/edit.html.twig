@@ -2,6 +2,7 @@
 
 {% block title %}Edit User{% endblock %}
     {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/admin.css">
             <link rel="stylesheet" href="/css/views/user.css">
     {% endblock %}
 
@@ -12,11 +13,11 @@
 
         {{ include('admin/user/_form.html.twig', {'button_label': 'Update'}) }}
 
-        <div class="col-md-12">
+        <div class="col-md-12 d-flex justify-content-between">
             <a class="action-link" href="{{ path('user_index') }}">back to list</a>
-        </div>
 
-        {{ include('admin/user/_delete_form.html.twig') }}
+            {{ include('admin/user/_delete_form.html.twig') }}
+        </div>
     </div>
 </section>
 

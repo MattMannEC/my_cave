@@ -44,7 +44,7 @@ class WineType extends AbstractType
 
         $builder
             ->add('imageFilename', FileType::class, [
-                'attr' => ['class' => 'btn'],
+                'attr' => ['class' => 'btn btn-upload'],
                 'mapped' => false,
                 'required' => false,
                 'constraints' => $imageConstraints,

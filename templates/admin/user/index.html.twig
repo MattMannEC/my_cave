@@ -2,6 +2,7 @@
 
 {% block title %}User index{% endblock %}
     {% block childStyleSheets %}
+            <link rel="stylesheet" href="/css/views/admin.css">
             <link rel="stylesheet" href="/css/views/user.css">
     {% endblock %}
 
@@ -30,7 +31,7 @@
                     <td>{{ user.firstname }}</td>
                     <td>{{ user.lastname }}</td>
                     <td>
-                        <a href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                        <a class="action-link" href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
                     </td>
                 </tr>
             {% else %}

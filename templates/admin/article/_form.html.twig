@@ -3,5 +3,4 @@
                 <img src="{{ form.vars.data.imagePath|imagine_filter('my_large') }}" class="article-image-large">
             {% endif %}
     {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
