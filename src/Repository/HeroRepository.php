@@ -60,11 +60,11 @@ class HeroRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    public function readHero($value): ?Hero
+    public function readHero(): ?Hero
     {
         return $this->createQueryBuilder('h')
             ->andWhere('h.id = :val')
-            ->setParameter('val', $value)
+            ->setParameter('val', 1)
             ->getQuery()
             ->getOneOrNullResult()
         ;

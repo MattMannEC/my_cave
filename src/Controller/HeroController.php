@@ -21,8 +21,8 @@ class HeroController extends AbstractController
      */
     public function index(HeroRepository $heroRepository): Response
     {
-        return $this->render('admin/hero/index.html.twig', [
-            'heroes' => $heroRepository->findAll(),
+        return $this->render('admin/index.html.twig', [
+            'hero' => $heroRepository->readHero(),
         ]);
     }
 
@@ -82,7 +82,7 @@ class HeroController extends AbstractController
 
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('hero_index');
+            return $this->redirectToRoute('home');
         }
 
         return $this->render('admin/hero/edit.html.twig', [
