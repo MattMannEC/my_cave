@@ -1,0 +1,25 @@
+#admin {
+    margin: 0 0 1rem 0;
+}
+
+.cms-image {
+    max-width: 100%;
+}
+
+.article-image-large {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+.admin-nav-item {
+    padding: 1em 2em 1em 2em;
+}
+
+.admin-nav a {
+    color: black;
+    text-transform: uppercase;
+}
+
+.admin-nav a:hover {
+    text-decoration: none;
+}

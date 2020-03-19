@@ -1,0 +1,129 @@
+
+
+/************************************************************
+*                       Section-1                           *
+************************************************************/
+
+#section-1 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 88vh;
+    padding: 0;
+}
+
+.hero-content-container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-content-container h1 {
+    color: var(--main-color-white); 
+    font-size: 10rem;
+}
+
+.hero-content-container h4 {
+    color: var(--main-color-white);
+    font-size: 2.25rem;
+    padding: 1rem 2rem;
+    margin: 0 3rem;
+    font-weight: 100;
+    text-align: center;
+}
+
+/************************************************************
+*                       Section-2                           *
+************************************************************/
+
+#section-2 {
+    margin-top: 5rem;
+}
+
+.slider-row {
+    display: flex;
+}
+
+#homeSlider {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.wine-banner {
+    color: var(--main-color-black);
+    margin-bottom: 1em;
+}
+
+.banner-name {
+    font-size: 3.75rem;
+}
+
+.banner-region-grape {
+    font-size: 2.75rem;
+}
+
+.slick-arrow {
+    z-index: 1;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-size: 50px;
+}
+
+/************************************************************
+                        Section-3                          
+************************************************************/
+
+#section-3 {
+    color: var(--main-color-white);
+    margin-top: 3rem;
+    background-color: var(--main-color-white);
+}
+
+.article-col {
+    padding: 0 6px;
+}
+
+.article-image-small {
+    width: 100%;
+    padding-bottom: 4px;
+}
+
+.article-image-small:hover {
+    width: calc(100% + 4px);
+    padding-bottom: 0;
+    
+}
+
+.article-title {
+    color: var(--main-color-black);
+    text-align: center;
+    text-transform: capitalize;
+    margin: 1rem 0;
+    padding: 0 1rem;
+}
+
+.article-text {
+    color: var(--main-color-black);
+    text-align: center;
+    margin: 1rem 0 2rem 0;
+    padding: 0 1rem;
+} 
+
+.article-a:hover {
+    text-decoration: none;
+}
+
+.article-title:hover {
+    color: var(--main-color-black);
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.article-text:hover {
+    color: var(--main-color-black);
+    text-align: center;
+}

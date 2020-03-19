@@ -1,0 +1,234 @@
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {}
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {}
+
+/* // Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width */
+
+
+
+/*===================================================
+                    Colors
+===================================================*/
+
+
+:root {
+    --main-color-red: rgba(140, 3, 53, 0.1);
+    --main-color-bordeaux: rgba(64, 1, 30, 1);
+    --main-color-purple: rgba(140, 94, 133, 0.1);
+    --main-color-white: rgba(242, 242, 242, 1);
+    --main-color-black: rgba(13, 13, 13, 1);
+}
+
+.b-color-red {
+    background-color: var(--main-color-red);
+}
+.b-color-bordeaux {
+    background-color: var(--main-color-bordeaux);
+}
+.b-color-purple {
+    background-color: var(--main-color-purple);
+}
+.b-color-white {
+    background-color: var(--main-color-white);
+}
+.b-color-black {
+    background-color: var(--main-color-black);
+}
+
+.color-red {
+    color: var(--main-color-red);
+}
+.color-bordeaux {
+    color: var(--main-color-bordeaux);
+}
+.color-purple {
+    color: var(--main-color-purple);
+}
+.color-white {
+    color: var(--main-color-white);
+}
+.color-black {
+    color: var(--main-color-black);
+}
+
+/*===================================================
+                    Fonts
+===================================================*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 100;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
+    color: black;
+}
+
+.pagination,
+.page-item,
+.page-link,
+.action-link {
+    color: inherit;
+}
+
+.pagination:hover,
+.page-item:hover,
+.page-link:hover,
+.action-link:hover {
+    color: inherit;
+}
+
+.btn-primary,
+.btn-bordeaux {
+    color: var(--main-color-white);
+    background-color: var(--main-color-bordeaux);
+    border: solid 1px var(--main-color-white);
+}
+
+.btn-bordeaux:hover,
+.btn-primary:hover {
+    color: var(--main-color-bordeaux);
+    background-color: var(--main-color-white);
+    border: solid 1px var(--main-color-bordeaux);
+}
+
+
+/************************************************************
+*                       global                        
+************************************************************/
+
+.container-fluid {
+    max-width: 1400px;
+}
+
+.deleteLabel {
+    margin: 0 1rem 0 0;
+}
+
+.btn-upload {
+    color: var(--main-color-black);
+    border: solid 1px var(--main-color-red);
+}
+
+.btn-upload:hover {
+    border: solid 1px var(--main-color-black);
+}
+
+.action-link {
+    margin: 1rem;
+}
+
+/************************************************************
+*                       header                        
+************************************************************/
+
+header {
+    height: 10vh;
+    text-transform: uppercase;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    background-color: white;
+}
+
+.header-logo {
+    height: 8vh;
+    margin: 1vh 0 1vh 0;
+}
+
+.navbar {
+    padding: 0;
+    height: 8vh;
+}
+
+.nav-item {
+    color: var(--main-color-bordeaux);
+    padding: 3em 2em 1em 2em;
+    border-bottom: 1px solid white;
+}
+
+.nav-item:hover {
+    color: rgba(64, 1, 30, 0.5);
+    text-decoration: none;
+    border-bottom: 1px solid  rgba(64, 1, 30, 0.5);
+}
+
+.login-div { 
+    background-color: var(--main-color-bordeaux);
+}
+
+.login-div:hover { 
+    color: var(--main-color-bordeaux);
+}
+
+.login-text {
+    color: inherit;
+    letter-spacing: 1px;
+
+}
+
+.login { 
+    color: var(--main-color-white);
+    background-color: var(--main-color-bordeaux);
+    border-bottom: none;
+}
+
+.login:hover { 
+    color: var(--main-color-bordeaux);
+    background-color: var(--main-color-white);
+    border-bottom: none;
+}
+
+
+/************************************************************
+*                       Structure                           *
+************************************************************/
+
+
+
+/************************************************************
+                        footer                         
+************************************************************/
+
+footer {
+    height: 25vh;
+    padding-top: 2rem;
+    color: var(--main-color-white);
+    background-color: var(--main-color-bordeaux);
+}
+
+.footer-quote {
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    font-weight: 100;
+    text-align: right;
+    color: var(--main-color-white);
+}
+
+.footer-nav-item {
+    color: white;
+    text-transform: uppercase;
+    text-align: right;
+}
+
+.footer-nav-item:hover {
+    text-decoration: none;
+    color: white;
+    border-bottom: solid 1px white; 
+}
