@@ -15,10 +15,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Id</th>
                     <th>Title</th>
                     <th>Text</th>
-                    <th>ImageFilename</th>
+                    <th>Image</th>
                     <th>Date modified</th>
                     <th>actions</th>
                 </tr>
@@ -26,7 +25,6 @@
             <tbody>
             {% for article in articles %}
                 <tr>
-                    <td>{{ article.id }}</td>
                     <td>{{ article.title }}</td>
                     <td>{{ article.text |length > 255 ? article.text|slice(0, 255) ~ '...' : article.text  }}</td>
                     <td>

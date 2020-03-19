@@ -10,10 +10,10 @@
 <section id="user">
     <div class="container-fluid">
         <h2>Create new User</h2>
-
+        <a class="action-link" href="{{ path('user_index') }}"><i class="fas fa-arrow-left"></i>  back to list</a>
         {{ include('admin/user/_form.html.twig') }}
 
-        <a class="action-link" href="{{ path('user_index') }}">back to list</a>
+        
     </div>
 </section>
 

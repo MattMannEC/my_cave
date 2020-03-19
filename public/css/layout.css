@@ -103,8 +103,6 @@ a {
     margin: 0 1rem 0 0;
 }
 
-
-
 .btn-upload {
     color: var(--main-color-black);
     border: solid 1px var(--main-color-red);
@@ -112,6 +110,10 @@ a {
 
 .btn-upload:hover {
     border: solid 1px var(--main-color-black);
+}
+
+.action-link {
+    margin: 1rem;
 }
 
 /************************************************************

@@ -10,11 +10,11 @@
 <section id="article">
     <div class="container-fluid">
         <h1>Edit Article</h1>
+        <a class="action-link" href="{{ path('article_index') }}"><i class="fas fa-arrow-left"></i>  back to list</a>
 
         {{ include('admin/article/_form.html.twig', {'button_label': 'Update'}) }}
 
         <div class="col-md-12">
-            <a class="action-link" href="{{ path('article_index') }}">back to list</a>
         </div>
     </div>
 </section>
