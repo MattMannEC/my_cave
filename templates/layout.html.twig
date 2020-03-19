@@ -5,18 +5,49 @@
     <header>
         <div class="container-fluid">
             <div class="row align-items-stretch">
-                <div class="col-md-6">
+                <div class="col-6">
                     <div class="row">
-                        <div class="col-md-6 d-flex">
+                        <div class="col-6 d-flex">
                             <a href="{{ path('home') }}"><img src="{{ asset('images/logo-large.png') }}" alt="mycave" class="header-logo"></a>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-6">
                         </div>
                     </div>
                 </div>
                 
-                <div class="col-md-6">
-                    <div class="row navbar float-right navbar-expand-lg">
+                <div class="col-6">
+
+                    {# Mobile navbar #}
+                    <div id="mobile-navbar" class="row d-flex navbar navbar-expand-lg">
+
+                        <div class="d-flex flex-column justify-content-center login-div col-6">
+                            {% if app.user == false %}
+                                <a class="nav-item d-flex flex-column text-center login" href="{{ path('app_login') }}">  
+                                    <i class="fas fa-lock login-text"></i>
+                                    <p class="login-text">Login</p>
+                                </a>
+                            {% else %}
+                                <a class="nav-item d-flex flex-column text-center login" href="{{ path('app_logout') }}">
+                                    <i class="fas fa-lock login-text"></i>
+                                    <p class="login-text">Logout</p>
+                                </a>
+                            {% endif %}
+                        </div>
+
+                        <div class="dropdown-toggle nav-item col-6 menu-div" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                       <i class="fas fa-bars login-text"></i>
+                            <p class="">menu</p>
+                        </div>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item nav-item" href="{{ path('home') }}">My Cave</a>
+                            <a class="dropdown-item nav-item" href="{{ path('wine')}}">Collection</a>
+                                {% if is_granted('ROLE_ADMIN') %}
+                                    <a class="dropdown-item nav-item" href="{{ path('user_index') }}">Admin</a>
+                                {% endif %}
+                        </div>
+
+                    {# Desktop navbar #}
+                    <div id="desktop-navbar" class="row navbar float-right navbar-expand-lg">
                         <a class="nav-item" href="{{ path('home') }}">My Cave</a>
                         <a class="nav-item" href="{{ path('wine')}}">Collection</a>
                             {% if is_granted('ROLE_ADMIN') %}

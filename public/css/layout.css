@@ -134,6 +134,10 @@ header {
     margin: 1vh 0 1vh 0;
 }
 
+#mobile-navbar {
+    display: none;
+}
+
 .navbar {
     padding: 0;
     height: 8vh;
@@ -153,6 +157,8 @@ header {
 
 .login-div { 
     background-color: var(--main-color-bordeaux);
+    height: 10vh;
+    text-align: center;
 }
 
 .login-div:hover { 
