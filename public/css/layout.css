@@ -76,13 +76,6 @@ a {
     color: inherit;
 }
 
-
-.nav-item:hover {
-    color: var(--main-color-red);
-    text-decoration: none;
-    border-bottom: 1px solid var(--main-color-bordeaux);
-}
-
 .btn-primary,
 .btn-bordeaux {
     color: var(--main-color-white);
@@ -148,6 +141,12 @@ header {
     color: var(--main-color-bordeaux);
     padding: 3em 2em 1em 2em;
     border-bottom: 1px solid white;
+}
+
+.nav-item:hover {
+    color: rgba(64, 1, 30, 0.5);
+    text-decoration: none;
+    border-bottom: 1px solid  rgba(64, 1, 30, 0.5);
 }
 
 .login-div { 

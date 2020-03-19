@@ -80,7 +80,7 @@
 #section-3 {
     color: var(--main-color-white);
     margin-top: 3rem;
-    background-color: var(--main-color-purple);
+    background-color: var(--main-color-white);
 }
 
 .article-col {
@@ -89,6 +89,13 @@
 
 .article-image-small {
     width: 100%;
+    padding-bottom: 4px;
+}
+
+.article-image-small:hover {
+    width: calc(100% + 4px);
+    padding-bottom: 0;
+    
 }
 
 .article-title {
