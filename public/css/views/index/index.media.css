@@ -2,44 +2,66 @@
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 
+/************************************************************
+*                       Section-1                           *
+************************************************************/
+
+
+.hero-content-container {
+    width: 90%;
+}
+
+.hero-content-container h1 {
+    font-size: 4rem;
+}
+
+.hero-content-container h4 {
+    font-size: 1rem;
+    padding: 1rem 1rem;
+    margin: 0 0.5rem;
+}
+
 
     /************************************************************
     *                       Section-2   (max-width: 575.98px)   *
     ************************************************************/
-
-
-    .slider-row {
-        display: flex;
+    #section-2 {
+        height: 90vh;
+        margin-top: 3rem;
     }
 
     #homeSlider {
+        width: 100%;
+    }
+
+    .slider-image {
         width: 90%;
-        margin: 0 auto;
+        margin-bottom: 2rem;
     }
 
     .wine-banner {
-        color: var(--main-color-black);
-        margin-bottom: 1em;
+        text-align: center;
     }
 
     .banner-name {
-        font-size: 3.75rem;
+        font-size: 1.2rem;
     }
 
-    .banner-region-grape {
-        font-size: 2.75rem;
+    .banner-region {
+        font-size: 1rem;
+    }
+
+    .banner-grape,
+    .banner-description,
+    .dash {
+        display: none;
     }
 
     .slick-prev:before, .slick-next:before {
-        font-size: 50px;
+        font-size: 10px;
     }
 
 
-    /************************************************************
-    *                       header     (max-width: 575.98px)                  
-    ************************************************************/
-
-=
 
 }
 

@@ -1,13 +1,13 @@
 {% extends 'layout.html.twig' %}
 {% block title %}Homepage{% endblock %}
     {% block childStyleSheets %}
-            <link rel="stylesheet" href="/css/views/index.css">
+            <link rel="stylesheet" href="/css/views/index/index.css">
             <link rel="stylesheet" href="/css/views/index/index.media.css">
     {% endblock %}
 {% block content %}
 
-    {# {% for hero in heroElements %} #}
-    {# <section id="section-1" class="container-fluid" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
+    {% for hero in heroElements %}
+        <section id="section-1" class="container-fluid" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
             <div class="container-fluid hero-content-container text-center">
             <h1 class="display-1">{{ hero.title }}</h1>
             <h4 class="blockquote">{{ hero.text }}</h4>
@@ -17,26 +17,28 @@
             <img src="defaultimage.image"></img>
         {% endfor %}
             </div>
-    </section> #}
+        </section>
 
 
 <!--       Slider        -->
-{# 
+
 <section id="section-2" class="container-fluid" >
     <div id="arrow-container" class="container-fluid">
         <div id="homeSlider">
         {% for sliderElement in sliderElements %}
         <div>
             <div class="row slider-row">
-                <div class="col-md-4">
-                    <img src="{{ sliderElement.imagePath|imagine_filter('my_normal') }}" alt="wine">
+                <div class="col-12 col-md-4">
+                    <img class="slider-image mx-auto" src="{{ sliderElement.imagePath|imagine_filter('my_normal') }}" alt="wine">
                 </div>
-                <div class="col-md-8 d-flex flex-column justify-content-center">
+                <div class="col-12 col-md-8 d-flex flex-column justify-content-center">
                     <div class="wine-banner">
                         <h3 class="banner-name">{{ sliderElement.name }}</h3>
-                        <h4 class="banner-region-grape">{{ sliderElement.region }} - {{ sliderElement.grape }}</h4>
+                        <h4 class="banner-region">{{ sliderElement.region }}</h4>
+                        <h4 class="dash"> - </h4>
+                        <h4 class="banner-grape">{{ sliderElement.grape }}</h4>
                     </div>
-                        <p>{{ sliderElement.description }}</p>
+                        <p class="banner-description">{{ sliderElement.description }}</p>
                 </div>
             </div>
         </div>
@@ -45,8 +47,8 @@
         {% endfor %}
         </div>
     </div>    
-</section> #}
-{# 
+</section> 
+
 <section id="section-3" class="container-fluid" >
     <div class="container-fluid">
         <div id="about-banner" class="row">
@@ -61,5 +63,5 @@
             {% endfor %}
         </div>
     </div>
-</section> #}
+</section>
 {% endblock %}
