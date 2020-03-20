@@ -50,8 +50,8 @@
         height: 50vh;
     }
 
-    footer .col-6,
-    .col-12, .col-md-4 {
+    footer.col-6,
+    footer.col-12, footer.col-md-4 {
         padding: 0 ;
     }
 

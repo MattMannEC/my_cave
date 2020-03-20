@@ -1,25 +1,33 @@
-#loginSection {
-    min-height: 65vh;
-    position: relative;
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+
+    /************************************************************
+    *                         (max-width: 575.98px)                      
+    ************************************************************/
+
+
+    /************************************************************
+    *                            (max-width: 575.98px)                  
+    ************************************************************/
+
+
+    /************************************************************
+    *                            (max-width: 575.98px)                  
+    ************************************************************/
+
+
+
 }
 
-.login-container {
-    width: 25%;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {}
 
-.form-container {
-    border: none;
-}
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {}
 
-#loginSection h1 {
-    font-size: rem;
-}
-
-.login-submit {
-    width: 100%;
-}
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {} 
+/* 
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width */

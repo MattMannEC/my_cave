@@ -16,16 +16,20 @@ liip_imagine:
                     size: [100, 100]
                     mode: outbound
 
-        my_thumb_90:
+        my_thumb_wine:
             default_image: default.png
             quality: 100
             filters:
+                thumbnail: 
+                    size: [115, 140]
+                    mode: outbound
 
+        my_thumb_wine_90:
+            default_image: default.png
+            quality: 100
+            filters:
                 rotate:
                     angle: 270
-
-                # create a thumbnail: set size to 120x90 and use the "outbound" mode
-                # to crop the image when the size ratio of the input differs
                 thumbnail: 
                     size: [280, 230]
                     mode: outbound

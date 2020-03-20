@@ -26,10 +26,11 @@
             </div>
             <div class="d-flex row collection-container">
                 
-                {% for wine in pagination %}
 
-                <div class="col-md-4 text-center text-capitalize px-0">
-                    <img src="{{ wine.imagePath|imagine_filter('my_thumb_90') }}" class"wine-image">
+                {# Desktop Wine Collection #}                
+                {% for wine in pagination %}
+                <div id="desktop-collection" class="col-md-4 text-center text-capitalize px-0">
+                    <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine_90') }}" class="wine-image">
                     <div class="wine-container">
                         <h3 class="name">{{ wine.name }}</h3>
                         <h5 class="region">{{ wine.region }}</h5>
@@ -46,6 +47,36 @@
                 {% else %}
                 <div>
                     <td colspan="9">no records found</td>
+                </div>
+                {% endfor %}
+
+                {# Mobile Wine Collection #}                  
+                {% for wine in pagination %}
+                    <div id="mobile-collection" class="col-12 col-md-4 text-center text-capitalize px-0">
+                        <a class="mx-auto" href=" 
+                            {% if app.user == true %}
+                                {{ path('wine_edit', {'id': wine.id}) }}
+                            {% else %}
+                                {{ path('wine_show', {'id': wine.id}) }}
+                            {% endif %}
+                        ">
+                            
+                            <div class="mobile-wine-container d-flex">
+                                <div class="col-4">
+                                    <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine') }}" class="wine-image-mobile mx-auto">
+                                </div>
+                                <div class="col-8">
+                                    <h3 class="name">{{ wine.name }}</h3>
+                                    <h5 class="region">{{ wine.region }}</h5>
+                                    <h5 class="vintage d-inline">{{ wine.vintage }}</h5>
+                                    <h5 class="grape d-inline">{{ wine.grape }}</h5>
+                                </div>
+                            </div>
+                        </a>
+                {% else %}
+                    <div>
+                        <td colspan="9">no records found</td>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

@@ -13,8 +13,16 @@
     margin: 1rem 0;
 }
 
+#mobile-collection {
+    display: none;
+}
+
 .wine-container {
     padding: 1.5rem 1rem;
+}
+
+.wine-image-mobile {
+    display: none;
 }
 
 .name {
