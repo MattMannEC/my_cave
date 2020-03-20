@@ -18,7 +18,7 @@
                 <div class="col-6">
 
                     {# Mobile navbar #}
-                    <div id="mobile-navbar" class="row d-flex navbar navbar-expand-lg">
+                    <div id="mobile-navbar" class="row navbar">
 
                         <div class="d-flex flex-column justify-content-center login-div col-6">
                             {% if app.user == false %}
@@ -45,6 +45,7 @@
                                     <a class="dropdown-item nav-item" href="{{ path('user_index') }}">Admin</a>
                                 {% endif %}
                         </div>
+                    </div>
 
                     {# Desktop navbar #}
                     <div id="desktop-navbar" class="row navbar float-right navbar-expand-lg">

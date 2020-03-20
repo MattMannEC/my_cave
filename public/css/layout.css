@@ -134,6 +134,10 @@ header {
     margin: 1vh 0 1vh 0;
 }
 
+#desktop-navbar {
+    display: flex;
+}
+
 #mobile-navbar {
     display: none;
 }
