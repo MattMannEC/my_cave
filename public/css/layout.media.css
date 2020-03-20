@@ -50,6 +50,12 @@
         height: 50vh;
     }
 
+    footer .col-6,
+    .col-12, .col-md-4 {
+        padding: 0 ;
+    }
+
+
 }
 
 /* // Small devices (landscape phones, less than 768px) */
