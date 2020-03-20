@@ -6,8 +6,8 @@
     {% endblock %}
 {% block content %}
 
-    {% for hero in heroElements %}
-    <section id="section-1" class="container-fluid" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
+    {# {% for hero in heroElements %} #}
+    {# <section id="section-1" class="container-fluid" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
             <div class="container-fluid hero-content-container text-center">
             <h1 class="display-1">{{ hero.title }}</h1>
             <h4 class="blockquote">{{ hero.text }}</h4>
@@ -17,11 +17,11 @@
             <img src="defaultimage.image"></img>
         {% endfor %}
             </div>
-    </section>
+    </section> #}
 
 
 <!--       Slider        -->
-
+{# 
 <section id="section-2" class="container-fluid" >
     <div id="arrow-container" class="container-fluid">
         <div id="homeSlider">
@@ -45,8 +45,8 @@
         {% endfor %}
         </div>
     </div>    
-</section>
-
+</section> #}
+{# 
 <section id="section-3" class="container-fluid" >
     <div class="container-fluid">
         <div id="about-banner" class="row">
@@ -61,5 +61,5 @@
             {% endfor %}
         </div>
     </div>
-</section>
+</section> #}
 {% endblock %}

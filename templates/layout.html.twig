@@ -14,11 +14,10 @@
                         </div>
                     </div>
                 </div>
-                
-                <div class="col-6">
 
-                    {# Mobile navbar #}
-                    <div id="mobile-navbar" class="row navbar">
+                {# Mobile navbar #}
+                <div id="mobile-navbar" class="col-6">
+                    <div class="row navbar">
 
                         <div class="d-flex flex-column justify-content-center login-div col-6">
                             {% if app.user == false %}
@@ -38,7 +37,7 @@
                             <p class="">menu</p>
                         </div>
 
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <div class="dropdown-menu block" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item nav-item" href="{{ path('home') }}">My Cave</a>
                             <a class="dropdown-item nav-item" href="{{ path('wine')}}">Collection</a>
                                 {% if is_granted('ROLE_ADMIN') %}
@@ -46,28 +45,30 @@
                                 {% endif %}
                         </div>
                     </div>
+                </div>
 
-                    {# Desktop navbar #}
-                    <div id="desktop-navbar" class="row navbar float-right navbar-expand-lg">
+                {# Desktop navbar #}
+                <div id="desktop-navbar" class="col-6">
+                    <div class="row navbar float-right navbar-expand-lg">
                         <a class="nav-item" href="{{ path('home') }}">My Cave</a>
                         <a class="nav-item" href="{{ path('wine')}}">Collection</a>
                             {% if is_granted('ROLE_ADMIN') %}
                                 <a class="nav-item" href="{{ path('user_index') }}">Admin</a>
                             {% endif %}
                             
-                            <div class="d-flex flex-column justify-content-center login-div">
-                            {% if app.user == false %}
-                                <a class="nav-item d-flex flex-column text-center login" href="{{ path('app_login') }}">  
-                                    <i class="fas fa-lock login-text"></i>
-                                    <p class="login-text">Login</p>
-                                </a>
-                            {% else %}
-                                <a class="nav-item d-flex flex-column text-center login" href="{{ path('app_logout') }}">
-                                    <i class="fas fa-lock login-text"></i>
-                                    <p class="login-text">Logout</p>
-                                </a>
-                            {% endif %}
-                            </div>
+                        <div class="d-flex flex-column justify-content-center login-div">
+                        {% if app.user == false %}
+                            <a class="nav-item d-flex flex-column text-center login" href="{{ path('app_login') }}">  
+                                <i class="fas fa-lock login-text"></i>
+                                <p class="login-text">Login</p>
+                            </a>
+                        {% else %}
+                            <a class="nav-item d-flex flex-column text-center login" href="{{ path('app_logout') }}">
+                                <i class="fas fa-lock login-text"></i>
+                                <p class="login-text">Logout</p>
+                            </a>
+                        {% endif %}
+                        </div>
                     </div>    
                 </div>
             </div>
@@ -81,9 +82,9 @@
     <footer class="footer container-fluid">
         <div class="container-fluid h-100">
             <div class="row justify-content-between">
-                <div class="col-md-4">
-                    <img src="{{ asset('images/logo-dark.jpg') }}" alt="logo"></div>
-                <div class="col-md-4">
+                <div class="col-6 col-md-4">
+                    <img class="footer-logo" src="{{ asset('images/logo-dark.jpg') }}" alt="logo"></div>
+                <div class="col-6 col-md-4">
                     <div class="d-flex flex-column justify-content-between">
                         <div class="col-md-12">
                             <div class="row d-flex justify-content-between">
@@ -98,10 +99,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12"><h4 class="footer-quote">"Alcohol is bad, m'kay?"<br> Mr. Mackey</h4></div>
                     </div>    
                 </div>
             </div>
+            <div class="col-12"><h4 class="footer-quote">"Alcohol is bad, m'kay?"<br> Mr. Mackey</h4></div>
         </div>
     </footer>
 {% endblock %}

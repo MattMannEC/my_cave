@@ -37,6 +37,19 @@
         text-align: center;
     }
 
+    .dropdown-menu {
+        width: 100vw;
+        left: calc(0px - 50vw);
+    }
+
+    /************************************************************
+    *                       footer     (max-width: 575.98px)                  
+    ************************************************************/
+
+    footer {
+        height: 50vh;
+    }
+
 }
 
 /* // Small devices (landscape phones, less than 768px) */
