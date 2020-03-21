@@ -54,7 +54,9 @@ h4,
 h5,
 h6,
 p,
-a {
+a,
+th,
+td {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 100;
     line-height: 1.4;
@@ -114,6 +116,10 @@ a {
 
 .action-link {
     margin: 1rem;
+}
+
+input {
+    max-width: 100%;
 }
 
 /************************************************************

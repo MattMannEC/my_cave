@@ -12,35 +12,40 @@
             <h1>Wine</h1>
             <a class="action-link" href="{{ path('wine') }}"><i class="fas fa-arrow-left"></i>  back to list</a>
             <div class="row">
-                <div class="col-md-4">
-                    <img src="{{ wine.imagePath|imagine_filter('my_normal') }}">
+                <div class="col-12 col-md-4 text-center">
+                    <img src="{{ wine.imagePath|imagine_filter('my_normal') }}" class="showImageDesktop mx-auto">
                 </div>
-                <div class="col-md-8">
+                <div class="col-12 col-md-8">
                     <table class="table">
                         <tbody>
-                            <tr>
-                                <th>Name</th>
-                                <td>{{ wine.name }}</td>
+                            <tr class="text-center">
+                                <th class="nameLabel">Name</th>
+                                <td class="h3 name">{{ wine.name }}</td>
+                            </tr>
+                            <tr class="text-center">
+                                <td>
+                                    <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine') }}" class="showImageMobile mx-auto">
+                                </td>
                             </tr>
                             <tr>
-                                <th>Vintage</th>
-                                <td>{{ wine.vintage }}</td>
+                                <th class="vintageLabel">Vintage</th>
+                                <td class="vintage">{{ wine.vintage }}</td>
                             </tr>
                             <tr>
-                                <th>Grape</th>
-                                <td>{{ wine.grape }}</td>
+                                <th class="grapeLabel">Grape</th>
+                                <td class="grape">{{ wine.grape }}</td>
                             </tr>
                             <tr>
-                                <th>Country</th>
-                                <td>{{ wine.country }}</td>
+                                <th class="countryLabel">Country</th>
+                                <td class="country">{{ wine.country }}</td>
                             </tr>
                             <tr>
-                                <th>Region</th>
-                                <td>{{ wine.region }}</td>
+                                <th class="regionLabel">Region</th>
+                                <td class="region">{{ wine.region }}</td>
                             </tr>
                             <tr>
-                                <th>Description</th>
-                                <td>{{ wine.description }}</td>
+                                <th class="descriptionLabel">Description</th>
+                                <td class="descri">{{ wine.description }}</td>
                             </tr>
                         </tbody>
                     </table>

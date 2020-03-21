@@ -2,13 +2,6 @@
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 
-    h3 {
-        font-size: 1.25rem;
-    }
-
-    h5 {
-        font-size: 0.75rem;
-    }
 
     /************************************************************
     *                  Collection       (max-width: 575.98px)                      
@@ -43,6 +36,7 @@
 
     .name {
         margin-bottom: 1rem;
+        font-style: italic;
     }
 
     .region {
@@ -53,13 +47,56 @@
 
     .grape {
     }
+
+    .pagination-navbar {
+        font-size: 0.75rem;
+    }
     
 
 
     /************************************************************
-    *                            (max-width: 575.98px)                  
+    *                 Show           (max-width: 575.98px)                  
     ************************************************************/
 
+    .showImage {
+        height: 50vh;
+    }
+
+    .table td, .table th {
+        border-top: none;
+    }
+
+    .showNameLabel {
+        text-align: center;
+
+    }
+    
+
+    .nameLabel,
+    .vintageLabel,
+    .grapeLabel,
+    .countryLabel,
+    .regionLabel,
+    .descriptionLabel {
+        display: none;
+    }
+
+
+    .vintage,
+    .grape,
+    .country,
+    .region {
+        display: inline;
+    }
+    
+
+    .showImageDesktop {
+        display: none;
+    }
+
+    .showImageMobile {
+        display: block;
+    }
 
     /************************************************************
     *                            (max-width: 575.98px)                  
