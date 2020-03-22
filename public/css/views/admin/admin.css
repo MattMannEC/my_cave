@@ -2,6 +2,10 @@
     margin: 0 0 1rem 0;
 }
 
+#sectionNav {
+    height: 10vh;
+}
+
 .cms-image {
     max-width: 100%;
 }
@@ -11,9 +15,12 @@
     max-height: 80vh;
 }
 
-.admin-nav-item {
-    padding: 1em 2em 1em 2em;
+.admin-nav {
+    margin: 1rem;
+    justify-content: space-between;
 }
+
+
 
 .admin-nav a {
     color: black;
