@@ -7,7 +7,7 @@
         </div>
         <div class="col-md-12">
             {% if form.vars.data.imageFilename|default %}
-                <img class="cms-image-large" src="{{ form.vars.data.imagePath|imagine_filter('my_large') }}">
+                <img class="cms-image" src="{{ form.vars.data.imagePath|imagine_filter('my_large') }}">
                 <img class="cms-image-small" src="{{ form.vars.data.imagePath|imagine_filter('my_small') }}">
             {% endif %}
         </div>
