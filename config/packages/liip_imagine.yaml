@@ -34,7 +34,7 @@ liip_imagine:
                     size: [280, 230]
                     mode: outbound
 
-        my_article_small:
+        my_small:
             default_image: default.png
             quality: 100
             filters:

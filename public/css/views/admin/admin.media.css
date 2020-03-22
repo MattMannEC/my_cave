@@ -5,13 +5,22 @@
     /************************************************************
     *                         (max-width: 575.98px)                      
     ************************************************************/
-
+    .sectionTitle {
+        display: none;
+    }
     .admin-nav-item {
         padding: 0.5rem 0.2rem;
     }
 
-    .admin-nav {
-        margin: 1rem;
+    .label {
+        display: none;
+    }
+
+    .id,
+    .roles,
+    .firstname,
+    .lastname {
+        display: none;
     }
     /************************************************************
     *                            (max-width: 575.98px)                  

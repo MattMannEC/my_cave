@@ -6,6 +6,24 @@
     *                         (max-width: 575.98px)                      
     ************************************************************/
 
+    #article {
+        min-height: 80vh; 
+    }
+
+    .text,
+    .dateModified {
+        display: none;
+    }  
+    
+    .article-image-large {
+        display: none;
+    }
+    
+    .article-image-small {
+        display: block;
+        max-width: 100%;
+    }
+    
 
     /************************************************************
     *                            (max-width: 575.98px)                  

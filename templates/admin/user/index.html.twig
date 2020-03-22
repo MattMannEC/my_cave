@@ -8,45 +8,45 @@
             <link rel="stylesheet" href="/css/views/user/user.media.css">
     {% endblock %}
 
-{# {% block content %}
-<section id="user">
-    <div class="container-fluid">
-        <h2>Users</h2>
+{% block content %}
+    <section id="user">
+        <div class="container-fluid">
+            <h2>Users</h2>
 
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Username</th>
-                    <th>Roles</th>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                    <th>actions</th>
-                </tr>
-            </thead>
-            <tbody>
-            {% for user in users %}
-                <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.username }}</td>
-                    <td>{{ user.roles ? user.roles|json_encode : '' }}</td>
-                    <td>{{ user.firstname }}</td>
-                    <td>{{ user.lastname }}</td>
-                    <td>
-                        <a class="action-link" href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="7">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="label">Id</th>
+                        <th class="label">Username</th>
+                        <th class="label">Roles</th>
+                        <th class="label">Firstname</th>
+                        <th class="label">Lastname</th>
+                        <th class="label">actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for user in users %}
+                    <tr>
+                        <td class="id">{{ user.id }}</td>
+                        <td class="username">{{ user.username }}</td>
+                        <td class="roles">{{ user.roles ? user.roles|json_encode : '' }}</td>
+                        <td class="firstname">{{ user.firstname }}</td>
+                        <td class="lastname">{{ user.lastname }}</td>
+                        <td>
+                            <a class="action-link" href="{{ path('user_edit', {'id': user.id}) }}">edit</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="7">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
 
-        <div class="col-md-12">
-            <a class="action-link" href="{{ path('user_new') }}">Create new</a>
+            <div class="col-md-12">
+                <a class="action-link" href="{{ path('user_new') }}">Create new</a>
+            </div>
         </div>
-    </div>
-</section> #}
-{# {% endblock %} #}
+    </section>
+{% endblock %}

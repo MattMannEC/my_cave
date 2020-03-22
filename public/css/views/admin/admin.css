@@ -3,7 +3,12 @@
 }
 
 #sectionNav {
+    min-height: 10vh;
     height: 10vh;
+}
+
+.dropdown-toggle::after {
+    display: none;
 }
 
 .cms-image {
@@ -16,8 +21,11 @@
 }
 
 .admin-nav {
-    margin: 1rem;
-    justify-content: space-between;
+    height: 10vh;
+    margin: 1rem 0;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
 }
 
 

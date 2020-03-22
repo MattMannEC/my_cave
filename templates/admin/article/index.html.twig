@@ -17,22 +17,22 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Title</th>
-                    <th>Text</th>
-                    <th>Image</th>
-                    <th>Date modified</th>
-                    <th>actions</th>
+                    <th class="label">Title</th>
+                    <th class="label">Text</th>
+                    <th class="label">Image</th>
+                    <th class="label">Date modified</th>
+                    <th class="label">actions</th>
                 </tr>
             </thead>
             <tbody>
             {% for article in articles %}
                 <tr>
-                    <td>{{ article.title }}</td>
-                    <td>{{ article.text |length > 255 ? article.text|slice(0, 255) ~ '...' : article.text  }}</td>
-                    <td>
+                    <td class="title">{{ article.title }}</td>
+                    <td class="text">{{ article.text |length > 255 ? article.text|slice(0, 255) ~ '...' : article.text  }}</td>
+                    <td class="image">
                         <img src="{{ article.imagePath|imagine_filter ('my_thumb') }}" alt="">
                     </td>
-                    <td>{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</td>
+                    <td class="dateModified">{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</td>
                     <td>
                         <a class="action-link" href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
                     </td>
