@@ -1,10 +1,8 @@
 #loginSection {
-    min-height: 65vh;
     position: relative;
 }
 
 .login-container {
-    width: 25%;
     position: absolute;
     top: 40%;
     left: 50%;
@@ -13,12 +11,13 @@
 }
 
 .form-container {
+    height: 40vh;
     border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-#loginSection h1 {
-    font-size: rem;
-}
 
 .login-submit {
     width: 100%;

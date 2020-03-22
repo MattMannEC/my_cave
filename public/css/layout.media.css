@@ -35,6 +35,9 @@
         font-size: 1rem!important;
     }
 
+    section {
+        min-height: 90vh;
+    }
     
 
 
