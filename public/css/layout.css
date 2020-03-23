@@ -158,29 +158,29 @@ header {
 
 .navbar {
     padding: 0;
-    height: 8vh;
 }
 
 .nav-item {
+    height: 10vh;
     color: var(--main-color-bordeaux);
-    padding: 3em 2em 1em 2em;
-    border-bottom: 1px solid white;
+    padding: 3rem 2rem 2rem 2rem;
+    border-bottom: 3px solid white;
 }
 
 .nav-item:hover {
     color: rgba(64, 1, 30, 0.5);
     text-decoration: none;
-    border-bottom: 1px solid  rgba(64, 1, 30, 0.5);
+    border-bottom: 3px solid  rgba(64, 1, 30, 0.5);
 }
 
-.login-div { 
-    background-color: var(--main-color-bordeaux);
+.login-div {
+    background-color: rgba(64, 1, 30, 0.5);
     height: 10vh;
     text-align: center;
 }
 
 .login-div:hover { 
-    color: var(--main-color-bordeaux);
+    color: rgba(64, 1, 30, 0.5);
 }
 
 .login-text {
@@ -198,7 +198,6 @@ header {
 .login:hover { 
     color: var(--main-color-bordeaux);
     background-color: var(--main-color-white);
-    border-bottom: none;
 }
 
 header p {
