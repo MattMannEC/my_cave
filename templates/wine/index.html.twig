@@ -10,7 +10,7 @@
     <section id="collection">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 mx-auto"> 
+                <div class="col-lg-4 mx-auto"> 
                     <h1>Wine Collection</h1>
                     <form>
                     <div class="input-group mb-3 search-bar">
@@ -29,7 +29,7 @@
 
                 <div id="desktop-collection" class="row collection-container"> 
                     {% for wine in pagination %}
-                        <div class="col-md-4 text-center text-capitalize px-0">
+                        <div class="col-md-6 col-lg-4 text-center text-capitalize px-0">
 
                             <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine_90') }}" class="wine-image">
                             <div class="wine-container">
@@ -67,7 +67,7 @@
 
                 {# Mobile Wine Collection #}   
 
-                <div id="mobile-collection" class="col-12 col-md-4 text-center text-capitalize px-0">
+                <div id="mobile-collection" class="col-12 text-center text-capitalize px-0">
 
                     {% for wine in pagination %}
                         <a class="mx-auto" href=" 
@@ -82,10 +82,10 @@
                                     <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine') }}" class="wine-image-mobile mx-auto">
                                 </div>
                                 <div class="col-8">
-                                    <h6 class="name">{{ wine.name }}</h6>
-                                    <h6 class="region">{{ wine.region }}</h6>
-                                    <h6 class="vintage d-inline">{{ wine.vintage }}</h6>
-                                    <h6 class="grape d-inline">{{ wine.grape }}</h6>
+                                    <h4 class="name">{{ wine.name }}</h4>
+                                    <h5 class="region">{{ wine.region }}</h5>
+                                    <h5 class="vintage d-inline">{{ wine.vintage }}</h5>
+                                    <h5 class="grape d-inline">{{ wine.grape }}</h5>
                                 </div>
                             </div>
                         </a>
@@ -94,9 +94,9 @@
                             <td colspan="9">no records found</td>
                         </div>
                     {% endfor %}
-                    <div class="navigation text-center col-md-12">
+                    <div class="navigation text-center col-lg-12">
                         <div class="row">
-                            <div class="col-12 col-md-3 mx-auto pagination-navbar">
+                            <div class="col-12 col-lg-3 mx-auto pagination-navbar">
                                 {{ knp_pagination_render(pagination) }}
                             </div>
                         </div>

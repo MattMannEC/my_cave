@@ -3,7 +3,7 @@
 }
 
 #sectionNav {
-    min-height: 10vh;
+    min-height: 5vh;
     height: 10vh;
 }
 
@@ -22,6 +22,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 0;
+    text-align: left;
 }
 
 

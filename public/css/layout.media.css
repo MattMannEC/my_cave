@@ -7,37 +7,39 @@
     ************************************************************/
     h1,
     .h1 {
-        font-size: 2.5rem!important;
+        font-size: 6rem;
     }
 
     h2,
     .h2 {
-        font-size: 2rem!important;
+        font-size: 5rem;
     }
 
     h3,
     .h3 {
-        font-size: 1.75rem!important;
+        font-size: 4rem;
     }
 
     h4,
     .h4 {
-        font-size: 1.5rem!important;
+        font-size: 2rem;
     }
 
     h5,
-    .h5 {
-        font-size: 1.25rem!important;
+    .h5,
+    i,
+    button,
+    label, 
+    .form-control {
+        font-size: 1.5rem;
     }
 
     h6,
     .h6 {
-        font-size: 1rem!important;
+        font-size: 1rem;
     }
+    
 
-    section {
-        min-height: 90vh;
-    }
     
 
 
@@ -75,6 +77,14 @@
         height: 15vh;
     }
 
+    .login-text {
+        font-size: 16px;
+    }
+
+    .logout-text {
+        font-size: 14px;
+    }
+
     .menu-div {
         height: 15vh;
         text-align: center;
@@ -88,10 +98,6 @@
     /************************************************************
     *                       footer     (max-width: 991.98px)                  
     ************************************************************/
-
-    footer {
-        height: 50vh;
-    }
 
     footer.col-6,
     footer.col-12, footer.col-md-4 {
@@ -109,37 +115,34 @@
     ************************************************************/
     h1,
     .h1 {
-        font-size: 2.5rem!important;
+        font-size: 2.5rem;
     }
 
     h2,
     .h2 {
-        font-size: 2rem!important;
+        font-size: 2rem;
     }
 
     h3,
     .h3 {
-        font-size: 1.75rem!important;
+        font-size: 1.75rem;
     }
 
     h4,
     .h4 {
-        font-size: 1.5rem!important;
+        font-size: 1.5rem;
     }
 
     h5,
     .h5 {
-        font-size: 1.25rem!important;
+        font-size: 1.25rem;
     }
 
     h6,
     .h6 {
-        font-size: 1rem!important;
+        font-size: 1rem;
     }
 
-    section {
-        min-height: 90vh;
-    }
     
 
 
@@ -148,57 +151,10 @@
     ************************************************************/
 
 
-    header {
-        height: 15vh;
-    }
-
-    .header-logo {
-        height: 6vh;
-        margin: 4.5vh 0 4.5vh 0;
-    }
-
-    #desktop-navbar {
-        display: none;
-    }
-
-    #mobile-navbar {
-        display: block;
-    }
-
-    .navbar {
-        padding: 0;
-    }
-
-    .nav-item {
-        padding: 0;
-    }
-
-    .login-div {
-        height: 15vh;
-    }
-
-    .menu-div {
-        height: 15vh;
-        text-align: center;
-    }
-
-    .dropdown-menu {
-        width: 100vw;
-        left: calc(0px - 50vw);
-    }
 
     /************************************************************
     *                       footer     (max-width: 767.98px)                  
     ************************************************************/
-
-    footer {
-        height: 50vh;
-    }
-
-    footer.col-6,
-    footer.col-12, footer.col-md-4 {
-        padding: 0 ;
-    }
 
 
 }
@@ -211,36 +167,33 @@
     ************************************************************/
     h1,
     .h1 {
-        font-size: 2.5rem!important;
+        font-size: 2.5rem;
     }
 
     h2,
     .h2 {
-        font-size: 2rem!important;
+        font-size: 2rem;
     }
 
     h3,
     .h3 {
-        font-size: 1.75rem!important;
+        font-size: 1.75rem;
     }
 
     h4,
     .h4 {
-        font-size: 1.5rem!important;
+        font-size: 1.5rem;
     }
 
     h5,
-    .h5 {
-        font-size: 1.25rem!important;
+    .h5,
+    i {
+        font-size: 1.25rem;
     }
 
     h6,
     .h6 {
-        font-size: 1rem!important;
-    }
-
-    section {
-        min-height: 90vh;
+        font-size: 1rem;
     }
     
 

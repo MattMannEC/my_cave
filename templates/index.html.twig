@@ -9,11 +9,11 @@
     {% for hero in heroElements %}
         <section id="section-1" class="container-fluid" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
             <div class="container-fluid hero-content-container text-center">
-            <h1 class="display-1">{{ hero.title }}</h1>
-            <h4 class="blockquote">{{ hero.text }}</h4>
+            <h1 class="display-1 hero-title">{{ hero.title }}</h1>
+            <h5 class="hero-text">{{ hero.text }}</h5>
         {% else %}
             <h1>Default Title</h1>
-            <h4>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h4>
+            <h6>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</h6>
             <img src="defaultimage.image"></img>
         {% endfor %}
             </div>
@@ -28,12 +28,12 @@
         {% for sliderElement in sliderElements %}
         <div>
             <div class="row slider-row">
-                <div class="col-12 col-md-4">
+                <div class="col-12 col-lg-4">
                     <img id="slider-image" class="mx-auto" src="{{ sliderElement.imagePath|imagine_filter('my_normal') }}" alt="wine">
                     <img id="slider-image-mobile" class="slider-image-mobile mx-auto" src="{{ sliderElement.imagePath|imagine_filter('my_thumb_wine') }}" alt="wine">
                     <img id="slider-image-mobile-90" class="slider-image-mobile mx-auto" src="{{ sliderElement.imagePath|imagine_filter('my_thumb_wine_90') }}" alt="wine">
                 </div>
-                <div class="col-12 col-md-8 d-flex flex-column justify-content-center">
+                <div class="col-12 col-lg-8 d-flex flex-column justify-content-center">
                     <div class="wine-banner">
                         <h3 class="banner-name">{{ sliderElement.name }}</h3>
                         <h4 class="banner-region">{{ sliderElement.region }}</h4>

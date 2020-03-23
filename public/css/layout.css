@@ -56,7 +56,10 @@ h6,
 p,
 a,
 th,
-td {
+td,
+button
+i,
+label {
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 100;
     line-height: 1.4;
@@ -122,12 +125,13 @@ input {
     max-width: 100%;
 }
 
-section {
-    min-height: 66.6666vh;
-}
 
 .dropdown-toggle::after {
     display: none;
+}
+
+img {
+    width: 100%;
 }
 
 /************************************************************
@@ -145,6 +149,7 @@ header {
 
 .header-logo {
     height: 8vh;
+    width: auto;
     margin: 1vh 0 1vh 0;
 }
 
@@ -199,7 +204,7 @@ header {
     background-color: var(--main-color-white);
 }
 
-header p {
+header h5 {
     margin: 0;
 }
 
@@ -214,7 +219,6 @@ header p {
 ************************************************************/
 
 footer {
-    height: 25vh;
     padding-top: 2rem;
     color: var(--main-color-white);
     background-color: var(--main-color-bordeaux);

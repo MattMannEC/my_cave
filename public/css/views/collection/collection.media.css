@@ -1,4 +1,117 @@
 
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+
+
+    /************************************************************
+    *                  Collection       (max-width: 991.98px)                      
+    ************************************************************/
+
+
+    #desktop-collection {
+        display: flex;
+    }
+
+    #mobile-collection {
+        display: none;
+    }
+
+    .mobile-wine-container {
+        padding: 1rem 0;
+        text-align: left;
+    }
+
+    .mobile-wine-container .col-4,
+    .mobile-wine-container .col-8 {
+        padding: 0;
+    }
+
+    .wine-image-mobile {
+        display: block;
+    }
+
+    .name {
+        margin-bottom: 1rem;
+        font-style: italic;
+        font-size: 2rem;
+    }
+
+    .region {
+        font-weight: 100;
+        margin-bottom: 0;
+        line-height: 1.1;
+    }
+
+    .grape {
+    }
+
+    .pagination-navbar {
+        font-size: 0.75rem;
+    }
+    
+
+
+    /************************************************************
+    *                 Show           (max-width: 991.98px)                  
+    ************************************************************/
+
+    .showImage {
+        height: 50vh;
+    }
+
+    .table td, .table th {
+        border-top: none;
+    }
+
+    .showNameLabel {
+        text-align: center;
+
+    }
+    
+
+    .nameLabel,
+    .vintageLabel,
+    .grapeLabel,
+    .countryLabel,
+    .regionLabel,
+    .descriptionLabel {
+        display: none;
+    }
+
+
+    .vintage,
+    .grape,
+    .country,
+    .region {
+        display: inline;
+    }
+    
+
+    .showImageDesktop {
+        display: none;
+    }
+
+    .showImageMobile {
+        display: block;
+    }
+
+}
+
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+
+
+
+    #desktop-collection {
+        display: none;
+    }
+
+    #mobile-collection {
+        display: block;
+    }
+}
 /* // Extra small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
 
@@ -6,6 +119,8 @@
     /************************************************************
     *                  Collection       (max-width: 575.98px)                      
     ************************************************************/
+
+
 
     #desktop-collection {
         display: none;
@@ -31,12 +146,12 @@
 
     .wine-image-mobile {
         display: block;
-        height: 15vh;
     }
 
     .name {
         margin-bottom: 1rem;
         font-style: italic;
+        font-size: 20px;
     }
 
     .region {
@@ -45,7 +160,10 @@
         line-height: 1.1;
     }
 
-    .grape {
+    .grape,
+    .vintage,
+    .region {
+        font-size: 16px;
     }
 
     .pagination-navbar {
@@ -106,11 +224,6 @@
 
 }
 
-/* // Small devices (landscape phones, less than 768px) */
-@media (max-width: 767.98px) {}
-
-/* // Medium devices (tablets, less than 992px) */
-@media (max-width: 991.98px) {}
 
 /* // Large devices (desktops, less than 1200px) */
 @media (max-width: 1199.98px) {} 

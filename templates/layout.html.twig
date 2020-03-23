@@ -23,18 +23,18 @@
                             {% if app.user == false %}
                                 <a class="nav-item d-flex flex-column justify-content-center text-center login" href="{{ path('app_login') }}">  
                                     <i class="fas fa-lock login-text"></i>
-                                    <p class="login-text">Login</p>
+                                    <h5 class="login-text">Login</h5>
                                 </a>
                             {% else %}
                                 <a class="nav-item d-flex flex-column justify-content-center text-center login" href="{{ path('app_logout') }}">
                                     <i class="fas fa-lock login-text"></i>
-                                    <p class="login-text">Logout</p>
+                                    <h5 class="login-text logout-text">Logout</h5>
                                 </a>
                             {% endif %}
                         </div>
 
                         <div class="dropdown-toggle nav-item col-6 menu-div d-flex flex-column justify-content-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                                       <i class="fas fa-bars login-text"></i>
-                            <p class="">menu</p>
+                            <h5 class="login-text">menu</h5>
                         </div>
 
                         <div class="dropdown-menu block" aria-labelledby="dropdownMenuButton">
@@ -60,12 +60,12 @@
                         {% if app.user == false %}
                             <a class="nav-item d-flex flex-column justify-content-center text-center login" href="{{ path('app_login') }}">  
                                 <i class="fas fa-lock login-text"></i>
-                                <p class="login-text">Login</p>
+                                <h5 class="login-text">Login</h5>
                             </a>
                         {% else %}
                             <a class="nav-item d-flex flex-column justify-content-center text-center login" href="{{ path('app_logout') }}">
                                 <i class="fas fa-lock login-text"></i>
-                                <p class="login-text">Logout</p>
+                                <h5 class="login-text">Logout</h5>
                             </a>
                         {% endif %}
                         </div>
@@ -84,7 +84,7 @@
             <div class="row justify-content-between">
                 <div class="col-6 col-md-4">
                     <img class="footer-logo" src="{{ asset('images/logo-dark.jpg') }}" alt="logo"></div>
-                <div class="col-6 col-md-4">
+                <div class="col-6">
                     <div class="d-flex flex-column justify-content-between">
                         <div class="col-md-12">
                             <div class="row d-flex justify-content-between">

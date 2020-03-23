@@ -19,6 +19,11 @@
 
 .wine-container {
     padding: 1.5rem 1rem;
+    min-height: 200px;
+}
+
+.wine-image {
+    width: 70%;
 }
 
 .wine-image-mobile {
