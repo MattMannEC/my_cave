@@ -174,9 +174,9 @@ header {
 }
 
 .login-div {
-    background-color: rgba(64, 1, 30, 0.5);
     height: 10vh;
     text-align: center;
+    background-color: var(--main-color-bordeaux);
 }
 
 .login-div:hover { 
@@ -191,7 +191,6 @@ header {
 
 .login { 
     color: var(--main-color-white);
-    background-color: var(--main-color-bordeaux);
     border-bottom: none;
 }
 
