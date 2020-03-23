@@ -7,9 +7,6 @@
     height: 10vh;
 }
 
-.dropdown-toggle::after {
-    display: none;
-}
 
 .cms-image {
     max-width: 100%;
