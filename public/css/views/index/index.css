@@ -53,8 +53,14 @@
     margin: 0 auto;
 }
 
-.slider-image {
+#slider-image {
+    display: block;
     width: 100%;
+}
+
+#slider-image-mobile,
+#slider-image-mobile-90 {
+    display: none;
 }
 
 .wine-banner {
