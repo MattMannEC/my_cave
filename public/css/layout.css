@@ -219,7 +219,7 @@ header h5 {
 ************************************************************/
 
 footer {
-    padding-top: 2rem;
+    padding: 2rem 0;
     color: var(--main-color-white);
     background-color: var(--main-color-bordeaux);
 }
@@ -229,7 +229,7 @@ footer {
 }
 
 .footer-quote {
-    margin: 2rem 0;
+    margin: 2rem 0 0;
     font-size: 1.2rem;
     font-style: italic;
     font-weight: 100;
