@@ -34,9 +34,9 @@
                             <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine_90') }}" class="wine-image">
                             <div class="wine-container">
                                 <h3 class="name">{{ wine.name }}</h3>
-                                <h5 class="region">{{ wine.region }}</h5>
+                                <h5 class="region d-inline">{{ wine.region }}</h5>
                                 <h5 class="vintage d-inline">{{ wine.vintage }}</h5>
-                                <h5 class="grape d-inline">{{ wine.grape }}</h5>
+                                <h5 class="grape">{{ wine.grape }}</h5>
 
                                 {% if app.user == true %}
                                     <a class="d-block btn color-bordeaux collection-btn mx-auto" href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
@@ -81,7 +81,7 @@
                                 <div class="col-4">
                                     <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine') }}" class="wine-image-mobile mx-auto">
                                 </div>
-                                <div class="col-8">
+                                <div class="col-8 d-flex flex-column justify-content-center">
                                     <h4 class="name">{{ wine.name }}</h4>
                                     <h5 class="region">{{ wine.region }}</h5>
                                     <h5 class="vintage d-inline">{{ wine.vintage }}</h5>

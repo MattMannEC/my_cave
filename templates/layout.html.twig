@@ -3,30 +3,28 @@
 {% extends 'base.html.twig' %}
 {% block body %}
     <header>
-        <div class="container-fluid">
-            <div class="row align-items-stretch">
-                <div class="col-6">
-                    <div class="row">
-                        <div class="col-6 d-flex">
-                            <a href="{{ path('home') }}"><img src="{{ asset('images/logo-large.png') }}" alt="mycave" class="header-logo"></a>
-                        </div>
-                        <div class="col-6">
+        <div class="container-fluid h-100">
+            <div class="row align-items-stretch h-100">
+                <div class="col-6 h-100">
+                    <div class="row h-100">
+                        <div class="col-12 col-lg-6 d-flex justifty-content-start align-items-center">
+                            <a href="{{ path('home') }}" class="header-logo"><img src="{{ asset('images/logo-large.png') }}" alt="mycave"></a>
                         </div>
                     </div>
                 </div>
 
                 {# Mobile navbar #}
-                <div id="mobile-navbar" class="col-6">
-                    <div class="row navbar">
+                <div id="mobile-navbar" class="col-6 h-100">
+                    <div class="row navbar h-100">
 
-                        <div class="d-flex flex-column justify-content-center login-div col-6">
+                        <div class="d-flex flex-column justify-content-center login-div col-6 h-100">
                             {% if app.user == false %}
-                                <a class="nav-item d-flex flex-column justify-content-center text-center login" href="{{ path('app_login') }}">  
+                                <a class="nav-item d-flex flex-column justify-content-center text-center login h-100" href="{{ path('app_login') }}">  
                                     <i class="fas fa-lock login-text"></i>
                                     <h5 class="login-text">Login</h5>
                                 </a>
                             {% else %}
-                                <a class="nav-item d-flex flex-column justify-content-center text-center login" href="{{ path('app_logout') }}">
+                                <a class="nav-item d-flex flex-column justify-content-center text-center login h-100" href="{{ path('app_logout') }}">
                                     <i class="fas fa-lock login-text"></i>
                                     <h5 class="login-text logout-text">Logout</h5>
                                 </a>
@@ -48,22 +46,22 @@
                 </div>
 
                 {# Desktop navbar #}
-                <div id="desktop-navbar" class="col-6">
-                    <div class="row navbar float-right navbar-expand-lg">
-                        <a class="nav-item" href="{{ path('home') }}">My Cave</a>
-                        <a class="nav-item" href="{{ path('wine')}}">Collection</a>
+                <div id="desktop-navbar" class="col-6 h-100">
+                    <div class="row navbar float-right navbar-expand-lg h-100">
+                        <a class="nav-item h-100" href="{{ path('home') }}">My Cave</a>
+                        <a class="nav-item h-100" href="{{ path('wine')}}">Collection</a>
                             {% if is_granted('ROLE_ADMIN') %}
-                                <a class="nav-item" href="{{ path('user_index') }}">Admin</a>
+                                <a class="nav-item h-100" href="{{ path('user_index') }}">Admin</a>
                             {% endif %}
                             
                         <div class="d-flex flex-column justify-content-center login-div">
                         {% if app.user == false %}
-                            <a class="nav-item d-flex flex-column justify-content-center text-center login" href="{{ path('app_login') }}">  
+                            <a class="nav-item d-flex flex-column justify-content-center text-center login h-100" href="{{ path('app_login') }}">  
                                 <i class="fas fa-lock login-text"></i>
                                 <h5 class="login-text">Login</h5>
                             </a>
                         {% else %}
-                            <a class="nav-item d-flex flex-column justify-content-center text-center login" href="{{ path('app_logout') }}">
+                            <a class="nav-item d-flex flex-column justify-content-center text-center login h-100" href="{{ path('app_logout') }}">
                                 <i class="fas fa-lock login-text"></i>
                                 <h5 class="login-text">Logout</h5>
                             </a>

@@ -9,6 +9,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
+    min-height: 45rem;
     padding: 0;
 }
 
@@ -40,6 +41,7 @@
 
 #section-2 {
     height: 60vh;
+    min-height: 32rem;
     margin-top: 5rem;
 }
 
@@ -50,7 +52,8 @@
 #homeSlider {
     width: 90%;
     margin: 0 auto;
-    max-height: 90vh;
+    height: 60vh;
+    min-height: 32rem;
 }
 
 #slider-image {
@@ -85,7 +88,7 @@
 }
 
 .slick-prev:before, .slick-next:before {
-    font-size: 50px;
+    font-size: 2rem;
 }
 
 /************************************************************
@@ -105,6 +108,7 @@
 .article-image-small {
     width: 100%;
     padding-bottom: 4px;
+    max-width: none;
 }
 
 .article-image-small:hover {
@@ -134,11 +138,8 @@
 
 .article-title:hover {
     color: var(--main-color-black);
-    text-align: center;
-    text-transform: capitalize;
 }
 
 .article-text:hover {
     color: var(--main-color-black);
-    text-align: center;
 }

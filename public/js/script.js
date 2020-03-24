@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
 // Collection
 
 $('.wine-container:odd').addClass('b-color-purple');

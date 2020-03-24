@@ -17,7 +17,7 @@
     }
     
     .hero-text {
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         padding: 1rem 1rem;
         margin: 0 0.5rem;
     }
@@ -37,7 +37,6 @@
     }
 
     #slider-image {
-        display: block;
         width: 70%;
         margin-bottom: 0;
     }
@@ -88,8 +87,8 @@
     *                       Section-2   (max-width: 767.98px)   *
     ************************************************************/
     #section-2 {
-        height: 90vh;
-        margin-top: 3rem;
+        min-height: 30vh;
+        margin-top: 1.5rem;
     }
 
     #homeSlider {
@@ -141,6 +140,11 @@
     /************************************************************
     *                       Section-2   (max-width: 575.98px)   *
     ************************************************************/
+
+    #section-2 {
+        min-height: 60vh;
+        padding-top: 3rem;
+    }
 
     #slider-image,
     #slider-image-mobile-90 {

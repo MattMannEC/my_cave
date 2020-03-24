@@ -131,7 +131,8 @@ input {
 }
 
 img {
-    width: 100%;
+    width: auto;
+    max-width: 100%;
 }
 
 /************************************************************
@@ -139,7 +140,7 @@ img {
 ************************************************************/
 
 header {
-    height: 10vh;
+    height: 6rem;
     text-transform: uppercase;
     position: sticky;
     z-index: 1;
@@ -148,9 +149,8 @@ header {
 }
 
 .header-logo {
-    height: 8vh;
     width: auto;
-    margin: 1vh 0 1vh 0;
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 #desktop-navbar {
@@ -166,10 +166,10 @@ header {
 }
 
 .nav-item {
-    height: 10vh;
     color: var(--main-color-bordeaux);
     padding: 3rem 2rem 2rem 2rem;
     border-bottom: 3px solid white;
+    font-size: 1.25rem;
 }
 
 .nav-item:hover {
@@ -179,7 +179,7 @@ header {
 }
 
 .login-div {
-    height: 10vh;
+    height: 6rem;
     text-align: center;
     background-color: var(--main-color-bordeaux);
 }
@@ -191,7 +191,7 @@ header {
 .login-text {
     color: inherit;
     letter-spacing: 1px;
-
+    font-size: 1.25rem;
 }
 
 .login { 
@@ -222,10 +222,13 @@ footer {
     padding: 2rem 0;
     color: var(--main-color-white);
     background-color: var(--main-color-bordeaux);
+    height: 25vh;
+    min-height: 14rem;
 }
 
 .footer-logo {
-    max-width: 100%;
+    width: auto;
+    margin: 0.5rem 0 0.5rem 0;
 }
 
 .footer-quote {

@@ -2,7 +2,8 @@
     <div class="row">
         <div class="col-md-4">
             {% if form.vars.data.imageFilename|default %}
-                <img src="{{ form.vars.data.imagePath|imagine_filter('my_normal') }}">
+                <img src="{{ form.vars.data.imagePath|imagine_filter('my_normal') }}" class="showImageDesktop mx-auto">
+                <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine') }}" class="showImageMobile mx-auto">
             {% endif %}
             {{ form_row(form.imageFilename) }}
         </div>

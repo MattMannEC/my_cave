@@ -1,6 +1,7 @@
 #loginSection {
     position: relative;
     height: 65vh;
+    min-height: 36rem;
 }
 
 .login-container {
@@ -13,10 +14,11 @@
 
 .form-container {
     height: 40vh;
+    min-height: 20rem;
     border: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 

@@ -19,7 +19,7 @@
 
 .wine-container {
     padding: 1.5rem 1rem;
-    min-height: 200px;
+    min-height: 14rem;
 }
 
 .wine-image {
@@ -55,6 +55,10 @@
 .page-item.active .page-link {
     background-color: var(--main-color-bordeaux);
     border-color: var(--main-color-bordeaux);
+}
+
+.pagination {
+    margin-top: 1rem;
 }
 
 /*===================================================

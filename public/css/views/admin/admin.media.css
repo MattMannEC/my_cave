@@ -16,6 +16,8 @@
 
     #sectionNav {
         height: 5vh;
+        min-height: auto;
+        margin-bottom: 0.5rem;
     }
 
     #user,
@@ -28,6 +30,19 @@
         padding: 0.5rem 0.2rem;
     }
 
+    .label {
+        display: none;
+    }
+
+    .roles {
+        display: block;
+    }
+
+    .id,
+    .firstname,
+    .lastname {
+        display: none;
+    }
 }
 
 /* // Small devices (landscape phones, less than 768px) */
@@ -40,14 +55,7 @@
     *                         (max-width: 575.98px)                      
     ************************************************************/
 
-    .label {
-        display: none;
-    }
-
-    .id,
-    .roles,
-    .firstname,
-    .lastname {
+    .roles {
         display: none;
     }
 

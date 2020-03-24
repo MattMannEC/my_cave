@@ -1,5 +1,5 @@
 
-/* // Small devices (landscape phones, less than 992px) */
+/* // Medium devices (tablets, less than 992px)  */
 @media (max-width: 991.98px) {
 
     /************************************************************
@@ -30,7 +30,8 @@
     i,
     button,
     label, 
-    .form-control {
+    .form-control,
+    .login-submit {
         font-size: 1.5rem;
     }
 
@@ -49,12 +50,7 @@
 
 
     header {
-        height: 15vh;
-    }
-
-    .header-logo {
-        height: 6vh;
-        margin: 4.5vh 0 4.5vh 0;
+        height: 13vh;
     }
 
     #desktop-navbar {
@@ -65,34 +61,35 @@
         display: block;
     }
 
-    .navbar {
-        padding: 0;
-    }
-
     .nav-item {
         padding: 0;
     }
 
     .login-div {
-        height: 15vh;
+        height: 13vh;
     }
 
     .login-text {
-        font-size: 16px;
+        font-size: 20px;
     }
 
     .logout-text {
-        font-size: 14px;
+        font-size: 20px;
     }
 
     .menu-div {
-        height: 15vh;
+        height: 13vh;
         text-align: center;
     }
 
     .dropdown-menu {
         width: 100vw;
         left: calc(0px - 50vw);
+    }
+
+    .dropdown-item {
+        text-align: center;
+        font-size: 2rem;
     }
 
     /************************************************************
@@ -103,7 +100,6 @@
     footer.col-12, footer.col-md-4 {
         padding: 0 ;
     }
-
 
 }
 
@@ -149,6 +145,15 @@
     /************************************************************
     *                       header     (max-width: 767.98px)                  
     ************************************************************/
+
+    header {
+        height: 20vh;
+    }
+
+    .header-logo {
+        max-width: 50%;
+    }
+
 
 
 
@@ -197,11 +202,17 @@
     }
     
 
-
     /************************************************************
     *                       header     (max-width: 575.98px)                  
     ************************************************************/
 
+    header {
+        height: 15vh;
+    }
+
+    .header-logo {
+        max-width: 80%;
+    }
 
     .navbar {
         padding: 0;
@@ -209,6 +220,15 @@
 
     .nav-item {
         padding: 0;
+        font-size: 1rem;
+    }
+
+    .dropdown-item {
+        font-size: 1.75rem;
+    }
+
+    .login-text {
+        font-size: 1rem;
     }
 
 
