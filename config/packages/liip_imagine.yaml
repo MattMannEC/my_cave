@@ -21,7 +21,7 @@ liip_imagine:
             quality: 100
             filters:
                 thumbnail: 
-                    size: [115, 140]
+                    size: [230, 280]
                     mode: outbound
 
         my_thumb_wine_90:
