@@ -7,6 +7,7 @@ use App\Form\WineType;
 use App\Repository\WineRepository;
 use App\Service\UploaderHelper;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\Security\Core\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,16 +18,25 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class WineController extends AbstractController
 {
+    private $security;
+
+    public function __construct(Security $security)
+    {
+        $this->security = $security;
+    }
+
     /**
      * @Route("/new", name="wine_new", methods={"GET","POST"})
      */
     public function new(Request $request, UploaderHelper $uploaderHelper): Response
     {
         $wine = new Wine();
+        $user = $this->security->getUser();
         $form = $this->createForm(WineType::class, $wine);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $wine->setAuthor($user->getId());
             $uploadedFile = $form['imageFilename']->getData(); 
             if ($uploadedFile) {
                 $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);

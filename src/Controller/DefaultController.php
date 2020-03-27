@@ -6,6 +6,7 @@ use App\Entity\Wine;
 use App\Entity\Article;
 use App\Repository\ArticleRepository;
 use App\Repository\HeroRepository;
+use App\Repository\UserRepository;
 use App\Repository\WineRepository;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -53,10 +54,13 @@ class DefaultController extends AbstractController
     /**
      * @Route("/wine/{id}", name="wine_show", methods={"GET"})
      */
-    public function show(Wine $wine): Response
+    public function show(Wine $wine, UserRepository $userRepository): Response
     {
+        $user = $userRepository->readUser($wine->getAuthor());
+        $author = $user->getUsername();
         return $this->render('wine/show.html.twig', [
             'wine' => $wine,
+            'author' => $author,
         ]);
     }
 
