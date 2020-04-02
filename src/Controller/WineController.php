@@ -4,9 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Wine;
 use App\Form\WineType;
-use App\Repository\WineRepository;
 use App\Service\UploaderHelper;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

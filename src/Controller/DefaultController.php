@@ -8,6 +8,7 @@ use App\Repository\ArticleRepository;
 use App\Repository\HeroRepository;
 use App\Repository\UserRepository;
 use App\Repository\WineRepository;
+use Symfony\Component\Security\Core\Security;
 use Knp\Component\Pager\PaginatorInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,6 +21,7 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class DefaultController extends AbstractController
 {
+
     /**
      * @Route ("/", name="home")
      */
@@ -48,6 +50,7 @@ class DefaultController extends AbstractController
 
         return $this->render('wine/index.html.twig', [
             'pagination' => $pagination,
+            'userId' => $this->getUser()->getId(), // AbstractController has a getUser() method
         ]);
     } 
 
@@ -56,11 +59,12 @@ class DefaultController extends AbstractController
      */
     public function show(Wine $wine, UserRepository $userRepository): Response
     {
-        $user = $userRepository->readUser($wine->getAuthor());
-        $author = $user->getUsername();
+        $authorObject = $userRepository->readUser($wine->getAuthor());
+        $author = $authorObject->getUsername();
         return $this->render('wine/show.html.twig', [
             'wine' => $wine,
             'author' => $author,
+            'userId' => $this->getUser()->getId(),
         ]);
     }
 
