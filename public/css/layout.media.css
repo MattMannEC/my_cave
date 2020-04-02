@@ -1,4 +1,13 @@
 
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+
+    .nav-item {
+        padding: 3rem 1.5rem 2rem 1.5rem;
+    }
+
+} 
+
 /* // Medium devices (tablets, less than 992px)  */
 @media (max-width: 991.98px) {
 
