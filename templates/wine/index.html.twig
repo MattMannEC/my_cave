@@ -24,8 +24,6 @@
                     </form>
                 </div>
             </div>
-
-            <h1>{{ userId }}</h1>
                 
                 {# Desktop Wine Collection #}   
 
@@ -39,7 +37,6 @@
                                 <h5 class="region d-inline">{{ wine.region }}</h5>
                                 <h5 class="vintage d-inline">{{ wine.vintage }}</h5>
                                 <h5 class="grape">{{ wine.grape }}</h5>
-                                <h5 class="author">{{ wine.author }}</h5>
 
                                 {% if userId == wine.author %}
                                     <a class="d-block btn color-bordeaux collection-btn mx-auto" href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>

@@ -58,7 +58,7 @@ class Wine
     private $date_modified;
 
     /**
-     * @ORM\Column(type="integer", length=255, nullable=true)
+     * @ORM\Column(type="integer")
      */
     private $author;
 
