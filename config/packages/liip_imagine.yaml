@@ -17,7 +17,7 @@ liip_imagine:
                     mode: outbound
 
         my_thumb_wine:
-            default_image: default.png
+            default_image: defaultWine.png
             quality: 100
             filters:
                 thumbnail: 
@@ -25,7 +25,7 @@ liip_imagine:
                     mode: outbound
 
         my_thumb_wine_90:
-            default_image: default.png
+            default_image: defaultWine.png
             quality: 100
             filters:
                 rotate:
@@ -35,7 +35,7 @@ liip_imagine:
                     mode: outbound
 
         my_small:
-            default_image: default.png
+            default_image: defaultImage.jpeg
             quality: 100
             filters:
                 thumbnail: 
@@ -43,7 +43,7 @@ liip_imagine:
                     mode: outbound
 
         my_normal:
-            default_image: default.png
+            default_image: defaultWine.png
             quality: 100
             filters:
                 thumbnail: 
@@ -51,7 +51,7 @@ liip_imagine:
                     mode: outbound
 
         my_large:
-            default_image: default.png
+            default_image: defaultImage.jpeg
             quality: 100
             filters:
                 thumbnail: 
