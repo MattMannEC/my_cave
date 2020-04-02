@@ -58,7 +58,7 @@ class Wine
     private $date_modified;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="integer", length=255, nullable=true)
      */
     private $author;
 
@@ -168,12 +168,12 @@ class Wine
         return $this;
     }
 
-    public function getAuthor(): ?string
+    public function getAuthor(): ?int
     {
         return $this->author;
     }
 
-    public function setAuthor(?string $author): self
+    public function setAuthor(?int $author): self
     {
         $this->author = $author;
 
