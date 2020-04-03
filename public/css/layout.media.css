@@ -163,6 +163,10 @@
         max-width: 50%;
     }
 
+    .header-message {
+        display: none;
+    }
+
 
 
 
