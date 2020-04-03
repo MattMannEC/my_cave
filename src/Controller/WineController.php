@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Wine;
 use App\Form\WineType;
 use App\Service\UploaderHelper;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -56,25 +57,21 @@ class WineController extends AbstractController
         $form->handleRequest($request);
 
             if ($form->isSubmitted() && $form->isValid()) {
-                if ($this->getUser()->getId() == $wine->getAuthor()) {
+                if ($this->getUser()->getId() == $wine->getAuthor() or $this->isGranted('ROLE_ADMIN')) {
+                    $currentFilename = $wine->getImageFilename();
+                    $uploadedFile = $form['imageFilename']->getData(); 
+                    if ($uploadedFile) {
+                        $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
 
-                    /////// about to add condition for is_granted('role-admin)
-                    /// need to check if edit works before implicitly allowing it in controller when user is not owner but is admin.
-
-                $currentFilename = $wine->getImageFilename();
-                $uploadedFile = $form['imageFilename']->getData(); 
-                if ($uploadedFile) {
-                    $newFilename = $uploaderHelper->uploadArticleImage($uploadedFile);
-
-                    if ($newFilename) {
-                        $wine->setImageFilename($newFilename);
-                        $uploaderHelper->removeFile(UploaderHelper::IMAGES, $currentFilename);
+                        if ($newFilename) {
+                            $wine->setImageFilename($newFilename);
+                            $uploaderHelper->removeFile(UploaderHelper::IMAGES, $currentFilename);
+                        }
                     }
-                }
-                $this->getDoctrine()->getManager()->flush();
+                    $this->getDoctrine()->getManager()->flush();
 
-                return $this->redirectToRoute('wine');
-            }
+                    return $this->redirectToRoute('wine');
+                }
         }
 
         return $this->render('wine/edit.html.twig', [
@@ -89,13 +86,15 @@ class WineController extends AbstractController
      */ 
     public function delete(Request $request, Wine $wine, UploaderHelper $uploaderHelper): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$wine->getId(), $request->request->get('_token')) && $this->getUser()->getId() == $wine->getAuthor()) {
-            $uploaderHelper->removeFile(UploaderHelper::IMAGES, $wine->getImageFilename());
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($wine);
+        if ($this->isCsrfTokenValid('delete'.$wine->getId(), $request->request->get('_token'))) {
+            if ($this->getUser()->getId() == $wine->getAuthor() or $this->isGranted('ROLE_ADMIN')) {
+                $uploaderHelper->removeFile(UploaderHelper::IMAGES, $wine->getImageFilename());
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->remove($wine);
 
-            $entityManager->flush();
+                $entityManager->flush();
 
+            }
         }
         return $this->redirectToRoute('wine');
     }
