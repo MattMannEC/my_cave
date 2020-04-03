@@ -43,6 +43,7 @@ class WineController extends AbstractController
         return $this->render('wine/new.html.twig', [
             'wine' => $wine,
             'form' => $form->createView(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 
@@ -79,7 +80,7 @@ class WineController extends AbstractController
         return $this->render('wine/edit.html.twig', [
             'wine' => $wine,
             'form' => $form->createView(),
-            'user' => $this->getUser(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 

@@ -23,6 +23,7 @@ class HeroController extends AbstractController
     {
         return $this->render('admin/index.html.twig', [
             'hero' => $heroRepository->readHero(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 
@@ -46,6 +47,7 @@ class HeroController extends AbstractController
         return $this->render('admin/hero/new.html.twig', [
             'hero' => $hero,
             'form' => $form->createView(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 
@@ -56,6 +58,7 @@ class HeroController extends AbstractController
     {
         return $this->render('admin/hero/show.html.twig', [
             'hero' => $hero,
+            'currentUser' => $this->getUser(),
         ]);
     }
 
@@ -88,6 +91,7 @@ class HeroController extends AbstractController
         return $this->render('admin/hero/edit.html.twig', [
             'hero' => $hero,
             'form' => $form->createView(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 

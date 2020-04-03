@@ -70,7 +70,9 @@
                     </div> 
                 </div>
             </div>
-            <h6 class="float-right text-capitalize server-message header-message">Logged in as {{ user.username }}</h6>
+            {% if currentUser == true %}
+                <h6 class="float-right text-capitalize server-message header-message">Logged in as {{ currentUser.username }}</h6>
+            {% endif %}
         </div>
     </header>
         

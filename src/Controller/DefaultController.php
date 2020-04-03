@@ -9,7 +9,6 @@ use App\Repository\HeroRepository;
 use App\Repository\UserRepository;
 use App\Repository\WineRepository;
 use Knp\Component\Pager\PaginatorInterface;
-use Symfony\Component\Security\Core\Security;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,6 +30,7 @@ class DefaultController extends AbstractController
             'heroElements' => $heroRepository->readHeros(),
             'sliderElements' => $wineRepository->readWines(),
             'articleElements' => $articleRepository->readArticles(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 
@@ -50,7 +50,7 @@ class DefaultController extends AbstractController
 
         return $this->render('wine/index.html.twig', [
             'pagination' => $pagination,
-            'user' => $this->getUser(),
+            'currentUser' => $this->getUser(),
         ]);
     } 
 
@@ -64,7 +64,7 @@ class DefaultController extends AbstractController
         return $this->render('wine/show.html.twig', [
             'wine' => $wine,
             'author' => $author,
-            'user' => $this->getUser(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 
@@ -75,6 +75,7 @@ class DefaultController extends AbstractController
     {
         return $this->render('admin/article/show.html.twig', [
             'article' => $article,
+            'currentUser' => $this->getUser(),
         ]);
     }
 }

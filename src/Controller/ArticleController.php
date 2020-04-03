@@ -23,6 +23,7 @@ class ArticleController extends AbstractController
     {
         return $this->render('admin/article/index.html.twig', [
             'articles' => $articleRepository->findAll(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 
@@ -52,6 +53,7 @@ class ArticleController extends AbstractController
         return $this->render('admin/article/new.html.twig', [
             'article' => $article,
             'form' => $form->createView(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 
@@ -84,6 +86,7 @@ class ArticleController extends AbstractController
         return $this->render('admin/article/edit.html.twig', [
             'article' => $article,
             'form' => $form->createView(),
+            'currentUser' => $this->getUser(),
         ]);
     }
 
