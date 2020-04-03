@@ -20,22 +20,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @Route("/")
  */
 class DefaultController extends AbstractController
-{    
-    private $security;
-
-    public function __construct(Security $security)
-    {
-        $this->security = $security;
-    }
-
-    public function getSessionUserId()
-    {
-        $userId = '';
-        if ($this->security->getUser()) {
-            $userId = $this->security->getUser()->getId();
-        }
-        return $userId;
-    }
+{
 
     /**
      * @Route ("/", name="home")
@@ -54,7 +39,6 @@ class DefaultController extends AbstractController
      */
     public function wineCatalogue(WineRepository $wineRepository, Request $request, PaginatorInterface $paginator): Response
     {
-        
         $q = $request->query->get('q');
         $queryBuilder = $wineRepository->getWithSearchQueryBuilder($q);
 
@@ -66,7 +50,7 @@ class DefaultController extends AbstractController
 
         return $this->render('wine/index.html.twig', [
             'pagination' => $pagination,
-            'userId' => $this->getSessionUserId(),
+            'user' => $this->getUser(),
         ]);
     } 
 
@@ -80,7 +64,7 @@ class DefaultController extends AbstractController
         return $this->render('wine/show.html.twig', [
             'wine' => $wine,
             'author' => $author,
-            'userId' => $this->getSessionUserId(),
+            'user' => $this->getUser(),
         ]);
     }
 

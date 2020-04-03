@@ -38,7 +38,7 @@
                                 <h5 class="vintage d-inline">{{ wine.vintage }}</h5>
                                 <h5 class="grape">{{ wine.grape }}</h5>
 
-                                {% if userId == wine.author %}
+                                {% if user == true and user.id == wine.author or is_granted('ROLE_ADMIN') %}
                                     <a class="d-block btn color-bordeaux collection-btn mx-auto" href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
                                 {% else %}
                                     <a class="d-block btn color-bordeaux collection-btn mx-auto" href="{{ path('wine_show', {'id': wine.id}) }}">learn more</a>
@@ -71,10 +71,10 @@
 
                     {% for wine in pagination %}
                         <a class="mx-auto" href=" 
-                            {% if userId == wine.author %}
+                            {% if user == true and user.id == wine.author or is_granted('ROLE_ADMIN')%}
                                 {{ path('wine_edit', {'id': wine.id}) }}
                             {% else %}
-                                {{ path('wine_show', {'id': wine.id}) }}
+                                    {{ path('wine_show', {'id': wine.id}) }}
                             {% endif %}
                         ">
                             <div class="mobile-wine-container d-flex">

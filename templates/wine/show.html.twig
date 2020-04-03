@@ -51,7 +51,7 @@
                     </table>
                 </div>
             </div>                
-            {% if userId == wine.author %}
+            {% if user == true and user.id == wine.author %}
             <div class="col-md-12 d-flex justify-content-between">
 
                 <a class="action-link btn btn-bordeaux" href="{{ path('wine_edit', {'id': wine.id}) }}">edit</a>
