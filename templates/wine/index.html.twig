@@ -9,8 +9,8 @@
 {% block content %}   
     <section id="collection">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-4 mx-auto"> 
+            <div class="row mx-auto w-100">
+                <div class="col-lg-4 mx-auto w-100"> 
                     <h1>Wine Collection</h1>
                     <form>
                     <div class="input-group mb-3 search-bar">
@@ -60,7 +60,7 @@
                             {% if currentUser == true %}
                                 <a class="action-link btn btn-bordeaux" href="{{ path('wine_new') }}">Create new</a>
                             {% endif %}
-                                <h3 class="">{{ pagination.getTotalItemCount }} - Wine(s) in stock</h3>
+                                <h3 class="">{{ pagination.getTotalItemCount }} - Wine(s)</h3>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                             {% if currentUser == true %}
                                 <a class="action-link btn btn-bordeaux" href="{{ path('wine_new') }}">Create new</a>
                             {% endif %}
-                                <h3 class="">{{ pagination.getTotalItemCount }} - Wine(s) in stock</h3>
+                                <h3 class="">{{ pagination.getTotalItemCount }} - Wine(s) </h3>
                         </div>
                     </div>
                 </div>
