@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Wine;
 use App\Form\WineType;
 use App\Service\UploaderHelper;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
