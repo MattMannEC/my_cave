@@ -7,7 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextAreaType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\Image;
@@ -26,7 +26,7 @@ class WineType extends AbstractType
             ->add('grape')
             ->add('country')
             ->add('region')
-            ->add('description', TextAreaType::class, [
+            ->add('description', TextareaType::class, [
                 'attr' => ['rows' => '10','cols' => '10']
             ]);
             
