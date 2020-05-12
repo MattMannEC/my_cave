@@ -35,7 +35,7 @@ liip_imagine:
                     mode: outbound
 
         my_small:
-            default_image: defaultImage.jpeg
+            default_image: defaultImage.jpg
             quality: 25
             filters:
                 thumbnail: 
@@ -51,7 +51,7 @@ liip_imagine:
                     mode: outbound
 
         my_large:
-            default_image: defaultImage.jpeg
+            default_image: defaultImage.jpg
             quality: 25
             filters:
                 thumbnail: 
