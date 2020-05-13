@@ -24,7 +24,7 @@ Class UploaderHelper
         $newFilename = $orignalFilename . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
 
         $uploadedFile->move(
-            $destination,  
+            $destination,
             $newFilename
         );
 
@@ -38,7 +38,9 @@ Class UploaderHelper
 
     public function removeFile($directory, $imageFilename)
     {
-        $fileSystem = new FileSystem();
-        $fileSystem->remove($this->uploadsPath . '/' . $directory . '/' . $imageFilename);
+        if ($imageFilename) {
+            $fileSystem = new FileSystem();
+            $fileSystem->remove($this->uploadsPath . '/' . $directory . '/' . $imageFilename);
+        }
     }
 }
