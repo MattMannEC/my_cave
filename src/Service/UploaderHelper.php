@@ -31,11 +31,6 @@ Class UploaderHelper
         return $newFilename; 
     }
 
-    public static function getPublicPath()
-    {
-        return '/' . self::UPLOADS;
-    }
-
     public function removeFile($directory, $imageFilename)
     {
         if ($imageFilename) {
