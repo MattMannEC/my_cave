@@ -3,13 +3,13 @@
 liip_imagine:
     resolvers:
         default:
-            web_path: ~
+            web_path:
 
     filter_sets:
         cache: ~
 
         my_thumb:
-            default_image: default.png
+            default_image: defaultImage.jpeg
             quality: 25
             filters:
                 thumbnail: 

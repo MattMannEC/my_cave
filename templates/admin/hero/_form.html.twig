@@ -6,7 +6,7 @@
                 {{ form_row(form.imageFilename) }}
         </div>
         <div class="col-12">
-            {% if form.vars.data.imageFilename|default %}
+            {% if form.vars.data.imageFilename %}
                 <img class="cms-image" src="{{ form.vars.data.imagePath|imagine_filter('my_large') }}">
                 <img class="cms-image-small" src="{{ form.vars.data.imagePath|imagine_filter('my_small') }}">
             {% endif %}
