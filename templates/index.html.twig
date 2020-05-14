@@ -7,12 +7,13 @@
 {% block content %}
 
     {% for hero in heroElements %}
-        <section id="section-1" class="container-fluid" style="background-image: url('{{ hero.imagePath|imagine_filter('my_large') }}')">
+        <section id="section-1" class="container-fluid" style="background-image: url('{{ asset(hero.imagePath)|imagine_filter('my_large') }}')">
             <div class="container-fluid hero-content-container text-center">
                 <h1 class="display-1 hero-title">{{ hero.title }}</h1>
                 <h5 class="hero-text">{{ hero.text }}</h5>
             </div>
         </section>
+    {% endfor %}
 
 <!--       Slider        -->
 
@@ -23,9 +24,9 @@
         <div>
             <div class="row slider-row">
                 <div class="col-12 col-lg-4">
-                    <img id="slider-image" class="mx-auto" src="{{ sliderElement.imagePath|imagine_filter('my_normal') }}" alt="wine">
-                    <img id="slider-image-mobile" class="slider-image-mobile mx-auto" src="{{ sliderElement.imagePath|imagine_filter('my_thumb_wine') }}" alt="wine">
-                    <img id="slider-image-mobile-90" class="slider-image-mobile mx-auto" src="{{ sliderElement.imagePath|imagine_filter('my_thumb_wine_90') }}" alt="wine">
+                    <img id="slider-image" class="mx-auto" src="{{ asset(sliderElement.imagePath)|imagine_filter('my_large') }}" alt="">
+                    <img id="slider-image-mobile" class="slider-image-mobile mx-auto" src="{{ asset(sliderElement.imagePath)|imagine_filter('my_thumb_wine') }}" alt="">
+                    <img id="slider-image-mobile-90" class="slider-image-mobile mx-auto" src="{{ asset(sliderElement.imagePath)|imagine_filter('my_thumb_wine_90') }}" alt="">
                 </div>
                 <div class="col-12 col-lg-8 d-flex flex-column justify-content-center">
                     <div class="wine-banner">
@@ -51,7 +52,7 @@
             {% for articleElement in articleElements %}
             <div class="col-md-4 article-col">
                 <a class="article-a" href="{{ path('article_show', {'id': articleElement.id}) }}">
-                    <img href="{{ path('article_show', {'id': articleElement.id}) }}" src="{{ articleElement.imagePath|imagine_filter('my_small') }}" alt="grapes" class="article-image-small">
+                    <img href="{{ path('article_show', {'id': articleElement.id}) }}" src="{{ asset(articleElement.imagePath)|imagine_filter('my_small') }}" alt="grapes" class="article-image-small">
                     <h4 class="article-title">{{ articleElement.title }}</h4>
                     <p class="article-text">{{ articleElement.text |length > 255 ? articleElement.text|slice(0, 255) ~ '...' : articleElement.text  }}</p>
                 </a>

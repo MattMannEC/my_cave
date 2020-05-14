@@ -31,7 +31,7 @@
                     {% for wine in pagination %}
                         <div class="col-md-6 col-lg-4 text-center text-capitalize px-0">
 
-                            <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine_90') }}" class="wine-image">
+                            <img src="{{ asset(wine.imagePath)|imagine_filter('my_thumb_wine_90') }}" class="wine-image">
                             <div class="wine-container">
                                 <h3 class="name">{{ wine.name }}</h3>
                                 <h5 class="region d-inline">{{ wine.region }}</h5>
@@ -79,7 +79,7 @@
                         ">
                             <div class="mobile-wine-container d-flex">
                                 <div class="col-4">
-                                    <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine') }}" class="wine-image-mobile mx-auto">
+                                    <img src="{{ asset(wine.imagePath)|imagine_filter('my_thumb_wine') }}" class="wine-image-mobile mx-auto">
                                 </div>
                                 <div class="col-8 d-flex flex-column justify-content-center">
                                     <h4 class="name">{{ wine.name }}</h4>

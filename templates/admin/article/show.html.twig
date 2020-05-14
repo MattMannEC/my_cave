@@ -14,8 +14,8 @@
         <div class="col-md-12">
             <h1>{{ article.title }}</h1>
             <a href="{{ path('home') }}" class="action-link"><i class="fas fa-arrow-left"></i>  back to home</a>
-            <img src="{{ article.imagePath|imagine_filter('my_large') }}" alt="" class="article-image-large">
-            <img src="{{ article.imagePath|imagine_filter('my_small') }}" alt="" class="article-image-small">
+            <img src="{{ asset(article.imagePath)|imagine_filter('my_large') }}" alt="" class="article-image-large">
+            <img src="{{ asset(article.imagePath)|imagine_filter('my_small') }}" alt="" class="article-image-small">
             <p>{{ article.text }}</p>
             <h6>{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</h6>
 

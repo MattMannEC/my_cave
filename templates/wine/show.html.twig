@@ -13,8 +13,8 @@
             <a class="action-link" href="{{ path('wine') }}"><i class="fas fa-arrow-left"></i>  back to list</a>
             <div class="row">
                 <div class="col-12 col-md-4 text-center">
-                    <img src="{{ wine.imagePath|imagine_filter('my_normal') }}" class="showImageDesktop mx-auto">
-                    <img src="{{ wine.imagePath|imagine_filter('my_thumb_wine') }}" class="showImageMobile mx-auto">
+                    <img src="{{ asset(wine.imagePath)|imagine_filter('my_normal') }}" class="showImageDesktop mx-auto">
+                    <img src="{{ asset(wine.imagePath)|imagine_filter('my_thumb_wine') }}" class="showImageMobile mx-auto">
                 </div>
                 <div class="col-12 col-md-8">
                     <table class="table">

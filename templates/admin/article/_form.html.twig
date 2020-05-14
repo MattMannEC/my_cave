@@ -1,7 +1,7 @@
 {{ form_start(form) }}
             {% if form.vars.data.imageFilename %}
-                <img src="{{ form.vars.data.imagePath|imagine_filter('my_large') }}" class="article-image-large">
-                <img src="{{ form.vars.data.imagePath|imagine_filter('my_small') }}" class="article-image-small">
+                <img src="{{ asset(form.vars.data.imagePath)|imagine_filter('my_large') }}" class="article-image-large">
+                <img src="{{ asset(form.vars.data.imagePath)|imagine_filter('my_small') }}" class="article-image-small">
             {% endif %}
     {{ form_widget(form) }}
 {{ form_end(form) }}
