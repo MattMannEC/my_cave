@@ -30,7 +30,7 @@
                     <td class="title">{{ article.title }}</td>
                     <td class="text">{{ article.text |length > 255 ? article.text|slice(0, 255) ~ '...' : article.text  }}</td>
                     <td class="image">
-                        <img src="{{ article.imagePath|imagine_filter ('my_thumb') }}" alt="">
+                        <img src="{{ asset(article.imagePath)|imagine_filter ('my_thumb') }}" alt="">
                     </td>
                     <td class="dateModified">{{ article.dateModified ? article.dateModified|date('Y-m-d H:i:s') : '' }}</td>
                     <td>
