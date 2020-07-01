@@ -20,8 +20,8 @@ Class UploaderHelper
     public function uploadArticleImage(UploadedFile $uploadedFile): string
     {
         $destination = $this->uploadsPath . '/' . self::IMAGES;
-        $orignalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
-        $newFilename = $orignalFilename . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
+        $originalFilename = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+        $newFilename = $originalFilename . '-' . uniqid() . '.' . $uploadedFile->guessExtension();
 
         $uploadedFile->move(
             $destination,
