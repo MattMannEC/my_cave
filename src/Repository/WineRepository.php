@@ -51,7 +51,12 @@ class WineRepository extends ServiceEntityRepository
         $qb = $this->createQueryBuilder('w');
 
         if ($term) {
-            $qb->andWhere('w.name LIKE :term OR w.vintage LIKE :term OR w.grape LIKE :term OR w.country LIKE :term OR w.region LIKE :term OR w.description LIKE :term')
+            $qb->andWhere('w.name LIKE :term 
+                        OR w.vintage LIKE :term 
+                        OR w.grape LIKE :term 
+                        OR w.country LIKE :term
+                        OR w.region LIKE :term 
+                        OR w.description LIKE :term')
                 ->setParameter('term', '%' . $term . '%')
             ;
         }
